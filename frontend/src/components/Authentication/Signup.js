@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, useToast, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 const Signup = () => {
@@ -9,13 +9,55 @@ const Signup = () => {
     const [confirmpassword, setConfirmpassword] = useState();
     const [password, setPassword] = useState();
     const [pic, setPic] = useState();
+    const [loading, setLoading] = useState(false);
 
+    const toast = useToast();
 
     // Functions //
     const handleClick = () => setShow(!show);
 
     const postDetails = (pics) => {
+        setLoading(true);
+        if (pics === undefined) {
+            toast({
+                title: "Please Select an Image!",
+                status: "warning",
+                duration: 5000,
+                isClosable: true,
+                position: "bottom",
+            });
+            return;
+        }
 
+        if (pics.type === "image/jpeg" || pics.type === "image/png") {
+            const data = new FormData();
+            data.append("file", pics);
+            data.append("upload_preset", "chat-app");
+            data.append("cloud_name", "dihpb7leu");
+            fetch("https://api.cloudinary.com/v1_1/dihpb7leu/image/upload", {
+                method: "post",
+                body: data,
+            }).then((res) => res.json())
+              .then(data => {
+                  setPic(data.url.toString());
+                  console.log(data.url.toString());
+                  setLoading(false);
+              })
+              .catch((err) => {
+                  console.log(err);
+                  setLoading(false);
+              });
+        } else {
+            toast({
+                title: "Please Select an Image!",
+                status: "warning",
+                duration: 5000,
+                isClosable: true,
+                position: "bottom",
+            });
+            setLoading(false);
+            return;
+        }
     };
 
     const submitHandler = () => {
@@ -36,7 +78,7 @@ const Signup = () => {
             </FormControl>
 
             {/* Email */}
-            <FormControl id='email' isRequired>
+            <FormControl id='email1' isRequired>
                 <FormLabel>Email</FormLabel>
                 <Input
                     placeholder='Enter Your Email'
@@ -45,7 +87,7 @@ const Signup = () => {
             </FormControl>
 
             {/* Password */}
-            <FormControl id='password' isRequired>
+            <FormControl id='password1' isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
                     <Input
@@ -62,7 +104,7 @@ const Signup = () => {
             </FormControl>
 
             {/* Confirm Password */}
-            <FormControl id="password" isRequired>
+            <FormControl id="password2" isRequired>
                 <FormLabel>Confirm Password</FormLabel>
                 <InputGroup size="md">
                     <Input
@@ -95,6 +137,7 @@ const Signup = () => {
                 width='100%'
                 style={{ marginTop: 15 }}
                 onClick={submitHandler}
+                isLoading={loading}
             >
                 Sign Up
             </Button>
