@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Container, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react"
-import Login from '../components/Login'
+import Login from '../components/Authentication/Login'
 import Signup from '../components/Authentication/Signup'
 
 const Homepage = () => {
