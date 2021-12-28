@@ -1,16 +1,19 @@
-import { Button } from "@chakra-ui/button";
-import { useDisclosure } from "@chakra-ui/hooks";
-import { Input } from "@chakra-ui/input";
-import { Box, Text } from "@chakra-ui/layout";
-import { Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/menu";
-import { Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay } from "@chakra-ui/modal";
-import { Tooltip } from "@chakra-ui/tooltip";
-import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { Avatar } from "@chakra-ui/avatar";
-import { useToast } from "@chakra-ui/toast";
-import { Spinner } from "@chakra-ui/spinner";
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
+import { BellIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import { 
+  Avatar, 
+  Box, Button, 
+  Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, 
+  Input, 
+  Menu, MenuButton, MenuDivider, MenuItem, MenuList, 
+  Spinner, 
+  Text, Tooltip, 
+  useDisclosure, 
+  useToast } from '@chakra-ui/react';
+import { Effect } from 'react-notification-badge';
+import NotificationBadge from 'react-notification-badge/lib/components/NotificationBadge';
+
+
+
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
