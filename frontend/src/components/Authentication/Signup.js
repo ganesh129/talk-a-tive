@@ -1,7 +1,7 @@
 import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, useToast, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
     // States //
@@ -14,7 +14,7 @@ const Signup = () => {
     const [loading, setLoading] = useState(false);
 
     const toast = useToast();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     // Functions //
     // showing / hiding password
@@ -117,7 +117,7 @@ const Signup = () => {
             localStorage.setItem('userInfo', JSON.stringify(data));
 
             setLoading(false);
-            history.push('/chats')
+            navigate('/chats')
 
         } catch (error) {
             toast({
