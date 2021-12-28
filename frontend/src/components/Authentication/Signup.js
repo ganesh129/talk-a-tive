@@ -1,5 +1,7 @@
 import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, useToast, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const Signup = () => {
     // States //
@@ -12,10 +14,13 @@ const Signup = () => {
     const [loading, setLoading] = useState(false);
 
     const toast = useToast();
+    const history = useHistory();
 
     // Functions //
+    // showing / hiding password
     const handleClick = () => setShow(!show);
 
+    // for uploading picture
     const postDetails = (pics) => {
         setLoading(true);
         if (pics === undefined) {
@@ -60,8 +65,71 @@ const Signup = () => {
         }
     };
 
-    const submitHandler = () => {
+    const submitHandler = async () => {
+        setLoading(true);
+        // if not all fields inputted
+        if (!name || !email || !password || !confirmpassword) {
+            toast({
+                title: "Please Fill all the Fields!",
+                status: "warning",
+                duration: 5000,
+                isClosable: true,
+                position: "bottom",
+            });
+            setLoading(false);
+            return;
+        }
+        // if password do not match with confirm password
+        if (password !== confirmpassword) {
+            toast({
+                title: "Password Do Not Match!",
+                status: "warning",
+                duration: 5000,
+                isClosable: true,
+                position: "bottom",
+            });
+            setLoading(false);
+            return;
+        }
 
+        // POST request
+        try {
+            const config = {
+                headers: {
+                    "Content-type": "application/json",
+                },
+            }
+            const { data } = await axios.post(
+                "/api/user",
+                { name, email, password, pic },
+                config
+                );
+            
+            // success notification
+            toast({
+                title: "Registration Successful!",
+                status: "success",
+                duration: 5000,
+                isClosable: true,
+                position: "bottom",
+            });
+
+            localStorage.setItem('userInfo', JSON.stringify(data));
+
+            setLoading(false);
+            history.pushState('/chats')
+
+        } catch (error) {
+            toast({
+                title: "Error Occured!",
+                description: error.response.data.message,
+                status: "error",
+                duration: 5000,
+                isClosable: true,
+                position: "bottom",
+            });
+            setLoading(false);
+        }
     };
 
 
@@ -92,7 +160,7 @@ const Signup = () => {
                 <InputGroup>
                     <Input
                         type={show ? "text" : 'password'}
-                        placeholder='Enter Your Email'
+                        placeholder='Enter Your Password'
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <InputRightElement width="4.5rem">
