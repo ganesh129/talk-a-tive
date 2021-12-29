@@ -20,7 +20,7 @@
 
 ## [Website](https://talk-a-tive-chat-app.herokuapp.com/)
 
-<img src="public/talk-a-tive.gif" alt="talk-a-tive.gif" width=500 />
+<img src="frontend/public/talk-a-tive.gif" alt="talk-a-tive.gif" width=500 />
 
 ## Tech Stack
 - `React` to build front end
