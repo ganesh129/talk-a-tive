@@ -44,8 +44,8 @@ const Signup = () => {
                 body: data,
             }).then((res) => res.json())
               .then(data => {
-                  setPic(data.url.toString());
-                  console.log(data.url.toString());
+                  setPic(data.url.toString().replace('http', 'https'));
+                  console.log(data.url.toString().replace('http', 'https'));
                   setLoading(false);
               })
               .catch((err) => {
