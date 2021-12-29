@@ -25,11 +25,28 @@ https://user-images.githubusercontent.com/47933193/147628723-be45d327-2abf-4ea7-
 <br>
 
 ## Tech Stack
-- `React` to build front end
-- `MongoDB` to store and retrieve data
-- `Express.js` & `Node.js` to handle backend api
--  for backend
-- `Chakra UI` to design beautiful user interface
 
-## What can be done
+Client: <b>`React JS`</b>
+
+Server: <b>`Node.js`</b>, <b>`Express.js`</b>
+
+Database: <b>`Mongo DB`</b>
+
+<br>
+
+## Features
+- <b>`Authentication`</b>
+  - Log In
+  - Sign Up
+- <b>`User Profile`</b>
+- <b>`Search Users`</b>
+- <b>`Real-time Chatting with Typing Indicator`</b>
+- <b>`Chat Notification`</b>
+
+- <b>`One-to-One Chat`</b>
+
+- <b>`Group Chat`</b>
+  - Create Group Chat
+  - Update Group Name
+  - Add / Remove Users from group
 
