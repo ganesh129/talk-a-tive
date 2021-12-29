@@ -2,6 +2,8 @@
 
 <b>Talk to your friends! 🥳</b>
 
+>Talk-a-tive is a <b>Full Stack Chatting App.</b> <br>
+>Uses Socket.io for <b>real time communication</b> and stores user details in encrypted format in <b>Mongo DB Database.</b>
 
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat-square&logo=mongodb&logoColor=white)
