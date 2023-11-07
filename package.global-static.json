@@ -1,0 +1,927 @@
+{
+  "errors": {
+    "general": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Vi kunne ikke beregne en pris til dig.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "9999999": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-00001": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb afbrudt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi er kede af, at du har afbrudt købet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-00003": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Hvis du er under 18 år er det desværre ikke muligt at købe online.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-00015": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet. Fejlen kan fx opstå hos personer med beskyttet adresse.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-00021": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-00022": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-00032": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Tryg Drive kan kun købes for biler fra 2001 og frem. Du kan beregne en pris på&nbsp;forsikringen her<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-spp-car-label}",
+          "link": "${company-spp-car-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-80001": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-80005": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-80007": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-80009": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke gennemføre dit køb online, men kontakt os, så hjælper vi dig med at blive forsikret.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-80010": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "CU-90001": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "DC-PP-032": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Vi kunne ikke beregne en pris til dig. Hvis du i forvejen er kunde hos os, kan du med fordel logge ind på Min side og beregne en pris.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-login-label}",
+          "link": "${company-login-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "DC-PP-070": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Online køb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Vi kunne ikke beregne en pris til dig. Hvis du er kunde hos os i forvejen, kan du med fordel logge ind på Min side, og beregne en pris.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "Log ind her",
+          "link": "https:\/\/tjm-forsikring.dk\/minside",
+          "columns": "4"
+        }
+      ]
+    },
+    "DC-PP-071": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Info ikke tilgængelig\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Vi kan desvære&nbsp;ikke vise detaljer om din forsikringstillidsmand på nuværende tidspunkt. Du kan altid slå din rådgiver op ved at indtaste postnummer og organisation.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "Find din rådgiver her",
+          "link": "\/find-din-forsikringstillidsmand",
+          "columns": "4"
+        }
+      ]
+    },
+    "DC-PP-072": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Du kan desværre ikke købe online\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>For at gå videre med dit køb, skal du ringe til os. Vi har gemt dit tilbud, så vi hurtigt kan hjælpe dig.<\/p>\r\n\r\n<p><strong>Kontakt din personlige rådgiver<\/strong><br \/>\r\n$[agentDetails.ftmName]<br \/>\r\nTlf. $[agentDetails.telephone]<br \/>\r\nMail $[agentDetails.email]<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        }
+      ]
+    },
+    "DC-PP-073": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Du kan desværre ikke købe online\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Vi er i tvivl om nogle af dine oplysninger, så vi beder dig om at kontakte os.&nbsp;<\/p>\r\n\r\n<p><strong>Kontakt din personlige rådgiver<\/strong><br \/>\r\n$[agentDetails.ftmName]<br \/>\r\nTlf. $[agentDetails.telephone]<br \/>\r\nMail $[agentDetails.email]<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        }
+      ]
+    },
+    "DCB-TJMNotMember": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "For at blive&nbsp;kunde, skal du være medlem\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Det er kun medlemmer af de faglige organisationer, som vi samarbejder med, der kan blive kunder hos os. Du skal vælge organisation for at fortsætte dit køb.<\/p>\r\n\r\n<p>Er du ikke medlem, men barn af en kunde, skal du vælge \"Ikke medlem\".<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E09012": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi har desværre problemer med at hente informationer om dit køretøj. Kontakt os, så hjælper vi dig med at blive forsikret.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E20036": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Du kan ikke købe dette produkt online. Kontakt os for at høre om dine muligheder.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E20038": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Du kan desværre ikke købe denne forsikring online.&nbsp;<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E20072": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Adresse\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Tjek din adresse igen. Vi kan ikke hente oplysninger fra BBR på den adresse, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E30033": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Hent tilbud\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Der er desværre problemer med at hente dit tilbud. Det kan muligvis skyldes, at tilbuddet er ændret eller accepteret.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Log ind på Min Side for at se dit tilbud.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-login-label}",
+          "link": "${company-login-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E80067": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E80306": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Selvrisiko\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Der skal vælges en højere selvrisiko på grund af hundens alder<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E80356": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kunne ikke beregne en pris til dig<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E80368": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra det indtastede registreringsnummer.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "E80400": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "<span class='text__desc--after-button'>Fejlkode: $[gTransactionId] $[errorCode] $[produktnavn] $[currentSectionId]-$[currentPageId]-$[currentStepId]< /br>< /br></span>Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>For at færdigøre tilbuddet, bedes du kontakte os på telefon eller mail.<\/p>\r\n\r\n<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "SE-00001": {
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "Onlinekøb ikke muligt\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>Vi kan ikke beregne en pris til dig online, ud fra de oplysninger, du har indtastet.<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>Lad os hjælpe dig over telefonen. Bliv ringet op - du kan også ringe på ${company-contact-phone}.<\/p>\r\n"
+        },
+        {
+          "type": "space",
+          "rows": "3"
+        },
+        {
+          "type": "link",
+          "className": "button button--primary",
+          "label": "${company-call-me-up-label}",
+          "link": "${company-call-me-up-link}",
+          "columns": "4"
+        }
+      ]
+    },
+    "dk-mi-xcpr-0001": {
+      "props": [
+        {
+          "type": "space",
+          "rows": "10"
+        },
+        {
+          "type": "textHeader",
+          "title": "<h2>Onlinekøb ikke muligt<\/h2>"
+        },
+        {
+          "type": "space",
+          "rows": "5"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p><span><span><span><span><span><span>${step-failed-cpr-desc-line1}<\/span><\/span><\/span><\/span><\/span><\/span><\/p>\r\n"
+        },
+        {
+          "type": "textBlock",
+          "body": "<p>${step-failed-cpr-desc-line2}<\/p>\r\n"
+        }
+      ]
+    }
+  }
+}

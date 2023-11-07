@@ -1,0 +1,5708 @@
+{
+  "bodyClass": "spp-outer",
+  "credentials": {
+    "oauth": {
+      "grant_type": "client_credentials",
+      "client_id": "2157466f-bca9-4277-b025-94af6c1ab211",
+      "client_secret": "wFRXxe48XuS53BdheVtv@d?DWV+SAA"
+    }
+  },
+  "initialValues": {
+    "debugErrors": true,
+    "hasDataExchangeWithPartnerConsent": false,
+    "hasUnionMemberShipConsent": false,
+    "debugServices": false,
+    "env": "dev",
+    "paymentFee": "9.50",
+    "emailReceipt": true,
+    "leadSent": false,
+    "addressVariant": false,
+    "businessUnit": "tryg",
+    "stylePathBU": "https:\/\/uat.tryg.dk\/themes\/custom\/tryg\/dist\/css\/styles-theme-tryg.css",
+    "consentTypes": "CPR_offer,Marketing,Claim_history,Terminate_insurance,Digital_customer,Payment_service",
+    "consentUsage": "Tryg_standard",
+    "globalPartyKey": 1,
+    "telephoneNumber": "",
+    "errorDisplay": "Fejlkode: $[errorCode] | $[gTransactionId] | $[produktnavn] $[currentSectionId]-$[currentPageId]-$[currentStepId]",
+    "firstName": "",
+    "lastName": "",
+    "insertToUserData": [
+      "env",
+      "units",
+      "showChooseStartDate",
+      "addNextDayToStartDateList",
+      "paymentTypeMap",
+      "paymentFee",
+      "consumerId",
+      "chosenPackageName",
+      "leadSent",
+      "addressVariant",
+      "email",
+      "phoneNumber",
+      "hasMembershipCheck",
+      "hasPartnerPermissionConsent",
+      "showExtraMembership",
+      "indicativePrice",
+      "telephoneNumber",
+      "isUpdating",
+      "isDisabled",
+      "displayOnlyPostalCode",
+      "leadSentStatus",
+      "tjmOrganizationName",
+      "firstName",
+      "lastName"
+    ],
+    "insertToState": [
+      "consumerId",
+      "coverageList",
+      "packages",
+      "priceInfo",
+      "paymentRate",
+      "units"
+    ],
+    "units": {
+      "1": "kr.\/år.",
+      "12": "kr.\/md."
+    },
+    "paymentRate": [
+      {
+        "key": "1",
+        "value": "Årlig"
+      },
+      {
+        "key": "12",
+        "value": "Månedlig"
+      }
+    ],
+    "yesNoTrueFalse": [
+      {
+        "id": "true",
+        "label": "Ja",
+        "key": "true",
+        "value": "Ja"
+      },
+      {
+        "id": "false",
+        "label": "Nej",
+        "key": "false",
+        "value": "Nej"
+      }
+    ]
+  },
+  "trygTealium": {
+    "flowHashData": {
+      "error": false,
+      "startStep": "1.1.1",
+      "step1.1.1-start": {
+        "custom_event": [
+          "initial calc engagement"
+        ],
+        "flow_group": "beregn og køb widget",
+        "widget_type": "full width",
+        "flow_step_no": "step1.0.1",
+        "_append_title": "engagement"
+      },
+      "membershipCheck": {
+        "custom_event": [
+          "checkout step membership check"
+        ],
+        "flow_step_no": "stepmembershipcheck",
+        "_append_title": "Bekræftelse af medlemskab"
+      },
+      "dynamicFields": {
+        "purchase_product_id": [
+          "$[trackingProductCategory] $[chosenPackageName]"
+        ],
+        "additional_covers": [
+          "$[coverageCodes]"
+        ],
+        "page_product_name": "$[page_product_name]",
+        "product_category": "$[trackingProductCategory]"
+      },
+      "arrayToComma": [
+        "additional_covers"
+      ]
+    }
+  },
+  "sectionComponents": {
+    "ageSection": {
+      "name": "${section-age-name}",
+      "sectionGroup": "price",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "agePage"
+        }
+      ]
+    },
+    "addressSection": {
+      "name": "${section-address-name}",
+      "sectionGroup": "price",
+      "hideCurrentProgress": true,
+      "hideBackButtonCondition": {
+        "allof": [
+          {
+            "field": "flow",
+            "stringValue": "quick"
+          }
+        ]
+      },
+      "pages": [
+        {
+          "alias": "addressPage"
+        }
+      ]
+    },
+    "employmentSection": {
+      "name": "${section-employment-name}",
+      "sectionId": 1,
+      "sectionGroup": "price",
+      "sectionWeight": 1,
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "employmentPage"
+        }
+      ]
+    },
+    "priceSection": {
+      "name": "${section-price-name}",
+      "sectionGroup": "price",
+      "sectionWidth": "xlarge",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "priceLoaderPage"
+        },
+        {
+          "alias": "pricePage"
+        }
+      ]
+    },
+    "priceDetailsSection": {
+      "name": "${section-price-details}",
+      "sectionGroup": "price",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "priceDetailsPage"
+        },
+        {
+          "alias": "priceEditPage"
+        }
+      ]
+    },
+    "loginSection": {
+      "name": "${section-login-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "loginPage"
+        }
+      ]
+    },
+    "cprSection": {
+      "name": "${section-cpr-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "hideBackButtonCondition": {
+        "allof": [
+          {
+            "field": "flow",
+            "stringValue": "quick"
+          },
+          {
+            "notField": "landedPage"
+          }
+        ]
+      },
+      "backButtonConfig": {
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "loaderProgress",
+                  "value": 0
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "pages": [
+        {
+          "alias": "cprPage"
+        }
+      ]
+    },
+    "cprConsentSection": {
+      "name": "${section-cpr-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "hideBackButtonCondition": {
+        "allof": [
+          {
+            "field": "flow",
+            "stringValue": "quick"
+          },
+          {
+            "notField": "landedPage"
+          }
+        ]
+      },
+      "backButtonConfig": {
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "loaderProgress",
+                  "value": 0
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "pages": [
+        {
+          "alias": "cprConsentPage"
+        }
+      ]
+    },
+    "contactSection": {
+      "name": "${section-contact-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "contactPage"
+        }
+      ]
+    },
+    "contactConsentSection": {
+      "name": "${section-contact-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "contactConsentPage"
+        }
+      ]
+    },
+    "startDateSection": {
+      "name": "${section-start-date-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "startDatePage"
+        }
+      ]
+    },
+    "startDateConsentSection": {
+      "name": "${section-start-date-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "startDateConsentPage"
+        }
+      ]
+    },
+    "startDateSectionExistingInsurance": {
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "startDatePageExistingInsurance"
+        }
+      ]
+    },
+    "startDateSectionWhen": {
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "startDatePageWhen"
+        }
+      ]
+    },
+    "productSummarySection": {
+      "name": "${section-product-summary-name}",
+      "sectionGroup": "purchase",
+      "sectionWidth": "xlarge",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "productSummaryPage"
+        }
+      ]
+    },
+    "productSummaryConsentSection": {
+      "name": "${section-product-summary-name}",
+      "sectionGroup": "purchase",
+      "sectionWidth": "xlarge",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "productSummaryLoaderPage"
+        },
+        {
+          "alias": "productSummaryConsentPage"
+        }
+      ]
+    },
+    "confirmationV2Section": {
+      "name": "confirmationV2Section",
+      "sectionGroup": "price",
+      "sectionWidth": "small",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "confirmationV2Page"
+        }
+      ]
+    },
+    "paymentSection": {
+      "name": "${section-payment-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "backButtonConfig": {
+        "actions": [
+          {
+            "actionType": "refreshState"
+          }
+        ]
+      },
+      "pages": [
+        {
+          "alias": "paymentPage"
+        },
+        {
+          "alias": "purchaseLoaderPage"
+        },
+        {
+          "alias": "confirmationPage"
+        }
+      ]
+    },
+    "paymentConsentSection": {
+      "name": "${section-payment-name}",
+      "sectionGroup": "purchase",
+      "hideCurrentProgress": true,
+      "backButtonConfig": {
+        "actions": [
+          {
+            "actionType": "refreshState"
+          }
+        ]
+      },
+      "pages": [
+        {
+          "alias": "paymentConsentPage"
+        },
+        {
+          "alias": "purchaseLoaderConsentPage"
+        },
+        {
+          "alias": "confirmationPage"
+        }
+      ]
+    }
+  },
+  "pageComponents": {
+    "_basicPage": {
+      "pageId": 1,
+      "pageWeight": 1,
+      "component": {
+        "componentName": "Page"
+      },
+      "steps": [
+        {
+          "stepId": 1,
+          "stepWeight": 1
+        }
+      ]
+    },
+    "agePage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "ageInput"
+        }
+      ]
+    },
+    "employmentPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "employmentInput"
+        }
+      ]
+    },
+    "addressPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "addressInput"
+        }
+      ]
+    },
+    "priceLoaderPage": {
+      "pageId": 0,
+      "pageWeight": 0,
+      "component": {
+        "componentName": "Loader"
+      },
+      "loaderType": "price",
+      "loaderText": [
+        "${price-loader-text1}",
+        "${price-loader-text2}",
+        "${price-loader-text3}",
+        "${price-loader-text4}"
+      ],
+      "loaderTime": {
+        "prod": "2s",
+        "default": "3s"
+      },
+      "sliderTime": {
+        "prod": 500,
+        "default": 600
+      },
+      "hideProgress": true,
+      "hideBackButton": true,
+      "steps": [
+        {
+          "alias": "priceLoader"
+        }
+      ]
+    },
+    "pricePage": {
+      "alias": "_basicPage",
+      "backButtonConfig": {
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "packageId",
+                  "value": null
+                }
+              ]
+            }
+          },
+          {
+            "actionType": "callServices",
+            "requiredData": {
+              "anyof": [
+                {
+                  "field": "loadPrice",
+                  "value": true
+                },
+                {
+                  "field": "cprKnown",
+                  "value": true
+                }
+              ]
+            },
+            "props": {
+              "useSpinner": true,
+              "services": []
+            }
+          },
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "loadPrice",
+                  "value": true
+                }
+              ]
+            }
+          },
+          {
+            "actionType": "callServices",
+            "props": {
+              "useSpinner": true,
+              "services": [
+                {}
+              ]
+            }
+          }
+        ]
+      },
+      "steps": [
+        {
+          "alias": "spacingTopNoProgressBar"
+        },
+        {
+          "alias": "pricePackagesInput"
+        },
+        {
+          "alias": "priceTilpasInput"
+        },
+        {
+          "alias": "priceCoverageProductInfo"
+        }
+      ],
+      "hideProgress": true
+    },
+    "priceEditPage": {
+      "pageId": 2,
+      "pageWeight": 2,
+      "hideBackButton": true,
+      "component": {
+        "componentName": "Page"
+      },
+      "steps": [
+        {
+          "alias": "pricePrerequisiteInput"
+        },
+        {
+          "alias": "priceSaveDetailsInput"
+        }
+      ]
+    },
+    "priceDetailsPage": {
+      "pageId": 1,
+      "pageWeight": 1,
+      "component": {
+        "componentName": "Page"
+      },
+      "backButtonConfig": {
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "packageId",
+                  "value": "$[chosenPackage]"
+                }
+              ]
+            }
+          },
+          {
+            "actionType": "callServices",
+            "requiredData": {
+              "anyof": [
+                {
+                  "field": "loadPrice",
+                  "value": true
+                }
+              ]
+            },
+            "props": {
+              "useSpinner": true,
+              "services": [
+                {}
+              ]
+            }
+          }
+        ]
+      },
+      "steps": [
+        {
+          "alias": "pricePrerequisiteInfo"
+        }
+      ]
+    },
+    "loginPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "loginInput"
+        }
+      ]
+    },
+    "cprPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "cprInput"
+        }
+      ]
+    },
+    "cprNoConsentPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "cprNoConsentInput"
+        }
+      ]
+    },
+    "cprConsentPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "cprConsentInput"
+        }
+      ]
+    },
+    "contactPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "contactInput"
+        }
+      ]
+    },
+    "contactConsentPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "contactConsentInput"
+        }
+      ]
+    },
+    "startDatePage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "startDateInput"
+        }
+      ]
+    },
+    "startDateConsentPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "startDateConsentInput"
+        }
+      ]
+    },
+    "startDatePageExistingInsurance": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "startDateExistingInsuranceInput"
+        }
+      ]
+    },
+    "startDatePageWhen": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "startDateWhenInput"
+        }
+      ]
+    },
+    "productSummaryPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "productSummaryInput"
+        }
+      ]
+    },
+    "productSummaryLoaderPage": {
+      "pageId": 0,
+      "pageWeight": 0,
+      "component": {
+        "componentName": "Loader"
+      },
+      "loaderType": "Price",
+      "hideProgress": true,
+      "hideBackButton": true,
+      "steps": [
+        {
+          "alias": "productSummaryLoader"
+        }
+      ]
+    },
+    "productSummaryConsentPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "productSummaryConsentInput"
+        }
+      ]
+    },
+    "paymentPage": {
+      "alias": "_basicPage",
+      "hideBackButton": false,
+      "steps": [
+        {
+          "alias": "paymentInput"
+        }
+      ]
+    },
+    "paymentConsentPage": {
+      "alias": "_basicPage",
+      "hideBackButton": false,
+      "steps": [
+        {
+          "alias": "paymentConsentInput"
+        }
+      ]
+    },
+    "purchaseLoaderPage": {
+      "pageId": 2,
+      "pageWeight": 2,
+      "hideProgress": true,
+      "hideBackButton": true,
+      "component": {
+        "componentName": "Loader"
+      },
+      "loaderType": "confirm",
+      "loaderText": [
+        "${purchase-loader-text-1}",
+        "${purchase-loader-text-2}",
+        "${purchase-loader-text-3}",
+        "${purchase-loader-text-4}"
+      ],
+      "loaderTime": {
+        "prod": "10s",
+        "default": "32s"
+      },
+      "sliderTime": {
+        "prod": 1800,
+        "default": 3500
+      },
+      "steps": [
+        {
+          "alias": "purchaseLoader"
+        }
+      ]
+    },
+    "purchaseLoaderConsentPage": {
+      "pageId": 2,
+      "pageWeight": 2,
+      "hideProgress": true,
+      "hideBackButton": true,
+      "component": {
+        "componentName": "Loader"
+      },
+      "loaderType": "confirm",
+      "loaderText": [
+        "${purchase-loader-text-1}",
+        "${purchase-loader-text-2}",
+        "${purchase-loader-text-3}",
+        "${purchase-loader-text-4}"
+      ],
+      "loaderTime": {
+        "prod": "10s",
+        "default": "32s"
+      },
+      "sliderTime": {
+        "prod": 1800,
+        "default": 3500
+      },
+      "steps": [
+        {
+          "alias": "purchaseConsentLoader"
+        }
+      ]
+    },
+    "confirmationPage": {
+      "pageId": 3,
+      "pageWeight": 3,
+      "component": {
+        "componentName": "Page"
+      },
+      "hideBackButton": true,
+      "steps": [
+        {
+          "alias": "confirmationText"
+        }
+      ]
+    },
+    "confirmationV2Page": {
+      "pageId": 3,
+      "pageWeight": 3,
+      "component": {
+        "componentName": "Page"
+      },
+      "hideProgress": true,
+      "hideBackButton": true,
+      "steps": [
+        {
+          "alias": "confirmationV2Text"
+        }
+      ]
+    }
+  },
+  "stepComponents": {
+    "spacingTopNoProgressBar": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "props": [
+          {
+            "hidden": false,
+            "type": "space",
+            "rows": "4"
+          }
+        ]
+      }
+    },
+    "ageInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-age-title}",
+        "actionVariant": "clean",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "age",
+              "type": "formValues",
+              "numbersOnly": true,
+              "minNumber": 18,
+              "maxNumber": 120
+            }
+          ]
+        },
+        "props": [
+          {
+            "desc": "${step-age-desc}",
+            "type": "textBlock"
+          },
+          {
+            "type": "space",
+            "rows": "2"
+          },
+          {
+            "id": "age",
+            "type": "text",
+            "variant": "number",
+            "label": "${step-age-label}",
+            "placeholder": "${step-age-placeholder}",
+            "hidden": false,
+            "required": true,
+            "columns": "12",
+            "validators": [
+              {
+                "name": "numberBetween",
+                "errorMsg": "${age-range-invalid-error-message}",
+                "values": [
+                  "18",
+                  "120"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "employmentInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-employment-title}",
+        "actionVariant": "clean",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "employment",
+              "type": "formValues",
+              "minLength": 2
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "employmentInput",
+            "variant": "employment",
+            "type": "autoSuggest",
+            "label": "${step-employment-label}",
+            "name": "beskæftigelse",
+            "required": true,
+            "columns": "8",
+            "formValues": [
+              "employment",
+              "employmentInput"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-employment-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-employment-length-error-message}",
+                "values": [
+                  "1"
+                ]
+              }
+            ]
+          }
+        ],
+        "actionProps": [
+          {
+            "desc": "${step-employment-desc}",
+            "type": "textBlock"
+          }
+        ]
+      }
+    },
+    "addressInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-address-title}",
+        "actionVariant": "clean",
+        "afterButtonText": "${step-cpr-after-button-text}",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "postalCode",
+              "type": "formValues",
+              "minLength": 4
+            },
+            {
+              "field": "street",
+              "type": "formValues",
+              "minLength": 2
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "postalCodeInput",
+            "type": "autoSuggest",
+            "subType": "tel",
+            "variant": "postalCode",
+            "label": "${step-address-postal-code-label}",
+            "columns": "5",
+            "required": true,
+            "successIcon": "checkmark",
+            "placeholder": "${step-address-postal-code-placeholder}",
+            "name": "postnummer",
+            "formValues": [
+              "postalCode",
+              "city"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-address-postal-code-error-message}"
+              }
+            ]
+          },
+          {
+            "id": "addressInput",
+            "type": "autoSuggest",
+            "variant": "address",
+            "name": "adresse",
+            "label": "${step-address-street-label}",
+            "columns": "7",
+            "required": true,
+            "successIcon": "checkmark",
+            "placeholder": "${step-address-street-placeholder}",
+            "formValues": [
+              "street",
+              "houseNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-address-street-error-message}"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "priceLoader": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "skipBack": true,
+      "component": {
+        "componentName": "Basic",
+        "submitButton": false,
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "updateLoader": true,
+              "services": [
+                {
+                  "serviceParams": []
+                }
+              ]
+            }
+          }
+        ],
+        "props": [
+          {
+            "type": "slider",
+            "props": [
+              {
+                "type": "textBlock",
+                "title": "${step-price-loader-voucher-title}",
+                "desc": "${step-price-loader-voucher-desc}",
+                "showHide": {
+                  "userData": {
+                    "key": "hasVoucher",
+                    "value": true
+                  }
+                },
+                "numberFormat": true
+              },
+              {
+                "type": "textBlock",
+                "title": "${step-price-loader-bonus-title}",
+                "desc": "${step-price-loader-bonus-desc}"
+              },
+              {
+                "type": "textBlock",
+                "title": "${step-price-loader-product-title}",
+                "desc": "${step-price-loader-product-desc}"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pricePackagesInput": {
+      "stepId": 1,
+      "stepWeight": 2,
+      "component": {
+        "componentName": "ProductPrice",
+        "title": "${step-price-title}",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "onLoad": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "packageId",
+                  "value": null
+                },
+                {
+                  "field": "flow",
+                  "value": null
+                }
+              ]
+            }
+          },
+          {
+            "actionType": "modal",
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "hasVoucher",
+                  "value": "disable"
+                }
+              ]
+            },
+            "hidden": true,
+            "props": {
+              "name": "campaign"
+            }
+          }
+        ],
+        "props": [
+          {
+            "type": "productSelector",
+            "toolTip": "${read-more}",
+            "id": "package",
+            "columns": "4",
+            "label": "paymentFrequency-$[basketList]",
+            "className": "NoborderBottom",
+            "productFooterNote": "${step-price-product-box-footer-note}",
+            "advancedCoverage": false,
+            "recommendedText": "${step-price-product-box-recommended-text}",
+            "coverageText": "${step-price-product-box-coverage-text}",
+            "customTotalPriceText": "${step-price-package-total-price-text}",
+            "buttonTextMobile": "${step-price-product-box-button-text-mobile}",
+            "productBoxes": "$productBoxes",
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "chargesAndFees"
+                }
+              }
+            ],
+            "actions": [
+              {
+                "actionType": "nextStep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "priceCoverageProductInfo": {
+      "stepId": 1,
+      "stepWeight": 4,
+      "component": {
+        "componentName": "ProductPrice",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "props": [
+          {
+            "type": "componentGroup",
+            "className": "hero hero--fullwidth hero--12col",
+            "components": [
+              {
+                "type": "componentGroup",
+                "className": "hero__wrapper hero__wrapper__embedded",
+                "components": [
+                  {
+                    "type": "componentGroup",
+                    "className": "inner hero__inner inner--xlarge",
+                    "components": [
+                      {
+                        "type": "accordionAdvanced",
+                        "className": "accordion__heading coverage-heading",
+                        "variant": "advanced",
+                        "heading": "${step-price-additional-details-heading}",
+                        "title": "${step-price-additional-details-coverages}",
+                        "contentInfo": [
+                          {
+                            "showCoverageInfo": true
+                          }
+                        ]
+                      },
+                      {
+                        "type": "accordionAdvanced",
+                        "variant": "advanced",
+                        "title": "${step-price-additional-details-title}",
+                        "className": "outer-margin coverage-heading",
+                        "showPriceInfo": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "priceCoverageProductInfoCompact": {
+      "stepId": 1,
+      "stepWeight": 4,
+      "component": {
+        "componentName": "Basic",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "props": [
+          {
+            "id": "coverageLink",
+            "type": "button",
+            "className": "md",
+            "variant": "text",
+            "label": "${coverage-link-text-compact}",
+            "actions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "coverageOverviewModal"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pricePrerequisiteInfo": {
+      "stepId": 1,
+      "stepWeight": 3,
+      "component": {
+        "componentName": "Basic",
+        "actionVariant": "clean",
+        "title": "${step-price-details-coverage-title}",
+        "submitText": "${step-price-prerequisite-info-submit}",
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "first": true,
+            "props": {
+              "fields": [
+                {
+                  "field": "showPriceEdit",
+                  "value": null
+                }
+              ]
+            }
+          }
+        ],
+        "showHide": {
+          "userData": {
+            "key": "showPriceEdit",
+            "value": null,
+            "or": {
+              "notField": "showPriceEdit"
+            }
+          }
+        },
+        "props": [
+          {
+            "type": "textBlock",
+            "desc": "${step-price-details-coverage-desc}"
+          },
+          {
+            "hidden": false,
+            "type": "space",
+            "rows": "2"
+          },
+          {
+            "type": "productSelector",
+            "variant": "basic",
+            "heading": "${step-price-prerequisite-info-heading}",
+            "headingLink": {
+              "variant": "editLink",
+              "type": "label",
+              "label": "${edit}",
+              "actions": [
+                {
+                  "actionType": "nextStep",
+                  "props": {
+                    "changeUserData": true,
+                    "fields": []
+                  }
+                }
+              ]
+            },
+            "bodyProps": []
+          }
+        ]
+      }
+    },
+    "priceSaveDetailsInput": {
+      "stepId": 2,
+      "stepWeight": 4,
+      "showIf": {
+        "allof": [
+          {
+            "field": "showPriceEdit",
+            "minLength": 10
+          }
+        ]
+      },
+      "component": {
+        "componentName": "Basic",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "showHide": {
+          "userData": {
+            "multipleAnd": [
+              {
+                "key": "showPriceEdit",
+                "type": "minLength",
+                "value": 5
+              },
+              {
+                "key": "showPriceEdit",
+                "notValue": "advanced"
+              }
+            ]
+          }
+        },
+        "props": [
+          {
+            "type": "textHeader",
+            "numberFormat": true,
+            "title": "${step-price-details-prerequisite-price}"
+          },
+          {
+            "type": "space",
+            "rows": "2"
+          },
+          {
+            "id": "saveDetails",
+            "type": "button",
+            "label": "${step-savedetails-submit-label}",
+            "className": "primary",
+            "columns": "4",
+            "actions": [
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "fields": [
+                    {
+                      "field": "loadPrice",
+                      "value": true
+                    }
+                  ]
+                }
+              },
+              {
+                "actionType": "prevStep"
+              }
+            ]
+          },
+          {
+            "hidden": true,
+            "id": "cancelDetails",
+            "type": "button",
+            "label": "${step-savedetails-cancel-label}",
+            "columns": "4",
+            "actions": [
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "fields": [
+                    {
+                      "field": "loadPrice",
+                      "value": true
+                    }
+                  ]
+                }
+              },
+              {
+                "actionType": "prevStep"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "loginInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Login",
+        "title": "${step-login-title}",
+        "submitButton": false,
+        "props": [
+          {
+            "desc": "${step-login-details}",
+            "type": "textBlock"
+          },
+          {
+            "type": "space",
+            "rows": "1"
+          },
+          {
+            "id": "mitIdLogin",
+            "type": "link",
+            "className": "login mitId",
+            "link": "${mitId-login-url}",
+            "label": "${step-login-mitid}",
+            "icon": "mitId",
+            "columns": "7",
+            "iconPos": "after",
+            "target": "_self"
+          },
+          {
+            "id": "nemIdLogin",
+            "type": "link",
+            "className": "login nemId",
+            "link": "${nemId-login-url}",
+            "label": "${step-login-nemid}",
+            "icon": "nemId",
+            "columns": "7",
+            "iconPos": "after",
+            "target": "_self"
+          },
+          {
+            "id": "loginDetailsButton",
+            "type": "link",
+            "className": "login--details",
+            "link": "${login-more-details-url}",
+            "label": "${step-login-more-details}",
+            "columns": "8",
+            "hidden": true
+          }
+        ]
+      }
+    },
+    "cprInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-cpr-title}",
+        "actionVariant": "clean",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "civilRegistrationNumber",
+              "minLength": 11,
+              "type": "formValues"
+            }
+          ]
+        },
+        "props": [
+          {
+            "type": "textBlock",
+            "body": "${step-cpr-body}",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "flow",
+                "value": "quick"
+              }
+            }
+          },
+          {
+            "id": "civilRegistrationNumber",
+            "type": "cprText",
+            "label": "${step-cpr-label}",
+            "placeholder": "${step-cpr-placeholder}",
+            "required": true,
+            "columns": "6",
+            "value": "$[civilRegistrationNumber]"
+          },
+          {
+            "id": "cprWarning",
+            "type": "ajax",
+            "message": "${step-cpr-warning}",
+            "columns": "8",
+            "mobileColumns": "12",
+            "className": "text__ajax error",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "civilRegistrationNumber",
+                "type": "civilRegistrationNumber"
+              }
+            }
+          },
+          {
+            "id": "consent",
+            "type": "textBlock",
+            "desc": "${step-cpr-consent-desc}"
+          }
+        ],
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "age",
+                  "value": "$[civilRegistrationNumber-age]"
+                },
+                {
+                  "field": "cprKnown",
+                  "value": true
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "cprNoConsentInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-cpr-no-consent-title}",
+        "actionVariant": "clean",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "civilRegistrationNumber",
+              "minLength": 11,
+              "type": "formValues"
+            }
+          ]
+        },
+        "props": [
+          {
+            "type": "textBlock",
+            "body": "${step-cpr-body}",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "flow",
+                "value": "quick"
+              }
+            }
+          },
+          {
+            "id": "firstName",
+            "type": "text",
+            "label": "${step-contact-first-name-label}",
+            "required": true,
+            "columns": "5",
+            "formValues": [
+              "firstName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-first-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-first-name-letter-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-first-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ],
+            "value": "$[firstName]"
+          },
+          {
+            "id": "lastName",
+            "type": "text",
+            "label": "${step-contact-last-name-label}",
+            "required": true,
+            "columns": "7",
+            "formValues": [
+              "lastName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-last-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-last-name-letters-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-last-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "telephoneNumber",
+            "type": "tel",
+            "label": "${phone-label}",
+            "required": true,
+            "maxLength": 8,
+            "columns": "6",
+            "hidden": false,
+            "tealiumMap": "customer_mobile_phone_number",
+            "formValues": [
+              "telephoneNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${phone-empty-error-message}"
+              },
+              {
+                "name": "phoneNumber",
+                "errorMsg": "${phone-number-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${phone-length-error-message}",
+                "values": [
+                  "8"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "emailAddress",
+            "type": "email",
+            "label": "${email-label}",
+            "required": true,
+            "columns": "6",
+            "tealiumMap": "customer_email_address",
+            "formValues": [
+              "emailAddress"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${email-empty-error-message}"
+              },
+              {
+                "name": "email",
+                "errorMsg": "${email-invalid-error-message}"
+              }
+            ]
+          },
+          {
+            "id": "civilRegistrationNumber",
+            "type": "cprText",
+            "label": "${step-cpr-label}",
+            "placeholder": "${step-cpr-placeholder}",
+            "required": true,
+            "columns": "12",
+            "value": "$[civilRegistrationNumber]"
+          },
+          {
+            "id": "cprWarning",
+            "type": "ajax",
+            "message": "${step-cpr-warning}",
+            "columns": "8",
+            "mobileColumns": "12",
+            "className": "text__ajax error",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "civilRegistrationNumber",
+                "type": "civilRegistrationNumber"
+              }
+            }
+          },
+          {
+            "id": "consent",
+            "type": "textBlock",
+            "desc": "${step-cpr-consent-desc}"
+          }
+        ],
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "age",
+                  "value": "$[civilRegistrationNumber-age]"
+                },
+                {
+                  "field": "cprKnown",
+                  "value": true
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "cprConsentInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-cpr-consent-title}",
+        "actionVariant": "clean",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "civilRegistrationNumber",
+              "minLength": 11,
+              "type": "formValues"
+            },
+            {
+              "field": "CPR_offer",
+              "value": true,
+              "type": "formValues"
+            }
+          ]
+        },
+        "props": [
+          {
+            "type": "textBlock",
+            "body": "${step-cpr-consent-body}"
+          },
+          {
+            "type": "space"
+          },
+          {
+            "id": "firstName",
+            "type": "text",
+            "label": "${step-contact-first-name-label}",
+            "required": true,
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "firstName",
+                  "type": "userData",
+                  "value": ""
+                }
+              ]
+            },
+            "columns": "5",
+            "formValues": [
+              "firstName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-first-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-first-name-letter-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-first-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ],
+            "value": "$[firstName]"
+          },
+          {
+            "id": "lastName",
+            "type": "text",
+            "label": "${step-contact-last-name-label}",
+            "required": true,
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "lastName",
+                  "type": "userData",
+                  "value": ""
+                }
+              ]
+            },
+            "columns": "7",
+            "formValues": [
+              "lastName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-last-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-last-name-letters-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-last-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "telephoneNumber",
+            "type": "tel",
+            "label": "${phone-label}",
+            "required": true,
+            "maxLength": 8,
+            "columns": "6",
+            "hidden": false,
+            "tealiumMap": "customer_mobile_phone_number",
+            "formValues": [
+              "telephoneNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${phone-empty-error-message}"
+              },
+              {
+                "name": "phoneNumber",
+                "errorMsg": "${phone-number-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${phone-length-error-message}",
+                "values": [
+                  "8"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "emailAddress",
+            "type": "email",
+            "label": "${email-label}",
+            "required": true,
+            "columns": "6",
+            "tealiumMap": "customer_email_address",
+            "formValues": [
+              "emailAddress"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${email-empty-error-message}"
+              },
+              {
+                "name": "email",
+                "errorMsg": "${email-invalid-error-message}"
+              }
+            ]
+          },
+          {
+            "id": "civilRegistrationNumber",
+            "type": "cprText",
+            "label": "${step-cpr-label}",
+            "placeholder": "${step-cpr-placeholder}",
+            "required": true,
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "civilRegistrationNumber",
+                  "type": "userData",
+                  "value": ""
+                }
+              ]
+            },
+            "columns": "12",
+            "value": "$[civilRegistrationNumber]"
+          },
+          {
+            "id": "cprWarning",
+            "type": "ajax",
+            "message": "${step-cpr-warning}",
+            "columns": "8",
+            "mobileColumns": "12",
+            "className": "text__ajax error",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "civilRegistrationNumber",
+                "type": "civilRegistrationNumber"
+              }
+            }
+          },
+          {
+            "id": "CPR_offer",
+            "type": "checkbox",
+            "required": true,
+            "templateName": "CPR_offer",
+            "options": [
+              {
+                "label": "CPR_offer",
+                "id": "CPR_offer"
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "services": [
+                {
+                  "serviceName": "consentsService",
+                  "serviceParams": [
+                    {
+                      "field": "CPR_offer"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "contactInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-contact-title}",
+        "buttonPostClass": "spacing-bottom",
+        "onLoad": [
+          {
+            "actionType": "callService",
+            "props": {
+              "serviceName": "resetLoader",
+              "serviceParams": []
+            }
+          }
+        ],
+        "requiredData": {
+          "allof": [
+            {
+              "field": "firstName",
+              "type": "formValues",
+              "minLength": 2
+            },
+            {
+              "field": "lastName",
+              "type": "formValues",
+              "minLength": 2
+            },
+            {
+              "field": "telephoneNumber",
+              "type": "formValues",
+              "minLength": 8
+            },
+            {
+              "field": "emailAddress",
+              "type": "formValues",
+              "minLength": 5
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "firstName",
+            "type": "text",
+            "label": "${step-contact-first-name-label}",
+            "required": true,
+            "columns": "5",
+            "formValues": [
+              "firstName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-first-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-first-name-letter-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-first-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ],
+            "value": "$[firstName]"
+          },
+          {
+            "id": "lastName",
+            "type": "text",
+            "label": "${step-contact-last-name-label}",
+            "required": true,
+            "columns": "7",
+            "formValues": [
+              "lastName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-last-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-last-name-letters-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-last-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "telephoneNumber",
+            "type": "tel",
+            "label": "${phone-label}",
+            "required": true,
+            "maxLength": 8,
+            "columns": "6",
+            "tealiumMap": "customer_mobile_phone_number",
+            "formValues": [
+              "telephoneNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${phone-empty-error-message}"
+              },
+              {
+                "name": "phoneNumber",
+                "errorMsg": "${phone-number-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${phone-length-error-message}",
+                "values": [
+                  "8"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "emailAddress",
+            "type": "email",
+            "label": "${email-label}",
+            "required": true,
+            "columns": "6",
+            "tealiumMap": "customer_email_address",
+            "formValues": [
+              "emailAddress"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${email-empty-error-message}"
+              },
+              {
+                "name": "email",
+                "errorMsg": "${email-invalid-error-message}"
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "2"
+          }
+        ],
+        "actionProps": [
+          {
+            "type": "textBlock",
+            "body": "${step-contact-body}"
+          }
+        ]
+      }
+    },
+    "contactConsentInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-contact-title}",
+        "buttonPostClass": "spacing-bottom",
+        "onLoad": [
+          {
+            "actionType": "callService",
+            "props": {
+              "serviceName": "resetLoader",
+              "serviceParams": []
+            }
+          }
+        ],
+        "requiredData": {
+          "allof": [
+            {
+              "field": "firstName",
+              "type": "formValues",
+              "minLength": 2
+            },
+            {
+              "field": "lastName",
+              "type": "formValues",
+              "minLength": 2
+            },
+            {
+              "field": "telephoneNumber",
+              "type": "formValues",
+              "minLength": 8
+            },
+            {
+              "field": "emailAddress",
+              "type": "formValues",
+              "minLength": 5
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "firstName",
+            "type": "text",
+            "label": "${step-contact-first-name-label}",
+            "required": true,
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "firstName",
+                  "type": "userData",
+                  "value": ""
+                }
+              ]
+            },
+            "columns": "5",
+            "formValues": [
+              "firstName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-first-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-first-name-letter-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-first-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ],
+            "value": "$[firstName]"
+          },
+          {
+            "id": "lastName",
+            "type": "text",
+            "label": "${step-contact-last-name-label}",
+            "required": true,
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "lastName",
+                  "type": "userData",
+                  "value": ""
+                }
+              ]
+            },
+            "columns": "7",
+            "formValues": [
+              "lastName"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-contact-last-name-empty-error-message}"
+              },
+              {
+                "name": "lettersOnly",
+                "errorMsg": "${step-contact-last-name-letters-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-contact-last-name-short-length-error-message}",
+                "values": [
+                  "2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "telephoneNumber",
+            "type": "tel",
+            "label": "${phone-label}",
+            "required": true,
+            "maxLength": 8,
+            "columns": "6",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "addressVariant",
+                "value": false
+              }
+            },
+            "tealiumMap": "customer_mobile_phone_number",
+            "formValues": [
+              "telephoneNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${phone-empty-error-message}"
+              },
+              {
+                "name": "phoneNumber",
+                "errorMsg": "${phone-number-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${phone-length-error-message}",
+                "values": [
+                  "8"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "emailAddress",
+            "type": "email",
+            "label": "${email-label}",
+            "required": true,
+            "columns": "6",
+            "tealiumMap": "customer_email_address",
+            "formValues": [
+              "emailAddress"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${email-empty-error-message}"
+              },
+              {
+                "name": "email",
+                "errorMsg": "${email-invalid-error-message}"
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "2"
+          }
+        ],
+        "actionProps": [
+          {
+            "type": "textBlock",
+            "body": "${step-contact-body}"
+          },
+          {
+            "type": "space"
+          },
+          {
+            "id": "Marketing",
+            "type": "checkbox",
+            "required": false,
+            "variant": "greybox",
+            "templateName": "Marketing",
+            "options": [
+              {
+                "label": "Marketing",
+                "id": "Marketing"
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "services": [
+                {
+                  "serviceName": "consentsService",
+                  "serviceParams": [
+                    {
+                      "field": "Marketing"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "startDateInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-start-date-title}",
+        "buttonPostClass": "spacing-bottom",
+        "desc": "${step-start-date-desc}",
+        "requiredData": {
+          "anyof": [
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "no-start-date-message",
+              "allof": [
+                {
+                  "field": "activationDate",
+                  "type": "formValues",
+                  "minLength": 10
+                }
+              ]
+            },
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "yes-start-date-message",
+              "allof": [
+                {
+                  "field": "insuranceCompanyInfoAccept",
+                  "type": "formValues",
+                  "value": true
+                },
+                {
+                  "field": "terminateExternalPartyCode",
+                  "type": "formValues"
+                },
+                {
+                  "field": "activationDate",
+                  "type": "formValues"
+                }
+              ]
+            }
+          ]
+        },
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "requiredData": {
+              "anyof": [
+                {
+                  "notField": "activationDate",
+                  "type": "userData"
+                }
+              ]
+            },
+            "props": {
+              "services": [
+                {
+                  "serviceName": "getActivationDate",
+                  "useSpinner": true
+                }
+              ]
+            }
+          }
+        ],
+        "props": [
+          {
+            "id": "otherCompanyInsured",
+            "type": "radioButtons",
+            "required": true,
+            "validators": [
+              {
+                "name": "blocker",
+                "values": [
+                  "otherCompanyInsured"
+                ]
+              }
+            ],
+            "options": [
+              {
+                "id": "yes-start-date-message",
+                "label": "${yes}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "otherCompanyInsured",
+                          "value": "yes-start-date-message"
+                        },
+                        {
+                          "field": "activationDate",
+                          "value": ""
+                        },
+                        {
+                          "field": "activationDateText",
+                          "value": ""
+                        },
+                        {
+                          "field": "chooseStartDate",
+                          "value": false
+                        },
+                        {
+                          "field": "terminateExistingInsurance",
+                          "value": true
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "no-start-date-message",
+                "label": "${no}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "first": true,
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "activationDate",
+                          "value": ""
+                        },
+                        {
+                          "field": "activationDateText",
+                          "value": ""
+                        },
+                        {
+                          "field": "chooseStartDate",
+                          "value": false
+                        },
+                        {
+                          "field": "terminateExistingInsurance",
+                          "value": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "actionType": "callServices",
+                    "props": {
+                      "services": [
+                        {
+                          "serviceName": "getActivationDate",
+                          "useSpinner": true,
+                          "serviceParams": [
+                            {
+                              "field": "policyID",
+                              "required": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "terminateExternalPartyCode",
+                          "value": null
+                        },
+                        {
+                          "field": "otherCompanyInsured",
+                          "value": "no-start-date-message"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "2",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "no-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "otherCompanyInsuredNoStartDate",
+            "type": "ajax",
+            "message": "${step-start-date-no-start-date-message}",
+            "icon": "checkmark",
+            "label": {
+              "id": "chooseStartDate",
+              "type": "label",
+              "label": "${step-start-date-no-start-date-change-start-date-label}",
+              "columns": 7,
+              "hidden": true,
+              "actions": [
+                {
+                  "actionType": "changeUserData",
+                  "props": {
+                    "fields": [
+                      {
+                        "field": "chooseStartDate",
+                        "value": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "showHide": {
+                "userData": {
+                  "key": "showChooseStartDate",
+                  "value": true
+                }
+              }
+            },
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "no-start-date-message"
+              },
+              "userData": {
+                "key": "chooseStartDate",
+                "value": false
+              }
+            }
+          },
+          {
+            "type": "space",
+            "rows": "1",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "chooseStartDate",
+                "value": true
+              }
+            }
+          },
+          {
+            "id": "activationDate",
+            "type": "datePicker",
+            "label": "${step-start-date-no-start-date-choose-start-date-label}",
+            "startDate": "$[activationDate]",
+            "columns": "7",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "chooseStartDate",
+                "value": true
+              }
+            },
+            "formValues": [
+              "activationDate"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-start-date-empty-error-message}"
+              }
+            ]
+          },
+          {
+            "id": "otherCompanyInsuredYesText",
+            "type": "title",
+            "title": "${step-start-date-yes-title}",
+            "variant": "h4",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "terminateExternalPartyCode",
+            "variant": "insuranceCompanies",
+            "type": "autoSuggest",
+            "label": "${step-start-date-terminate-insurance-company-label}",
+            "placeholder": "${step-start-date-terminate-insurance-company-placeholder}",
+            "hidden": true,
+            "required": true,
+            "name": "forsikringsselskab",
+            "title": "${step-start-date-terminate-insurance-company-title}",
+            "columns": "8",
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "insuranceCompanyInfo",
+            "type": "checkbox",
+            "hidden": true,
+            "required": true,
+            "variant": "greyBox",
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            },
+            "options": [
+              {
+                "label": "${step-start-date-insurance-company-permission}",
+                "id": "insuranceCompanyInfoAccept"
+              }
+            ]
+          },
+          {
+            "id": "insuranceMoveStart",
+            "type": "title",
+            "title": "${step-start-date-move-date-title}",
+            "variant": "h4",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "activationDate",
+            "type": "select",
+            "label": "${step-start-date-move-date-label}",
+            "optionsFrom": "service",
+            "options": "getActivationDates",
+            "columns": "8",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "type": "textBlock",
+            "body": "${step-start-date-terminate-insurance-text}",
+            "variant": "greyBox",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "startDateConsentInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-start-date-title}",
+        "buttonPostClass": "spacing-bottom",
+        "desc": "${step-start-date-desc}",
+        "requiredData": {
+          "anyof": [
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "no-start-date-message",
+              "allof": [
+                {
+                  "field": "activationDate",
+                  "type": "formValues",
+                  "minLength": 10
+                }
+              ]
+            },
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "yes-start-date-message",
+              "allof": [
+                {
+                  "field": "Terminate_Insurance",
+                  "type": "formValues",
+                  "value": true
+                },
+                {
+                  "field": "Claim_History",
+                  "type": "formValues",
+                  "value": true
+                },
+                {
+                  "field": "terminateExternalPartyCode",
+                  "type": "formValues"
+                },
+                {
+                  "field": "activationDate",
+                  "type": "formValues"
+                }
+              ]
+            }
+          ]
+        },
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "requiredData": {
+              "anyof": [
+                {
+                  "notField": "activationDate",
+                  "type": "userData"
+                }
+              ]
+            },
+            "props": {
+              "services": [
+                {
+                  "serviceName": "getActivationDate",
+                  "useSpinner": true
+                }
+              ]
+            }
+          }
+        ],
+        "props": [
+          {
+            "id": "otherCompanyInsured",
+            "type": "radioButtons",
+            "required": true,
+            "validators": [
+              {
+                "name": "blocker",
+                "values": [
+                  "otherCompanyInsured"
+                ]
+              }
+            ],
+            "options": [
+              {
+                "id": "yes-start-date-message",
+                "label": "${yes}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "otherCompanyInsured",
+                          "value": "yes-start-date-message"
+                        },
+                        {
+                          "field": "activationDate",
+                          "value": ""
+                        },
+                        {
+                          "field": "activationDateText",
+                          "value": ""
+                        },
+                        {
+                          "field": "chooseStartDate",
+                          "value": false
+                        },
+                        {
+                          "field": "terminateExistingInsurance",
+                          "value": true
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "no-start-date-message",
+                "label": "${no}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "first": true,
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "activationDate",
+                          "value": ""
+                        },
+                        {
+                          "field": "activationDateText",
+                          "value": ""
+                        },
+                        {
+                          "field": "chooseStartDate",
+                          "value": false
+                        },
+                        {
+                          "field": "terminateExistingInsurance",
+                          "value": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "actionType": "callServices",
+                    "props": {
+                      "services": [
+                        {
+                          "serviceName": "getActivationDate",
+                          "useSpinner": true,
+                          "serviceParams": [
+                            {
+                              "field": "policyID",
+                              "required": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "terminateExternalPartyCode",
+                          "value": null
+                        },
+                        {
+                          "field": "otherCompanyInsured",
+                          "value": "no-start-date-message"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "2",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "no-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "otherCompanyInsuredNoStartDate",
+            "type": "ajax",
+            "message": "${step-start-date-no-start-date-message}",
+            "icon": "checkmark",
+            "label": {
+              "id": "chooseStartDate",
+              "type": "label",
+              "label": "${step-start-date-no-start-date-change-start-date-label}",
+              "columns": 7,
+              "hidden": true,
+              "actions": [
+                {
+                  "actionType": "changeUserData",
+                  "props": {
+                    "fields": [
+                      {
+                        "field": "chooseStartDate",
+                        "value": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "showHide": {
+                "userData": {
+                  "key": "showChooseStartDate",
+                  "value": true
+                }
+              }
+            },
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "no-start-date-message"
+              },
+              "userData": {
+                "key": "chooseStartDate",
+                "value": false
+              }
+            }
+          },
+          {
+            "type": "space",
+            "rows": "1",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "chooseStartDate",
+                "value": true
+              }
+            }
+          },
+          {
+            "id": "activationDate",
+            "type": "datePicker",
+            "label": "${step-start-date-no-start-date-choose-start-date-label}",
+            "startDate": "$[activationDate]",
+            "columns": "7",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "chooseStartDate",
+                "value": true
+              }
+            },
+            "formValues": [
+              "activationDate"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-start-date-empty-error-message}"
+              }
+            ]
+          },
+          {
+            "id": "otherCompanyInsuredYesText",
+            "type": "title",
+            "title": "${step-start-date-yes-title}",
+            "variant": "h4",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "terminateExternalPartyCode",
+            "variant": "insuranceCompanies",
+            "type": "autoSuggest",
+            "label": "${step-start-date-terminate-insurance-company-label}",
+            "placeholder": "${step-start-date-terminate-insurance-company-placeholder}",
+            "hidden": true,
+            "required": true,
+            "name": "forsikringsselskab",
+            "title": "${step-start-date-terminate-insurance-company-title}",
+            "columns": "8",
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "insuranceMoveStart",
+            "type": "title",
+            "title": "${step-start-date-move-date-title}",
+            "variant": "h4",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "type": "textBlock",
+            "body": "${step-start-date-terminate-insurance-text}",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "activationDate",
+            "type": "select",
+            "label": "${step-start-date-move-date-label}",
+            "optionsFrom": "service",
+            "options": "getActivationDates",
+            "columns": "8",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "type": "space",
+            "options": [
+              {
+                "label": "Terminate_Insurance",
+                "id": "Terminate_Insurance"
+              }
+            ],
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "Terminate_Insurance",
+            "type": "checkbox",
+            "required": true,
+            "templateName": "Terminate_Insurance",
+            "options": [
+              {
+                "label": "Terminate_Insurance",
+                "id": "Terminate_Insurance"
+              }
+            ],
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "Claim_History",
+            "type": "checkbox",
+            "required": true,
+            "templateName": "Claim_History",
+            "options": [
+              {
+                "label": "Claim_History",
+                "id": "Claim_History"
+              }
+            ],
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          }
+        ],
+        "actions": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "services": [
+                {
+                  "serviceName": "consentsService",
+                  "serviceParams": [
+                    {
+                      "field": "Terminate_Insurance"
+                    },
+                    {
+                      "field": "Claim_History"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "startDateExistingInsuranceInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-start-date-title}",
+        "actionVariant": "clean",
+        "requiredData": {
+          "anyof": [
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "no-start-date-message"
+            },
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "yes-start-date-message",
+              "allof": [
+                {
+                  "field": "insuranceCompanyInfoAccept",
+                  "type": "formValues",
+                  "value": true
+                },
+                {
+                  "field": "terminateExternalPartyCode",
+                  "type": "formValues"
+                }
+              ]
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "otherCompanyInsured",
+            "type": "radioButtons",
+            "required": true,
+            "radioType": "equalHeight",
+            "validators": [
+              {
+                "name": "blocker",
+                "values": [
+                  "otherCompanyInsured"
+                ]
+              }
+            ],
+            "options": [
+              {
+                "id": "yes-start-date-message",
+                "label": "${yes}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "callServices",
+                    "props": {
+                      "services": [
+                        {
+                          "serviceName": "getActivationDate",
+                          "useSpinner": true,
+                          "serviceParams": [
+                            {
+                              "field": "policyID",
+                              "required": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "otherCompanyInsured",
+                          "value": "yes-start-date-message"
+                        },
+                        {
+                          "field": "chooseStartDate",
+                          "value": false
+                        },
+                        {
+                          "field": "terminateExistingInsurance",
+                          "value": true
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "no-start-date-message",
+                "label": "${no}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "callServices",
+                    "props": {
+                      "services": [
+                        {
+                          "serviceName": "getActivationDate",
+                          "useSpinner": true,
+                          "serviceParams": [
+                            {
+                              "field": "policyID",
+                              "required": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "chooseStartDate",
+                          "value": true
+                        },
+                        {
+                          "field": "terminateExistingInsurance",
+                          "value": false
+                        },
+                        {
+                          "field": "terminateExternalPartyCode",
+                          "value": false
+                        },
+                        {
+                          "field": "otherCompanyInsured",
+                          "value": "no-start-date-message"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "3",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "terminateExternalPartyCode",
+            "variant": "insuranceCompanies",
+            "type": "autoSuggest",
+            "label": "${step-start-date-terminate-insurance-company-label}",
+            "placeholder": "${step-start-date-terminate-insurance-company-placeholder}",
+            "hidden": true,
+            "required": true,
+            "name": "forsikringsselskab",
+            "title": "${step-start-date-terminate-insurance-company-title}",
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "type": "space",
+            "rows": "3",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "id": "insuranceCompanyInfo",
+            "type": "checkbox",
+            "hidden": true,
+            "required": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            },
+            "options": [
+              {
+                "label": "${step-start-date-insurance-company-permission}",
+                "id": "insuranceCompanyInfoAccept"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "startDateWhenInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-start-date-title-when}",
+        "requiredData": {
+          "anyof": [
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "no-start-date-message",
+              "allof": [
+                {
+                  "field": "activationDate",
+                  "type": "formValues",
+                  "validDate": true
+                }
+              ]
+            },
+            {
+              "field": "otherCompanyInsured",
+              "type": "formValues",
+              "value": "yes-start-date-message",
+              "allof": [
+                {
+                  "field": "insuranceCompanyInfoAccept",
+                  "type": "formValues",
+                  "value": true
+                },
+                {
+                  "field": "terminateExternalPartyCode",
+                  "type": "formValues"
+                }
+              ]
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "activationDate",
+            "type": "datePicker",
+            "label": "${step-start-date-move-date-label-when}",
+            "startDate": "$[activationDate]",
+            "minDate": "$[minActivationDate]",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "otherCompanyInsured",
+                "value": "no-start-date-message"
+              }
+            },
+            "formValues": [
+              "activationDate"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-start-date-empty-error-message}"
+              }
+            ]
+          },
+          {
+            "id": "activationDate",
+            "type": "select",
+            "label": "${step-start-date-move-date-label-when}",
+            "optionsFrom": "service",
+            "options": "getActivationDates",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          },
+          {
+            "type": "textBlock",
+            "body": "${step-start-date-terminate-insurance-text}",
+            "variant": "greyBox",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "otherCompanyInsured",
+                "value": "yes-start-date-message"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "productSummaryInputCompact": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "submitButton": false,
+        "title": "${step-product-summary-title-compact}",
+        "afterButtonText": "${step-product-summary-section-fee}<\/br><\/br>${step-payment-cancellation-body}",
+        "props": [
+          {
+            "type": "textBlock",
+            "title": "${step-product-summary-section-contact-product-title}",
+            "desc": "${step-product-summary-section-contact-product-body-compact}"
+          },
+          {
+            "type": "space",
+            "rows": "2"
+          },
+          {
+            "type": "textBlock",
+            "title": "${step-product-summary-section-contact-contact-title}",
+            "desc": "${step-product-summary-section-contact-contact-body}"
+          },
+          {
+            "type": "space",
+            "rows": "2"
+          },
+          {
+            "type": "textBlock",
+            "title": "${step-product-summary-section-coverage-title-compact}",
+            "desc": "${step-product-summary-section-coverage-body-compact}"
+          },
+          {
+            "id": "coverageLink",
+            "type": "button",
+            "variant": "text",
+            "label": "${step-product-summary-section-coverage-semore}",
+            "actions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "productSummaryCoverageDetailsModal"
+                }
+              }
+            ]
+          },
+          {
+            "type": "divider",
+            "rows": "2"
+          },
+          {
+            "type": "textBlock",
+            "title": "${step-product-summary-section-price-title-compact}"
+          },
+          {
+            "type": "label",
+            "label": "${step-product-summary-section-price-label-compact}",
+            "className": "text--textFitContent"
+          },
+          {
+            "type": "label",
+            "label": "${step-product-summary-section-price-price-compact}",
+            "className": "text--textFitContent",
+            "numberFormat": true
+          },
+          {
+            "id": "prepurchasedisclaimer",
+            "type": "button",
+            "variant": "button",
+            "className": "primary",
+            "label": "${step-product-summary-section-consent-goto-payment-label}",
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "postalCode",
+                  "type": "formValues",
+                  "minLength": 4
+                },
+                {
+                  "field": "street",
+                  "type": "formValues",
+                  "minLength": 2
+                }
+              ]
+            },
+            "actions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "prePurchaseDisclaimer"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "productSummaryInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-product-summary-title}",
+        "className": "summary--v2",
+        "submitButton": false,
+        "props": [
+          {
+            "type": "productSummary",
+            "sectionHeader": {
+              "title": "${step-product-summary-section-header-title}"
+            },
+            "sectionContact": [
+              {
+                "title": "${step-product-summary-section-contact-product-title}",
+                "body": "${step-product-summary-section-contact-product-body}"
+              },
+              {
+                "title": "${step-product-summary-section-contact-contact-title}",
+                "body": "${step-product-summary-section-contact-contact-body}"
+              }
+            ],
+            "sectionCoverage": {
+              "title": "${step-product-summary-section-coverage-title}",
+              "packageTitle": "${step-product-summary-section-coverage-package-name}",
+              "additionalValues": [
+                "${step-product-summary-section-coverage-additional-values1}",
+                "${step-product-summary-section-coverage-additional-values2}",
+                "${step-product-summary-section-coverage-additional-values3}",
+                "${step-product-summary-section-coverage-additional-values4}"
+              ]
+            },
+            "sectionDate": {
+              "body": "${step-product-summary-section-start-date-$[otherCompanyInsured]}"
+            },
+            "sectionPrice": {
+              "title": "${step-product-summary-section-price-title}",
+              "price": "$[quotes.$[chosenPackage].priceApiResponse.offeredPrice.priceWithFee]",
+              "unit": "$[units.$[paymentFrequency-$[basketList]]]",
+              "showPrePrice": true,
+              "prePriceTitle": "${step-product-summary-section-preprice-title}",
+              "prePrice": "$[quotes.$[chosenPackage].priceApiResponse.listPrice.priceWithFee]",
+              "discountTitle": "${step-product-summary-section-preprice-online-discount-title}",
+              "discount": "$[quotes.$[chosenPackage].priceApiResponse.discountAmount]",
+              "priceTitle": "${step-product-summary-section-final-price-title}",
+              "taxFooterNoteTitle": "${step-product-summary-section-tax-footer-note-title}",
+              "showLabelActions": true,
+              "labelActions": [
+                {
+                  "actionType": "modal",
+                  "props": {
+                    "name": "chargesAndFees"
+                  }
+                }
+              ]
+            },
+            "sectionConsent": [
+              {
+                "type": "checkbox",
+                "id": "permissions",
+                "formValues": [
+                  "permission_purchase_terms",
+                  "permission_purchase_prerequisite",
+                  "permission_tryg_drive",
+                  "permission_partner_consent",
+                  "perm_contactInfo_accept"
+                ],
+                "validators": [
+                  {
+                    "name": "formHasValues",
+                    "errorMsg": "${step-product-summary-section-consent-permission-error-message}"
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "permission_purchase_terms",
+                    "label": "${step-product-summary-section-consent-permission-purchase-terms-label}",
+                    "variant": "link",
+                    "required": true,
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "purchaseTerms"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "permission_purchase_prerequisite",
+                    "label": "${step-product-summary-section-consent-permission-purchase-prerequisite-label}",
+                    "variant": "link",
+                    "required": true,
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "purchasePrerequisite"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "permission_tryg_drive",
+                    "label": "${step-product-summary-section-consent-permission-tryg-drive-label}",
+                    "variant": "link",
+                    "required": true,
+                    "defaultValue": true,
+                    "showHide": {
+                      "userData": {
+                        "key": "subProduct",
+                        "includes": "trygdrive"
+                      }
+                    },
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "consentPermissionTrygDrive"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "permission_partner_consent",
+                    "label": "${step-product-summary-section-consent-permission-partner-consent-label}",
+                    "variant": "link",
+                    "required": true,
+                    "hidden": true,
+                    "defaultValue": true,
+                    "showHide": {
+                      "userData": {
+                        "key": "hasPartnerPermissionConsent",
+                        "value": true
+                      }
+                    },
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "consentPermissionPartner"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "perm_contactInfo_accept",
+                    "label": "${step-contact-email-permission-promotion-label}",
+                    "variant": "link",
+                    "required": false,
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "emailPermissionPromotion"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "textBlock",
+                "body": "${step-payment-cancellation-body}"
+              },
+              {
+                "id": "purchaseButton",
+                "type": "button",
+                "label": "${step-product-summary-section-consent-goto-payment-label}",
+                "className": "primary",
+                "requiredData": {
+                  "allof": [
+                    {
+                      "field": "permission_purchase_terms",
+                      "type": "formValues",
+                      "value": true
+                    },
+                    {
+                      "field": "permission_purchase_prerequisite",
+                      "type": "formValues",
+                      "value": true
+                    },
+                    {
+                      "field": "permission_tryg_drive",
+                      "type": "formValues",
+                      "value": true
+                    },
+                    {
+                      "field": "permission_partner_consent",
+                      "type": "formValues",
+                      "value": true
+                    }
+                  ]
+                },
+                "actions": [
+                  {
+                    "actionType": "nextStep"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "productSummaryLoader": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "skipBack": true,
+      "component": {
+        "componentName": "Basic",
+        "submitButton": false,
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "useSpinner": true,
+              "updateLoader": true,
+              "services": [
+                {
+                  "serviceParams": []
+                }
+              ]
+            }
+          }
+        ],
+        "props": [
+          {
+            "type": "Spinner"
+          }
+        ]
+      }
+    },
+    "productSummaryConsentInput": {
+      "stepId": 1,
+      "stepWeight": 2,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-product-summary-title}",
+        "className": "summary--v2",
+        "submitButton": false,
+        "props": [
+          {
+            "type": "productSummary",
+            "sectionHeader": {
+              "title": "${step-product-summary-section-header-title}"
+            },
+            "sectionContact": [
+              {
+                "title": "${step-product-summary-section-contact-product-title}",
+                "body": "${step-product-summary-section-contact-product-body}"
+              },
+              {
+                "title": "${step-product-summary-section-contact-contact-title}",
+                "body": "${step-product-summary-section-contact-contact-body}"
+              }
+            ],
+            "sectionCoverage": {
+              "title": "${step-product-summary-section-coverage-title}",
+              "packageTitle": "${step-product-summary-section-coverage-package-name}",
+              "additionalValues": [
+                "${step-product-summary-section-coverage-additional-values1}",
+                "${step-product-summary-section-coverage-additional-values2}",
+                "${step-product-summary-section-coverage-additional-values3}",
+                "${step-product-summary-section-coverage-additional-values4}"
+              ]
+            },
+            "sectionDate": {
+              "body": "${step-product-summary-section-start-date-$[otherCompanyInsured]}"
+            },
+            "sectionPrice": {
+              "title": "${step-product-summary-section-price-title}",
+              "price": "$[quotes.$[chosenPackage].priceApiResponse.offeredPrice.priceWithFee]",
+              "unit": "$[units.$[paymentFrequency-$[basketList]]]",
+              "showPrePrice": true,
+              "prePriceTitle": "${step-product-summary-section-preprice-title}",
+              "prePrice": "$[quotes.$[chosenPackage].priceApiResponse.listPrice.priceWithFee]",
+              "discountTitle": "${step-product-summary-section-preprice-online-discount-title}",
+              "discount": "$[quotes.$[chosenPackage].priceApiResponse.discountAmount]",
+              "priceTitle": "${step-product-summary-section-final-price-title}",
+              "taxFooterNoteTitle": "${step-product-summary-section-tax-footer-note-title}",
+              "showLabelActions": true,
+              "labelActions": [
+                {
+                  "actionType": "modal",
+                  "props": {
+                    "name": "chargesAndFees"
+                  }
+                }
+              ]
+            },
+            "sectionConsent": [
+              {
+                "type": "textBlock",
+                "variant": "greyBox",
+                "body": "${step-section-consent-body}"
+              },
+              {
+                "type": "checkbox",
+                "id": "permissions",
+                "formValues": [
+                  "permission_purchase_terms",
+                  "permission_purchase_prerequisite",
+                  "permission_tryg_drive",
+                  "permission_partner_consent"
+                ],
+                "validators": [
+                  {
+                    "name": "formHasValues",
+                    "errorMsg": "${step-product-summary-section-consent-permission-error-message}"
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "permission_purchase_terms",
+                    "label": "${step-product-summary-section-consent-permission-purchase-terms-label}",
+                    "variant": "link",
+                    "required": true,
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "purchaseTerms"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "permission_purchase_prerequisite",
+                    "label": "${step-product-summary-section-consent-permission-purchase-prerequisite-label}",
+                    "variant": "link",
+                    "required": true,
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "purchasePrerequisite"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "permission_tryg_drive",
+                    "label": "${step-product-summary-section-consent-permission-tryg-drive-label}",
+                    "variant": "link",
+                    "required": true,
+                    "defaultValue": true,
+                    "showHide": {
+                      "userData": {
+                        "key": "subProduct",
+                        "includes": "trygdrive"
+                      }
+                    },
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "consentPermissionTrygDrive"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "permission_partner_consent",
+                    "label": "${step-product-summary-section-consent-permission-partner-consent-label}",
+                    "variant": "link",
+                    "required": true,
+                    "hidden": true,
+                    "defaultValue": true,
+                    "showHide": {
+                      "userData": {
+                        "key": "hasPartnerPermissionConsent",
+                        "value": true
+                      }
+                    },
+                    "actions": [
+                      {
+                        "actionType": "modal",
+                        "props": {
+                          "name": "consentPermissionPartner"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "userData": {
+                  "key": "indicativePrice",
+                  "value": "$[quotes.$[chosenPackage].priceApiResponse.offeredPrice.priceWithFee]"
+                }
+              },
+              {
+                "id": "Marketing",
+                "type": "checkbox",
+                "templateName": "Marketing",
+                "options": [
+                  {
+                    "label": "Marketing",
+                    "id": "Marketing"
+                  }
+                ],
+                "required": false
+              },
+              {
+                "type": "textBlock",
+                "body": "${step-payment-cancellation-body}"
+              },
+              {
+                "id": "purchaseButton",
+                "type": "button",
+                "label": "${step-product-summary-section-consent-goto-payment-label}",
+                "className": "primary",
+                "requiredData": {
+                  "allof": [
+                    {
+                      "field": "permission_purchase_terms",
+                      "type": "formValues",
+                      "value": true
+                    },
+                    {
+                      "field": "permission_purchase_prerequisite",
+                      "type": "formValues",
+                      "value": true
+                    },
+                    {
+                      "field": "permission_tryg_drive",
+                      "type": "formValues",
+                      "value": true
+                    },
+                    {
+                      "field": "permission_partner_consent",
+                      "type": "formValues",
+                      "value": true
+                    }
+                  ]
+                },
+                "actions": [
+                  {
+                    "actionType": "modal",
+                    "requiredData": {
+                      "allof": [
+                        {
+                          "field": "hasMembershipCheck",
+                          "type": "userData",
+                          "value": true
+                        },
+                        {
+                          "notField": "membershipCheck",
+                          "type": "userData"
+                        }
+                      ]
+                    },
+                    "hidden": true,
+                    "props": {
+                      "name": "membershipCheck"
+                    }
+                  },
+                  {
+                    "actionType": "callServices",
+                    "props": {
+                      "services": [
+                        {
+                          "serviceName": "consentsService",
+                          "serviceParams": [
+                            {
+                              "field": "Marketing"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "actionType": "nextStep",
+                    "requiredData": {
+                      "anyof": [
+                        {
+                          "field": "membershipCheck",
+                          "type": "userData",
+                          "value": true
+                        },
+                        {
+                          "field": "hasMembershipCheck",
+                          "value": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "paymentInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-payment-title}",
+        "desc": "${step-payment-desc}",
+        "buttonPostClass": "spacing-bottom",
+        "submitText": "${step-payment-submit-text}",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "bankRegistrationNumber",
+              "type": "formValues",
+              "maxLength": 4
+            },
+            {
+              "field": "bankAccountNumber",
+              "type": "formValues",
+              "minLength": 6,
+              "maxLength": 10
+            }
+          ]
+        },
+        "props": [
+          {
+            "type": "tel",
+            "label": "${step-payment-registration-number-label}",
+            "id": "bankRegistrationNumber",
+            "columns": "4",
+            "maxLength": 4,
+            "endFocus": "bankAccountNumber",
+            "required": true,
+            "formValues": [
+              "bankRegistrationNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-payment-registration-number-empty-error-message}"
+              },
+              {
+                "name": "numberOnly",
+                "errorMsg": "${step-payment-registration-number-only-numbers-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-payment-registration-number-length-error-message}",
+                "values": [
+                  "4"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tel",
+            "label": "${step-payment-account-number-label}",
+            "id": "bankAccountNumber",
+            "columns": "8",
+            "minLength": 6,
+            "maxLength": 10,
+            "required": true,
+            "formValues": [
+              "bankAccountNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-payment-account-number-empty-error-message}"
+              },
+              {
+                "name": "numberOnly",
+                "errorMsg": "${step-payment-account-number-numbers-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-payment-account-number-length-error-message}",
+                "values": [
+                  "6"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "textBlock",
+            "body": "${step-payment-consent-desc}"
+          },
+          {
+            "type": "textBlock",
+            "body": "${step-payment-cancellation-body}",
+            "variant": "greyBox"
+          }
+        ]
+      }
+    },
+    "paymentConsentInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-payment-title}",
+        "desc": "${step-payment-desc}",
+        "buttonPostClass": "spacing-bottom",
+        "submitText": "${step-payment-submit-text}",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "bankRegistrationNumber",
+              "type": "formValues",
+              "maxLength": 4
+            },
+            {
+              "field": "bankAccountNumber",
+              "type": "formValues",
+              "minLength": 6,
+              "maxLength": 10
+            },
+            {
+              "field": "Payment_service",
+              "type": "formValues",
+              "value": true
+            }
+          ]
+        },
+        "props": [
+          {
+            "type": "tel",
+            "label": "${step-payment-registration-number-label}",
+            "id": "bankRegistrationNumber",
+            "columns": "4",
+            "maxLength": 4,
+            "endFocus": "bankAccountNumber",
+            "required": true,
+            "formValues": [
+              "bankRegistrationNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-payment-registration-number-empty-error-message}"
+              },
+              {
+                "name": "numberOnly",
+                "errorMsg": "${step-payment-registration-number-only-numbers-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-payment-registration-number-length-error-message}",
+                "values": [
+                  "4"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tel",
+            "label": "${step-payment-account-number-label}",
+            "id": "bankAccountNumber",
+            "columns": "8",
+            "minLength": 6,
+            "maxLength": 10,
+            "required": true,
+            "formValues": [
+              "bankAccountNumber"
+            ],
+            "validators": [
+              {
+                "name": "formHasValues",
+                "errorMsg": "${step-payment-account-number-empty-error-message}"
+              },
+              {
+                "name": "numberOnly",
+                "errorMsg": "${step-payment-account-number-numbers-only-error-message}"
+              },
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-payment-account-number-length-error-message}",
+                "values": [
+                  "6"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "Payment_service",
+            "type": "checkbox",
+            "templateName": "Payment_service",
+            "options": [
+              {
+                "label": "Payment_service",
+                "id": "Payment_service"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "Digital_Customer",
+            "type": "consent",
+            "templateName": "Digital_Customer",
+            "consentDisplay": false
+          }
+        ]
+      }
+    },
+    "purchaseLoader": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "submitButton": false,
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "updateLoader": true,
+              "services": [
+                {
+                  "serviceName": "createCustomer"
+                }
+              ],
+              "lastService": {
+                "serviceName": "purchase"
+              }
+            }
+          }
+        ],
+        "props": [
+          {
+            "type": "slider",
+            "props": [
+              {
+                "type": "textBlock",
+                "title": "${step-purchase-loader-title1}",
+                "desc": "${step-purchase-loader-desc1}"
+              },
+              {
+                "type": "textBlock",
+                "title": "${step-purchase-loader-title2}",
+                "desc": "${step-purchase-loader-desc2}"
+              },
+              {
+                "type": "textBlock",
+                "title": "${step-purchase-loader-title3}",
+                "desc": "${step-purchase-loader-desc3}"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "purchaseConsentLoader": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "submitButton": false,
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "updateLoader": true,
+              "services": [
+                {
+                  "serviceName": "createCustomer"
+                }
+              ],
+              "lastService": {
+                "serviceName": "purchase"
+              },
+              "saveConsentService": [
+                {
+                  "serviceName": "consentsService",
+                  "serviceParams": [
+                    {
+                      "field": "Payment_Service"
+                    }
+                  ]
+                },
+                {
+                  "serviceName": "consentsService",
+                  "serviceParams": [
+                    {
+                      "field": "Digital_Customer"
+                    }
+                  ]
+                },
+                {
+                  "serviceName": "consentGPCService"
+                }
+              ]
+            }
+          }
+        ],
+        "props": [
+          {
+            "type": "slider",
+            "props": [
+              {
+                "type": "textBlock",
+                "title": "${step-purchase-loader-title1}",
+                "desc": "${step-purchase-loader-desc1}"
+              },
+              {
+                "type": "textBlock",
+                "title": "${step-purchase-loader-title2}",
+                "desc": "${step-purchase-loader-desc2}"
+              },
+              {
+                "type": "textBlock",
+                "title": "${step-purchase-loader-title3}",
+                "desc": "${step-purchase-loader-desc3}"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "confirmationText": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "submitButton": false,
+        "props": [
+          {
+            "type": "textHeader",
+            "title": "${step-confirmation-full-purchase-title}"
+          },
+          {
+            "type": "textBlock",
+            "body": "${step-confirmation-full-purchase-body}",
+            "list": [
+              "${step-confirmation-full-purchase-list1}",
+              "${step-confirmation-full-purchase-list2}",
+              "${step-confirmation-full-purchase-list3}",
+              "${step-confirmation-full-purchase-list4}"
+            ],
+            "listProps": [
+              {
+                "id": "voucherText",
+                "type": "textSimple",
+                "value": "${step-confirmation-voucher-ok-text}",
+                "hidden": false,
+                "requiredData": {
+                  "allof": [
+                    {
+                      "field": "hasVoucher",
+                      "value": true
+                    }
+                  ],
+                  "anyof": [
+                    {
+                      "field": "voucherCreateStatus",
+                      "value": "Success"
+                    },
+                    {
+                      "field": "voucherCreateStatus",
+                      "value": "Partial"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "voucherText",
+                "type": "textSimple",
+                "value": "${step-confirmation-voucher-failed-text}",
+                "hidden": false,
+                "requiredData": {
+                  "allof": [
+                    {
+                      "field": "hasVoucher",
+                      "value": true
+                    }
+                  ],
+                  "anyof": [
+                    {
+                      "field": "voucherCreateStatus",
+                      "value": "Failed"
+                    },
+                    {
+                      "field": "voucherCreateStatus",
+                      "value": "Partial"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "3"
+          },
+          {
+            "type": "link",
+            "label": "${company-login-label}",
+            "link": "${company-login-link}",
+            "className": "button button--primary",
+            "columns": "4"
+          }
+        ]
+      }
+    },
+    "confirmationV2Text": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "className": "confirmation_page",
+        "submitButton": false,
+        "props": [
+          {
+            "type": "productConfirmation",
+            "sectionHeader": {
+              "title": "${step-confirmation-full-purchase-title}"
+            },
+            "sectionBody": {
+              "body": "${step-confirmation-full-purchase-body}",
+              "listProps": [
+                {
+                  "id": "voucherText",
+                  "type": "textSimple",
+                  "value": "${step-confirmation-voucher-ok-text}",
+                  "hidden": false,
+                  "requiredData": {
+                    "allof": [
+                      {
+                        "field": "hasVoucher",
+                        "value": true
+                      }
+                    ],
+                    "anyof": [
+                      {
+                        "field": "voucherCreateStatus",
+                        "value": "Success"
+                      },
+                      {
+                        "field": "voucherCreateStatus",
+                        "value": "Partial"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "voucherText",
+                  "type": "textSimple",
+                  "value": "${step-confirmation-voucher-failed-text}",
+                  "hidden": false,
+                  "requiredData": {
+                    "allof": [
+                      {
+                        "field": "hasVoucher",
+                        "value": true
+                      }
+                    ],
+                    "anyof": [
+                      {
+                        "field": "voucherCreateStatus",
+                        "value": "Failed"
+                      },
+                      {
+                        "field": "voucherCreateStatus",
+                        "value": "Partial"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "sectionLink": {
+              "label": "${company-login-label}",
+              "link": "${company-login-link}",
+              "columns": "12",
+              "className": "button button--primary"
+            },
+            "sectionCard": {}
+          }
+        ]
+      }
+    },
+    "priceCoverageInfo": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "showHide": {
+          "userData": {
+            "key": "showPriceEdit",
+            "value": null,
+            "or": {
+              "notField": "showPriceEdit"
+            }
+          }
+        },
+        "props": [
+          {
+            "hidden": true,
+            "type": "productSelector",
+            "variant": "basic",
+            "heading": "${step-price-additional-details-coverages}",
+            "headingLink": {
+              "variant": "editLink",
+              "type": "label",
+              "label": "${edit}",
+              "actions": [
+                {
+                  "actionType": "nextStep",
+                  "props": {
+                    "changeUserData": true,
+                    "fields": [
+                      {
+                        "field": "packageId",
+                        "value": "$[basketList]a"
+                      },
+                      {
+                        "field": "showPriceEdit",
+                        "value": "advanced"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "bodyProps": [
+              {
+                "title": "${step-price-coverage-info-package}",
+                "body": "$[chosenPackageName]"
+              },
+              {
+                "title": "${step-price-additional-details-coverages}",
+                "coverages": "quotes.defaults.$[chosenPackage].usedParams.coverageCodes"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "modals": {
+    "prePriceDisclaimer": {
+      "modalType": "compact",
+      "props": [
+        {
+          "type": "label",
+          "label": "${step-before-price-after-button-text}"
+        },
+        {
+          "id": "ok",
+          "type": "button",
+          "variant": "button",
+          "className": "button--primary",
+          "label": "${next-button}",
+          "actions": [
+            {
+              "actionType": "nextStep"
+            }
+          ]
+        }
+      ]
+    },
+    "prePurchaseDisclaimer": {
+      "modalType": "compact",
+      "title": "${step-product-summary-section-consent-disclaimer-title}",
+      "props": [
+        {
+          "id": "disclaimerAcceptance",
+          "type": "checkbox",
+          "required": true,
+          "options": [
+            {
+              "id": "contact_email_permission",
+              "label": "${step-contact-email-permission-promotion-label}",
+              "variant": "link",
+              "actions": []
+            },
+            {
+              "id": "permission_purchase_terms",
+              "label": "${step-product-summary-section-consent-permission-purchase-terms-label}",
+              "variant": "link",
+              "actions": [
+                {
+                  "actionType": "modal",
+                  "props": {
+                    "name": "purchaseTerms"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "permission_purchase_prerequisite",
+              "label": "${step-product-summary-section-consent-permission-purchase-prerequisite-label}",
+              "variant": "link",
+              "actions": [
+                {
+                  "actionType": "modal",
+                  "props": {
+                    "name": "purchasePrerequisite"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "permission_tryg_drive",
+              "label": "${step-product-summary-section-consent-permission-tryg-drive-label}",
+              "variant": "link",
+              "defaultValue": true,
+              "showHide": {
+                "userData": {
+                  "key": "subProduct",
+                  "includes": "trygdrive"
+                }
+              },
+              "actions": [
+                {
+                  "actionType": "modal",
+                  "props": {
+                    "name": "consentPermissionTrygDrive"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "permission_partner_consent",
+              "label": "${step-product-summary-section-consent-permission-partner-consent-label}",
+              "variant": "link",
+              "hidden": true,
+              "defaultValue": true,
+              "showHide": {
+                "userData": {
+                  "key": "hasPartnerPermissionConsent",
+                  "value": true
+                }
+              },
+              "actions": [
+                {
+                  "actionType": "modal",
+                  "props": {
+                    "name": "consentPermissionPartner"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ok",
+          "type": "button",
+          "variant": "button",
+          "className": "button--primary",
+          "label": "${next-button}",
+          "requiredData": {
+            "allof": [
+              {
+                "field": "permission_purchase_terms",
+                "type": "formValues",
+                "value": true
+              },
+              {
+                "field": "permission_purchase_prerequisite",
+                "type": "formValues",
+                "value": true
+              },
+              {
+                "field": "permission_tryg_drive",
+                "type": "formValues",
+                "value": true
+              },
+              {
+                "field": "permission_partner_consent",
+                "type": "formValues",
+                "value": true
+              }
+            ]
+          },
+          "actions": [
+            {
+              "actionType": "nextStep"
+            }
+          ]
+        }
+      ]
+    },
+    "productSummaryCoverageDetailsModal": {
+      "modalType": "compact",
+      "title": "${step-product-summary-coverage-details-title}",
+      "subTitle": "${step-product-summary-coverage-details-subtitle}",
+      "props": [
+        {
+          "type": "divider"
+        },
+        {
+          "type": "textBlock",
+          "title": "${step-product-summary-coverage-details-cov-title}"
+        },
+        {
+          "type": "productSummary",
+          "sectionCoverage": {
+            "showPackageName": false,
+            "additionalValues": [
+              "${step-product-summary-section-coverage-additional-values1}",
+              "${step-product-summary-section-coverage-additional-values2}",
+              "${step-product-summary-section-coverage-additional-values3}",
+              "${step-product-summary-section-coverage-additional-values4}"
+            ]
+          },
+          "sectionPrice": {
+            "showPrePrice": false
+          },
+          "sectionDate": {}
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "textBlock",
+          "title": "${step-product-summary-coverage-details-det-title}",
+          "desc": "${step-product-summary-coverage-details-det-body}"
+        }
+      ]
+    },
+    "coverageOverviewModal": {
+      "modalType": "compact",
+      "title": "${modal-coverage-overview-title}",
+      "subTitle": "${modal-coverage-overview-subtitle}",
+      "props": [
+        {
+          "type": "coverageOverview",
+          "title": "${modal-coverage-additional-details-title}",
+          "contentInfo": [
+            {
+              "showCoverageInfo": true
+            }
+          ]
+        },
+        {
+          "type": "coverageOverview",
+          "title": "${modal-coverage-overview-documents-title}",
+          "showDocuments": true
+        }
+      ]
+    },
+    "coverageDetails": {
+      "modalType": "compact",
+      "props": [
+        {
+          "type": "coverage",
+          "variant": "longOrShort"
+        },
+        {
+          "id": "ok",
+          "type": "button",
+          "variant": "button",
+          "className": "button--primary",
+          "label": "Se alle dækninger",
+          "actions": [
+            {
+              "actionType": "modal",
+              "props": {
+                "name": "coverageOverviewModal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "emailPermissionPromotion": {
+      "modalType": "info",
+      "title": "${modal-email-permission-promotion-title}",
+      "text": "${modal-email-permission-promotion-text}"
+    },
+    "purchaseTerms": {
+      "modalType": "info",
+      "title": "${modal-purchase-terms-title}",
+      "text": "${modal-purchase-terms-text}"
+    },
+    "purchasePrerequisite": {
+      "modalType": "info",
+      "title": "${modal-purchase-prerequisite-title}",
+      "props": [
+        {
+          "type": "textBlock",
+          "title": "${modal-purchase-prerequisite-condition-title}",
+          "list": [
+            "${modal-purchase-prerequisite-condition-list1}",
+            "${modal-purchase-prerequisite-condition-list2}",
+            "${modal-purchase-prerequisite-condition-list3}",
+            "${modal-purchase-prerequisite-condition-list4}",
+            "${modal-purchase-prerequisite-condition-list5}",
+            "${modal-purchase-prerequisite-condition-list6}",
+            "${modal-purchase-prerequisite-condition-list7}",
+            "${modal-purchase-prerequisite-condition-list8}"
+          ]
+        }
+      ]
+    },
+    "chargesAndFees": {
+      "modalType": "info",
+      "title": "${modal-charges-fees-title}",
+      "props": [
+        {
+          "type": "textBlock",
+          "desc": "${modal-charges-fees-desc}"
+        },
+        {
+          "type": "textBlock",
+          "messages": [
+            "${modal-charges-fees-message-insurance-tax}",
+            "${modal-charges-fees-message-payment-service-fee}",
+            "${modal-charges-fees-message-flood-tax}",
+            "${modal-charges-fees-message-guarantee-contributions}"
+          ],
+          "currencyFormat": true
+        },
+        {
+          "type": "textBlock",
+          "body": "${modal-charges-fees-info-body}",
+          "desc": "${modal-charges-fees-info-desc}"
+        },
+        {
+          "id": "ok",
+          "type": "button",
+          "variant": "button",
+          "label": "${ok}",
+          "actions": [
+            {
+              "actionType": "closeModal"
+            }
+          ]
+        }
+      ]
+    },
+    "excessAmount": {
+      "modalType": "info",
+      "title": "${excess-amount}",
+      "body": "${modal-excess-amount-body}"
+    },
+    "paymentRate": {
+      "modalType": "info",
+      "title": "${payment-rate}",
+      "body": "${modal-payment-rate-body}"
+    },
+    "addOnCarKeyCoverageInfo": {
+      "modalType": "info",
+      "title": "${addon-car-key-coverage-title}",
+      "body": "${modal-addon-car-key-coverage-body}"
+    },
+    "addOnVacationCourtesyCarCoverageInfo": {
+      "modalType": "info",
+      "title": "${addon-vacation-courtesy-car-coverage-title}",
+      "body": "${modal-addon-vacation-courtesy-car-coverage-body}"
+    },
+    "addOnWrongFuelCoverageInfo": {
+      "modalType": "info",
+      "title": "${addon-wrong-fuel-coverage-title}",
+      "body": "${modal-addon-wrong-fuel-coverage-body}"
+    },
+    "membershipCheckInput": {
+      "modalType": "info",
+      "className": "registrationModal",
+      "trackingStepNo": "membershipCheck",
+      "title": "${modal-membership-check-title}",
+      "text": "${modal-membership-check-text}",
+      "props": [
+        {
+          "id": "membershipStatus",
+          "type": "radioButtons",
+          "radioType": "borderless",
+          "options": [
+            {
+              "id": "newMembership",
+              "label": "${modal-membership-check-input-new-membership-label}",
+              "required": true
+            },
+            {
+              "id": "hasMembership",
+              "label": "${modal-membership-check-input-existing-membership-label}",
+              "required": true
+            }
+          ]
+        },
+        {
+          "id": "infoMembership",
+          "type": "textBlock",
+          "hidden": true,
+          "desc": "${modal-membership-check-input-existing-membership-desc}",
+          "showHide": {
+            "formValues": {
+              "key": "membershipStatus",
+              "value": "hasMembership"
+            }
+          }
+        },
+        {
+          "id": "membershipID",
+          "type": "text",
+          "placeholder": "${modal-membership-check-input-existing-membership-placeholder}",
+          "hidden": true,
+          "columns": "6",
+          "required": true,
+          "maxLength": 7,
+          "showHide": {
+            "formValues": {
+              "key": "membershipStatus",
+              "value": "hasMembership"
+            }
+          },
+          "validators": [
+            {
+              "name": "inputLength",
+              "errorMsg": "${modal-membership-check-input-existing-membership-number-length-error-message}",
+              "values": [
+                "7"
+              ]
+            },
+            {
+              "name": "numberOnly",
+              "errorMsg": "${modal-membership-check-input-existing-membership-number-only-error-message}"
+            }
+          ]
+        },
+        {
+          "id": "membershipIdCheckbox",
+          "type": "checkbox",
+          "hidden": true,
+          "options": [
+            {
+              "label": "${modal-membership-check-input-existing-membership-verification-label}"
+            }
+          ],
+          "showHide": {
+            "formValues": {
+              "key": "membershipStatus",
+              "value": "hasMembership"
+            }
+          }
+        },
+        {
+          "id": "continue",
+          "type": "button",
+          "variant": "button",
+          "className": "primary",
+          "label": "${confirm}",
+          "columns": "4",
+          "requiredData": {
+            "anyof": [
+              {
+                "field": "membershipStatus",
+                "type": "formValues",
+                "value": "newMembership"
+              },
+              {
+                "field": "membershipStatus",
+                "type": "formValues",
+                "value": "hasMembership",
+                "allof": [
+                  {
+                    "field": "membershipID",
+                    "type": "formValues",
+                    "minLength": 7,
+                    "numbersOnly": true
+                  },
+                  {
+                    "field": "membershipIdCheckbox",
+                    "type": "userData",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          },
+          "actions": [
+            {
+              "actionType": "changeUserData",
+              "props": {
+                "fields": [
+                  {
+                    "field": "membershipCheck",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "closeModal"
+            },
+            {
+              "actionType": "nextStep"
+            }
+          ]
+        }
+      ]
+    },
+    "membershipCheck": {
+      "modalType": "info",
+      "className": "registrationModal",
+      "trackingStepNo": "membershipCheck",
+      "title": "${modal-membership-check-title}",
+      "text": "${modal-membership-check-text}",
+      "props": [
+        {
+          "id": "infoMembershipBefore",
+          "type": "textBlock",
+          "body": "<br\/>${modal-membership-check-body}",
+          "hidden": true,
+          "list": [
+            "${modal-membership-check-list1}",
+            "${modal-membership-check-list2}",
+            "${modal-membership-check-list3}",
+            "${modal-membership-check-list4}"
+          ],
+          "showHide": {
+            "userData": {
+              "key": "showExtraMembership",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "space",
+          "rows": "2",
+          "requiredData": {
+            "anyof": [
+              {
+                "notField": "showExtraMembership",
+                "type": "userData"
+              }
+            ]
+          }
+        },
+        {
+          "id": "infoMembershipAfter",
+          "type": "textBlock",
+          "desc": "${modal-membership-check-desc}"
+        },
+        {
+          "id": "membershipIdCheckbox",
+          "type": "checkbox",
+          "options": [
+            {
+              "label": "${modal-membership-check-checkbox-label}"
+            }
+          ]
+        },
+        {
+          "type": "space",
+          "rows": "1"
+        },
+        {
+          "id": "continue",
+          "type": "button",
+          "variant": "button",
+          "className": "primary",
+          "label": "${confirm}",
+          "columns": "4",
+          "requiredData": {
+            "anyof": [
+              {
+                "field": "membershipIdCheckbox",
+                "type": "formValues",
+                "value": true
+              }
+            ]
+          },
+          "actions": [
+            {
+              "actionType": "changeUserData",
+              "props": {
+                "fields": [
+                  {
+                    "field": "membershipCheck",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "closeModal"
+            },
+            {
+              "actionType": "nextStep"
+            }
+          ]
+        }
+      ]
+    },
+    "contactInfoInput": {
+      "modalType": "info",
+      "className": "contactModal",
+      "trackingStepNo": "contactInfoInput",
+      "title": "${modal-contact-input-title}",
+      "text": "${modal-contact-input-text}",
+      "props": [
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "${email-label}",
+          "required": true,
+          "columns": "6",
+          "tealiumMap": "customer_email_address",
+          "formValues": [
+            "email"
+          ],
+          "validators": [
+            {
+              "name": "formHasValues",
+              "errorMsg": "${email-empty-error-message}"
+            },
+            {
+              "name": "email",
+              "errorMsg": "${email-invalid-error-message}"
+            }
+          ]
+        },
+        {
+          "id": "phoneNumber",
+          "type": "tel",
+          "label": "${phone-label}",
+          "required": true,
+          "maxLength": 8,
+          "columns": "6",
+          "tealiumMap": "customer_mobile_phone_number",
+          "formValues": [
+            "phoneNumber"
+          ],
+          "validators": [
+            {
+              "name": "formHasValues",
+              "errorMsg": "${phone-empty-error-message}"
+            },
+            {
+              "name": "phoneNumber",
+              "errorMsg": "${phone-number-error-message}"
+            },
+            {
+              "name": "inputLength",
+              "errorMsg": "${phone-length-error-message}",
+              "values": [
+                "8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "continue",
+          "type": "button",
+          "variant": "button",
+          "className": "primary",
+          "label": "${confirm}",
+          "columns": "4",
+          "requiredData": {
+            "allof": [
+              {
+                "field": "email",
+                "type": "formValues",
+                "minLength": 6
+              },
+              {
+                "field": "phoneNumber",
+                "type": "formValues",
+                "minLength": 8
+              }
+            ]
+          },
+          "actions": [
+            {
+              "actionType": "nextStep"
+            }
+          ]
+        }
+      ]
+    },
+    "personData": {
+      "title": "${modal-person-data-title}",
+      "modalType": "info",
+      "text": "${modal-person-data-text}"
+    },
+    "confirmationLeadCampaign": {
+      "modalType": "info",
+      "className": "contactModal",
+      "trackingStepNo": "contactInfoInput",
+      "title": "${modal-contact-input-title}",
+      "text": "${modal-contact-input-text}",
+      "props": [
+        {
+          "type": "space",
+          "rows": "2"
+        },
+        {
+          "id": "telephoneNumber",
+          "type": "tel",
+          "label": "${phone-label}",
+          "required": true,
+          "maxLength": 8,
+          "columns": "6",
+          "tealiumMap": "customer_mobile_phone_number",
+          "key": "telephoneNumber",
+          "formValues": [
+            "telephoneNumber"
+          ],
+          "validators": [
+            {
+              "name": "formHasValues",
+              "errorMsg": "${phone-empty-error-message}"
+            },
+            {
+              "name": "phoneNumber",
+              "errorMsg": "${phone-number-error-message}"
+            },
+            {
+              "name": "inputLength",
+              "errorMsg": "${phone-length-error-message}",
+              "values": [
+                "8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "continue",
+          "type": "button",
+          "variant": "button",
+          "className": "primary",
+          "label": "${confirm}",
+          "columns": "4",
+          "requiredData": {
+            "allof": [
+              {
+                "field": "telephoneNumber",
+                "type": "formValues",
+                "minLength": 8
+              }
+            ]
+          },
+          "actions": [
+            {
+              "props": {
+                "fields": [
+                  {},
+                  {
+                    "field": "leadSent",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "callServices",
+              "props": {
+                "useSpinner": false,
+                "services": [
+                  {
+                    "serviceName": "createPortraitLead",
+                    "serviceParams": [
+                      {
+                        "field": "PostalCode",
+                        "required": false,
+                        "valueFrom": "postalCode"
+                      },
+                      {
+                        "field": "City",
+                        "required": false,
+                        "valueFrom": "city"
+                      },
+                      {
+                        "field": "Street",
+                        "required": false,
+                        "valueFrom": "street"
+                      },
+                      {
+                        "field": "HouseNumber",
+                        "required": false,
+                        "valueFrom": "houseNumber"
+                      },
+                      {
+                        "field": "FloorNumber",
+                        "required": false,
+                        "valueFrom": "floorNumber"
+                      },
+                      {
+                        "field": "UnitNumber",
+                        "required": false,
+                        "valueFrom": "unitNumber"
+                      },
+                      {
+                        "field": "MobilePhoneNumber",
+                        "required": true,
+                        "valueFrom": "telephoneNumber"
+                      },
+                      {
+                        "field": "EmailAddress",
+                        "required": false,
+                        "valueFrom": "email"
+                      },
+                      {
+                        "field": "FirstName",
+                        "required": false,
+                        "valueFrom": "firstName"
+                      },
+                      {
+                        "field": "LastName",
+                        "required": false,
+                        "valueFrom": "lastName"
+                      },
+                      {
+                        "field": "CivilRegistrationNumber",
+                        "required": false,
+                        "valueFrom": "cpr"
+                      },
+                      {
+                        "field": "CampaignDescription",
+                        "required": false,
+                        "value": "Lovligt frafald - FINA"
+                      },
+                      {
+                        "field": "produktnavn",
+                        "required": true
+                      },
+                      {
+                        "field": "policyID",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "changeUserData",
+              "props": {
+                "fields": [
+                  {
+                    "field": "leadSent",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "closeModal"
+            },
+            {
+              "actionType": "modal",
+              "props": {
+                "modalType": "info",
+                "title": "Forespørgsel sendt med succes. Du vil snart modtage et opkald fra vores kundeservice"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "campaigns": [
+    {},
+    {
+      "id": "voucher",
+      "isActive": false,
+      "icon": "voucher",
+      "showForProducts": [],
+      "componentData": {
+        "productBox": {
+          "description": "${campaigns-voucher-product-box-description}",
+          "icon": "voucherSmall"
+        },
+        "productSummary": [
+          {
+            "id": "voucherInfo",
+            "type": "textBlock",
+            "desc": "${campaigns-voucher-product-summary-info}"
+          },
+          {
+            "id": "voucherInfoModal",
+            "label": "${read-more}",
+            "type": "button",
+            "variant": "text",
+            "actions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "campaign",
+                  "title": "${campaigns-voucher-product-summary-modal-title-override}",
+                  "campaign": "voucher"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "modal": {
+        "modalType": "info",
+        "className": "voucherModal",
+        "title": "${campaigns-voucher-modal-title}",
+        "image": "\/images\/voucher-$[voucherAmount].png",
+        "props": [
+          {
+            "id": "infoVoucher",
+            "type": "textBlock",
+            "desc": "${campaigns-voucher-modal-desc}"
+          },
+          {
+            "type": "link",
+            "label": "${campaigns-voucher-terms-and-conditions}",
+            "link": "${campaigns-voucher-terms-and-conditions-link}"
+          },
+          {
+            "id": "continue",
+            "type": "button",
+            "variant": "button",
+            "className": "primary",
+            "label": "${continue}",
+            "actions": [
+              {
+                "actionType": "closeModal"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "trygDrive",
+      "isActive": false,
+      "showForProducts": [
+        "car"
+      ],
+      "componentData": {
+        "productSelector": {
+          "advantages": [
+            {
+              "text": "${product-box-sub-product-label}",
+              "actions": [
+                {
+                  "actionType": "modal",
+                  "props": {
+                    "name": "trygDrive"
+                  }
+                }
+              ],
+              "conditions": [
+                "$[SUB_PRODUCT].includes('trygdrive')"
+              ]
+            }
+          ]
+        }
+      },
+      "modal": {
+        "modalType": "coverage",
+        "className": "",
+        "title": "${modal-trygdrive-add-campaign-title}",
+        "props": [
+          {
+            "id": "trygDrive",
+            "type": "textBlock",
+            "desc": "${modal-trygdrive-add-campaign-content}"
+          }
+        ]
+      }
+    }
+  ],
+  "translations": {
+    "go-back": "Tilbage",
+    "read-more": "Læs mere",
+    "continue": "Videre",
+    "proceed": "Forsæt",
+    "confirm": "Bekræft",
+    "close": "Luk",
+    "yes": "Ja",
+    "no": "Nej",
+    "false": "Nej",
+    "true": "Ja",
+    "ok": "Ok",
+    "loading...": "Henter...",
+    "choose": "Vælg",
+    "advanced-choices": "Avancerede tilvalg",
+    "excess-amount": "Selvrisiko",
+    "payment-rate": "Betalingsrate",
+    "prerequisite": "Forudsætninger",
+    "company-call-me-up-label": "Bliv ringet op",
+    "company-login-label": "Log ind på Min side",
+    "modal-cpr-info-title": "Brug af dit cpr-nummer",
+    "modal-cpr-info-text": "<p>Vi bruger dit cpr-nummer til at vurdere, hvilken pris og eventuelle rabatter du kan få hos os og til entydigt at identificere dig. Vi bruger også dit cpr-nummer til at indhente oplysning om gebyr i DFIM, ved tegning af lovpligtig ansvarsforsikring på et motorkøretøj, som krævet ifølge færdselsloven. Dit cpr-nummer er beskyttet af kryptering, der sikrer, at ingen uvedkommende kan læse det. Du kan altid trække dit samtykke tilbage ved at ringe eller skrive til os.<\/p>",
+    "step-cpr-title": "Hvad er dit <strong>CPR-nummer?<\/strong>",
+    "step-cpr-body": "For at udregne den eksakte pris på din ${product-name} mangler vi stadig et par detaljer om dig.",
+    "step-cpr-label": "Cpr-nummer",
+    "step-cpr-placeholder": "123456-1234",
+    "step-cpr-warning": "Det ser ud til, at du har indtastet et ugyldigt cpr-nummer.",
+    "step-cpr-desc": "Hvor meget rabat kan du få? Vi bruger dit cpr-nummer til at beregne den skarpest mulige pris til dig. Når du skriver dit cpr-nummer, giver du samtykke til, at vi må behandle det.",
+    "step-cpr-consent-title": "Hej <strong>$[firstName]<\/strong>",
+    "step-cpr-consent-body": "Du er nu logget ind. Vi har de fleste oplysninger om dig, men mangler stadig et par detaljer.",
+    "step-cpr-no-consent-title": "Indtast <strong>dine<\/strong> oplysninger",
+    "step-cpr-consent-desc": "Ved at fortsætte giver du tiladelse til at ${company-name} må behandle dit cpr-nummer for at kunne identificere dig entydigt i den løbende håndtering af dit kundeforhold. Du kan altid trække dit samtykke tilbage ved at skrive eller ringe til os på ${company-contact-phone}.",
+    "step-payment-consent-desc": "Ved at fortsætte tilmelder du dig betalingsservice, hvor din forsikring fremover bliver betalt.",
+    "step-telephone-consent-desc": "Vi kan bruge dit telefonnummer til at ringe til dig om salg og rådgivning af forsikringer, medmindre du står på Robinsonlisten eller har frabedt dig direkte markedsføring hos os. Læs mere <a href='${person-data-url}'>her<\/a>.",
+    "step-gdpr-desc": "<p>Vi træffer afgørelse, der alene beror på automatisk behandling, herunder profilering, når du online får et tilbud eller køber en forsikring. <a href=\"${company-person-info-url}\">Læs mere om brug af persondata, automatisk afgørelse og profilering<\/a>.<\/p>",
+    "step-address-title": "Hvad er din <strong>adresse?<\/strong>",
+    "step-address-postal-code-label": "Postnummer og by",
+    "step-address-postal-code-placeholder": "fx 2750",
+    "step-address-postal-code-error-message": "Indtast et korrekt postnummer, fx 2750",
+    "step-address-street-label": "Vejnavn og husnummer",
+    "step-address-street-placeholder": "fx Klausdalsbrovej 601",
+    "step-address-street-error-message": "Indtast en korrekt adresse, fx Klausdalsbrovej 601",
+    "step-contact-title": "Hvad er dine <strong>kontaktoplysninger?<\/strong>",
+    "step-contact-first-name-label": "Fornavn",
+    "step-contact-first-name-empty-error-message": "Fejl!",
+    "step-contact-first-name-letter-only-error-message": "Du må kun indtaste bogstaver",
+    "step-contact-first-name-short-length-error-message": "Skriv dit fornavn",
+    "step-contact-last-name-label": "Efternavn",
+    "step-contact-last-name-empty-error-message": "Fejl!",
+    "step-contact-last-name-letters-only-error-message": "Du må kun indtaste bogstaver",
+    "step-contact-last-name-short-length-error-message": "Skriv dit efternavn",
+    "phone-label": "Telefonnummer",
+    "phone-empty-error-message": "Fejl!",
+    "phone-number-error-message": "Indtast 8 tal, uden mellemrum",
+    "phone-length-error-message": "Indtast gyldigt telefonnummer",
+    "email-label": "Mail",
+    "email-empty-error-message": "Fejl!",
+    "email-invalid-error-message": "Mailadressen er ikke udfyldt korrekt",
+    "step-contact-body": "Vi gemmer dine oplysninger. <a href='${company-gpdr-url}'>Læs mere<\/a>",
+    "step-contact-email-permission-promotion-label": "Ja tak, jeg ønsker at modtage mails\/sms med rådgivning om forsikringer, gode råd for at undgå skader, nyheder og særlige tilbud om forsikringer og skadeforebyggende produkter fra ${company-name}. Du kan altid trække dit samtykke tilbage ved at ringe til os på ${company-contact-phone}. Du kan læse mere om, hvordan vi behandler dine personoplysninger i vores persondatapolitik på <a href=\"${company-gpdr-url}\" _target=\"blank\">personoplysninger<\/a>.",
+    "modal-email-permission-promotion-title": "Samtykke",
+    "modal-email-permission-promotion-text": "<p>Når du giver os samtykke, vil du modtage mails\/sms med rådgivning om forsikringer, gode råd for at\nundgå skader, nyheder og særlige tilbud om forsikringer og\nskadeforebyggende produkter.\n\n\n\nDu\nkan altid trække dit samtykke tilbage ved at ringe eller skrive til ${company-name}. <\/p>",
+    "purchase-loader-text-1": "Tak fordi, du valgte ${company-name}",
+    "purchase-loader-text-2": "Opretter ${product-din-dit} ${product-name}",
+    "purchase-loader-text-3": "Behandler dine informationer",
+    "purchase-loader-text-4": "Forsikringen registreres",
+    "step-start-date-title": "Har du i forvejen en ${product-name}?",
+    "step-start-date-title-when": "Hvornår skal forsikringen starte?",
+    "step-start-date-desc": "For at finde den rigtige startdato til din forsikring, skal vi vide, om du allerede er forsikret i dit navn hos et andet selskab.",
+    "step-start-date-yes-continue-error-message": "Hvis du vil forsætte skal du trykke på nej",
+    "step-start-date-no-continue-error-message": "Hvis du vil forsætte skal du trykke på nej",
+    "step-start-date-no-start-date-message": "Din ${product-name} starter <strong>I morgen d. $[activationDateText]<\/strong>",
+    "step-start-date-no-start-date-change-start-date-label": "Ret startdato",
+    "step-start-date-no-start-date-choose-start-date-label": "Startdato",
+    "step-start-date-yes-start-date-message": "Startdato <strong>$[activationDateText]<\/strong>",
+    "step-start-date-yes-title": "Hos hvilket selskab har du forsikringen?",
+    "step-start-date-terminate-insurance-company-label": "Nuværende forsikringsselskab",
+    "step-start-date-terminate-insurance-company-placeholder": "Dit nuværende forsikringsselskab",
+    "step-start-date-terminate-insurance-company-title": "Hos hvilket selskab har du forsikringen?",
+    "step-start-date-insurance-company-permission": "Ja, ${company-name} må indhente oplysninger om mine forsikringer hos tidligere og nuværende forsikringsselskaber.",
+    "step-start-date-move-date-title": "Hvornår vil du gerne starte din forsikring?",
+    "step-start-date-move-date-label": "Startdato",
+    "step-start-date-move-date-label-when": "Forsikringens startdato",
+    "step-start-date-terminate-insurance-text": "Vi sørger for at opsige din nuværende forsikring, når din ${product-name} hos os starter. Vær opmærksom på, at der kan være et ekstra gebyr hos dit nuværende forsikringsselskab, når du stopper din forsikring inden for det første år.",
+    "step-payment-title": "Betalingsoplysninger",
+    "step-payment-desc": "Første gang, beløbet bliver trukket, afhænger af, hvornår din ${product-name} starter. Dvs. den dag, forsikringen dækker fra.",
+    "step-payment-submit-text": "Gennemfør køb",
+    "step-payment-registration-number-label": "Reg. nr.",
+    "step-payment-registration-number-empty-error-message": "Fejl!",
+    "step-payment-registration-number-only-numbers-error-message": "Du må kun indtaste tal",
+    "step-payment-registration-number-length-error-message": "Du skal mindst indtaste 4 tal",
+    "step-payment-account-number-label": "Kontonr.",
+    "step-payment-account-number-empty-error-message": "Fejl!",
+    "step-payment-account-number-numbers-only-error-message": "Du må kun indtaste tal",
+    "step-payment-account-number-length-error-message": "Du skal indtaste mellem 6 og 10 tal",
+    "step-payment-cancellation-body": "Du har 14 dages fuld fortrydelsesret fra den dag, du modtager forsikringsaftalen.",
+    "step-confirmation-full-purchase-title": "<h3>Tak for dit køb<\/h3>",
+    "step-confirmation-full-purchase-body": "Hvad sker der nu?",
+    "step-confirmation-full-purchase-list1": "Du modtager dine forsikringspapirer inden for 3 uger.",
+    "step-confirmation-full-purchase-list2": "Vi tilmelder betalingen til Betalingsservice.",
+    "step-confirmation-full-purchase-list3": "Skal din forsikring flyttes, sørger vi for det.",
+    "step-confirmation-full-purchase-list4": "Du kan nu se forsikringen på Min side.",
+    "step-confirmation-full-purchase-list5": "",
+    "step-confirmation-voucher-ok-text": "Du kan allerede se dit gavekort på Min side. Når vi aktiverer dit gavekort, får du en mail med en guide til, hvordan du indløser det.",
+    "step-confirmation-voucher-failed-text": "Hvis du skulle opleve problemer med modtagelsen af en eller flere af dine gavekort, så kontakt os for at få hjælp.",
+    "step-confirmation-partial-purchase-title": "<h3>Vi kunne desværre ikke gennemføre dit køb online<\/h3>",
+    "step-confirmation-partial-purchase-body": "Din beregning er gemt hos ${company-name}, og vi kan hjælpe dig over telefonen. Bliv ringet op – du kan også ringe på ${company-contact-phone}.",
+    "step-product-summary-section-start-date-no-start-date-message": "Din ${product-name} starter <strong>I morgen d. $[activationDateText]<\/strong>",
+    "step-product-summary-section-start-date-yes-start-date-message": "Startdato <strong>$[activationDateText]<\/strong>",
+    "step-product-summary-title": "Oversigt",
+    "step-product-summary-title-compact": "Din oversigt",
+    "step-product-summary-section-header-title": "${product-Din-Dit} ${product-name}",
+    "step-product-summary-section-contact-product-title": "Dine valg",
+    "step-product-summary-section-coverage-package-name": "<strong>$[chosenPackageName]<\/strong>",
+    "step-product-summary-section-contact-contact-title": "Kontaktoplysninger",
+    "step-product-summary-section-contact-contact-body": "$[firstName] $[lastName] <br\/> $[emailAddress] <br\/> $[telephoneNumber]",
+    "step-product-summary-section-coverage-title": "Din dækningspakke: ",
+    "step-product-summary-section-coverage-title-compact": "<strong>Dine dækninger<\/strong>",
+    "step-product-summary-section-price-title": "Din pris",
+    "step-price-package-total-price-text": "Din pris",
+    "step-product-summary-section-price-title-compact": "<strong>Din pris<\/strong>",
+    "step-product-summary-section-price-label-compact": "<strong>Totalpris<\/strong>",
+    "step-product-summary-section-price-price-compact": "<strong>$[quotes.$[chosenPackage].priceApiResponse.offeredPrice.priceWithFee] $[units.$[paymentFrequency-$[basketList]]]<\/strong>",
+    "step-product-summary-section-preprice-title": "Førpris",
+    "step-product-summary-section-preprice-online-discount-title": "Onlinerabat",
+    "step-product-summary-section-tax-footer-note-title": "Alle priser er inkl. gebyrer og afgifter",
+    "step-product-summary-section-final-price-title": "<strong>Pris i alt<\/strong>",
+    "step-product-summary-section-consent-permission-error-message": "Du skal acceptere alle betingelserne for at lave købet.",
+    "step-product-summary-section-consent-permission-purchase-terms-label": "Jeg har givet korrekte oplysninger og godkender <span class='link__text'>vilkår for køb på ${company-url}<\/span>",
+    "step-product-summary-section-consent-permission-purchase-prerequisite-label": "Jeg er indforstået med <span class='link__text'>forudsætningerne for købet<\/span>",
+    "step-product-summary-section-consent-disclaimer-title": "Du skal godkende følgende forudsætninger for at fortsætte dit køb",
+    "step-product-summary-section-consent-goto-payment-label": "Gå til betaling",
+    "step-product-summary-section-coverage-additional-values1": "",
+    "step-product-summary-section-coverage-additional-values2": "",
+    "step-product-summary-section-coverage-additional-values3": "",
+    "step-product-summary-section-coverage-additional-values4": "",
+    "step-product-summary-section-coverage-body-compact": "Dækningspakke: $[chosenPackageName]<br\/>Startdato: $[activationDateText]",
+    "step-product-summary-section-consent-permission-tryg-drive-label": "",
+    "step-product-summary-section-consent-permission-partner-consent-label": "",
+    "step-product-summary-section-fee": "Prisen er inkl. <a href='${company-charges-fees-url}' target=\"_blank\">gebyrer og afgifter.<\/a>",
+    "step-product-summary-coverage-details-title": "Dine dækninger",
+    "step-product-summary-coverage-details-subtitle": "Lidt flere detaljer om forsikringen",
+    "step-product-summary-coverage-details-cov-title": "Forsikringen dækker",
+    "step-product-summary-coverage-details-det-title": "Forsikringsdetaljer",
+    "step-product-summary-coverage-details-det-body": "Dækningspakke: $[chosenPackageName]<br\/>Startdato: $[activationDateText]",
+    "step-product-summary-section-coverage-semore": "Se mere",
+    "modal-purchase-terms-title": "Vilkår for køb",
+    "modal-purchase-terms-text": "<p>Når du køber online, beder vi dig acceptere de vilkår, der gælder for køb på nettet.<\/p><p><a href='${company-purchase-info-url}'>Læs vilkår<\/a> (åbner i et nyt vindue)<\/p>",
+    "modal-purchase-prerequisite-title": "Forudsætninger",
+    "modal-purchase-prerequisite-product-title": "Om dig:",
+    "modal-purchase-prerequisite-condition-title": "Tilbuddet forudsætter, at du og\/eller medlemmer i din husstand",
+    "modal-purchase-prerequisite-condition-list1": "Bliver digitale kunder - dvs. får post, breve og andre dokumenter på Min side på ${company-url}",
+    "modal-purchase-prerequisite-condition-list2": "Ikke har gæld til ${company-name} eller andet forsikringsselskab",
+    "modal-purchase-prerequisite-condition-list3": "Ikke har fået afslag på at blive kunde i ${company-name} eller er blevet opsagt af ${company-name} eller et andet forsikringsselskab",
+    "modal-purchase-prerequisite-condition-list4": "Ikke er registreret i RKI eller Debitor Registret",
+    "modal-purchase-prerequisite-condition-list5": "Ikke har fået særlige begrænsninger i dine dækninger hos ${company-name} eller et andet forsikringsselskab.",
+    "modal-purchase-prerequisite-condition-list6": "",
+    "modal-purchase-prerequisite-condition-list7": "",
+    "modal-purchase-prerequisite-condition-list8": "",
+    "modal-charges-fees-title": "Afgifter og gebyrer",
+    "modal-charges-fees-desc": "<strong>De priser, du ser, er inklusiv følgende afgifter og gebyrer<\/strong>",
+    "modal-charges-fees-message-insurance-tax": "<span class='col col--6 display__block leftAlign'>${modal-charges-fees-insurance-tax} <\/span><span class='col col--6 display__block leftAlign'>$[quotes.$[basketList]0.priceApiResponse.offeredPrice.insuranceFee]\/${modal-charges-fees-frequency-$[paymentFrequency-$[basketList]]}<\/span>",
+    "modal-charges-fees-message-payment-service-fee": "<span class='col col--6 display__block leftAlign'>${modal-charges-fees-payment-service-fee} <\/span><span class='col col--6 display__block leftAlign'>$[paymentFee]<\/span>",
+    "modal-charges-fees-message-flood-tax": "",
+    "modal-charges-fees-message-guarantee-contributions": "",
+    "modal-charges-fees-insurance-tax": "Skadeforsikringsafgift til staten",
+    "modal-charges-fees-payment-service-fee": "BS gebyr pr. opkrævning",
+    "modal-charges-fees-flood-tax": "Stormflodsafgift",
+    "modal-charges-fees-guarantee-contributions": "Garantifondsbidrag",
+    "modal-charges-fees-frequency-1,00-kr.": "år",
+    "modal-charges-fees-frequency-12,00-kr.": "md",
+    "modal-charges-fees-info-body": "<br\/>Læs mere om <a href='${company-charges-fees-url}'><strong>afgifter og gebyrer<\/strong><\/a> (åbner i nyt vindue)",
+    "modal-charges-fees-info-desc": "<br\/>",
+    "embedded-price-loaded-text": "Beregner din forsikring...",
+    "step-price-title-compact": "Vælg din forsikring",
+    "step-price-product-box-footer-note": "Alle priser er inkl. gebyrer og afgifter",
+    "step-price-product-box-recommended-text": "Bedste dækning",
+    "step-price-product-box-coverage-text": "Dækker: ",
+    "step-price-product-box-button-text-mobile": "Vis",
+    "step-price-additional-choices": "Valgmuligheder",
+    "step-price-additional-details-heading": "Yderligere detaljer",
+    "step-price-additional-details-title": "Produktinformation og betingelser",
+    "step-price-additional-details-coverages": "Dækninger",
+    "modal-excess-amount-body": "<p>Selvrisikoen er den del af en skade, du selv betaler. Højere selvrisiko = billigere forsikring.<\/p>",
+    "modal-payment-rate-body": "<p>Du kan vælge at betale dine forsikringer månedligt eller årligt over Betalingsservice.<\/p>\n\n<p>På grund af gebyrer og afgifter bliver den samlede årlige betaling lidt dyrere ved månedsbetaling, end når du vælger at betale helårligt.<\/p>",
+    "modal-number-of-claims-body": "Her skal du skrive antallet af skader du har haft de seneste tre år. Oplys kun om skader, som førte til en udbetaling fra dit tidligere selskab. Du skal ikke medregne skader, hvor modpartens forsikring har betalt for skaden, eller hvor skaden ikke har belastet din forsikring. ",
+    "modal-addon-car-key-coverage-body": "Hvis du mister din bilnøgle ved tyveri eller du har tabt din bilnøgle.",
+    "modal-addon-vacation-courtesy-car-coverage-body": "Lånebil til\nrådighed, hvis bilferien er i fare efter en skade på familiens egen bil.",
+    "modal-addon-wrong-fuel-coverage-body": "Hvis du ved uheld kommer til at fylde forkert\nbrændstof på din bil, så får du hjælp til at få det forkerte brændstof suget op\nigen.",
+    "modal-membership-check-title": "Bekræftelse af medlemskab",
+    "modal-membership-check-text": "Need overwrite on each main flow!!!",
+    "modal-membership-check-desc": "",
+    "modal-membership-check-body": "Du skal som minimum have:",
+    "modal-membership-check-list1": "",
+    "modal-membership-check-list2": "",
+    "modal-membership-check-list3": "",
+    "modal-membership-check-list4": "",
+    "modal-membership-check-checkbox-label": "Ja, jeg er medlem af ${company-original-name} og Tryg må bekræfte mit medlemsskab.",
+    "modal-membership-check-input-new-membership-label": "Ja tak, jeg vil gerne være medlem af ${company-original-name}",
+    "modal-membership-check-input-existing-membership-label": "Jeg er allerede medlem af ${company-original-name}",
+    "modal-membership-check-input-existing-membership-desc": "Indtast venligst dit ${company-original-name} medlemsnummer, så vi kan bekræfte dit medlemskab af ${company-original-name} og gemme dit medlemsnummer til senere køb.",
+    "modal-membership-check-input-existing-membership-placeholder": "membership ID",
+    "modal-membership-check-input-existing-membership-number-length-error-message": "Du skal mindst indtaste 7 tal",
+    "modal-membership-check-input-existing-membership-number-only-error-message": "Du skal mindst indtaste 7 tal",
+    "modal-membership-check-input-existing-membership-verification-label": "Jeg er ok med, at I bekræfter mit medlemskab",
+    "step-price-additional-coverage-disable-text": "Kan desværre ikke tilkøbes pt.",
+    "section-address-name": "Din adresse",
+    "section-cpr-name": "CPR-nummer",
+    "section-contact-name": "Kontaktoplysninger",
+    "section-start-date-name": "Startdato",
+    "section-product-summary-name": "Oversigt",
+    "section-payment-name": "Betaling",
+    "section-confirmation-name": "Bekræftelse",
+    "step-price-advanced-coverage": "Tilvalgsdækninger",
+    "section-price-name": "Din pris",
+    "section-persons-address-name": "Personer på din adresse",
+    "modal-contact-input-text": "Vi mangler følgende kontaktoplysninger for at kunne forsætte beregningen. Indtast venligst telefonnummer og mailadresse.",
+    "section-price-name-cu": "Vælg pakke",
+    "step-firstname-label": "Fornavn",
+    "section-customer-detail-cu": "Den forsikrede",
+    "step-start-date-empty-error-message": "tom start dato",
+    "step-start-date-min-date-error-message": "min. start dato",
+    "excess-amount-label": "Din selvrisiko",
+    "payment-rate-link-label": "Hvad er betalingsrate?",
+    "minside-login-label": "Se alle dine forsikringer",
+    "section-age-name": "Din alder",
+    "step-age-title": "Hvad er din <strong>alder?<\/strong>",
+    "step-age-desc": "Vi skal også spørge om din alder. Du skal være mindst 18 år for at tegne en ${product-name}",
+    "step-age-label": "Din alder",
+    "step-age-placeholder": "Fx. 36",
+    "step-age-error-message": "Indtast din alder",
+    "see-price": "Se pris",
+    "edit": "Rediger",
+    "next-button": "Næste",
+    "step-price-details-coverage-title": "Forsikringens forudsætninger",
+    "step-price-details-coverage-desc": "Forsikringens pris er beregnet ud fra følgende standard forudsætniger. Du kan ændre dem her.",
+    "step-price-coverage-info-package": "Forsikringspakke",
+    "step-price-prerequisite-info-heading": "Forudsætninger",
+    "step-price-prerequisite-info-submit": "Fortsæt",
+    "step-price-prerequisite-title": "<strong>Redigér<\/strong> forudsætninger",
+    "step-price-details-prerequisite-price": "Din pris <strong>$[quotes.$[chosenPackage].priceApiResponse.offeredPrice.priceWithFee]<\/strong> $[units.$[paymentFrequency-$[basketList]]]",
+    "step-price-details-prerequisite-price-label-compact": "<strong>Din pris<\/strong>",
+    "step-price-details-prerequisite-price-compact": "<strong>$[quotes.$[chosenPackage].priceApiResponse.offeredPrice.priceWithFee] $[units.$[paymentFrequency-$[basketList]]]<\/strong>",
+    "step-savedetails-submit-label": "Gem detaljer",
+    "step-savedetails-cancel-label": "Annullér ændringer",
+    "person-data-link": "Sådan behandler vi dine personoplysninger",
+    "modal-person-data-title": "Sådan behandler vi dine personoplysninger",
+    "modal-person-data-text": "Vi behandler dine personoplysninger for at kunne give dig et tilbud og gemmer dem til statistik og markedsføring. Vi træffer afgørelse, der alene beror på automatisk behandling, herunder profilering, når du online får et tilbud eller køber en forsikring. <br\/><br\/> Læs mere om brug af persondata, automatisk afgørelse og profilering, eller sluk for statistik og markedsføring på <a href=\"${person-data-url}\" target=\"_blank\">informationssiden for Trygs persondata og cookie politik<\/a>",
+    "section-price-details": "Forudsætninger",
+    "step-cpr-error-msg": "",
+    "step-cpr-legal-desc": "Ja, ${company-name} må behandle mit cpr-nummer for at kunne identificere mig entydigt i den løbende håndtering af mit kundeforhold. Du kan altid trække dit samtykke tilbage ved at ringe eller skrive til os. ",
+    "cpr-read-more": "Læs mere om behandling af cpr-nummer",
+    "price-discount": "$[discount-$[basketList]]",
+    "campaigns-voucher-modal-desc": "<p>Når du køber din ${product-name} online på tryg.dk, får du rabat i form af et gavekort på ${$[voucherAmount]} kr., som du kan bruge hos bl.a. <strong>Zalando, Wupti, Matas og Humac.<\/strong><\/p>",
+    "campaigns-voucher-modal-title": "Få et <strong>gavekort<\/strong> med, når du køber online",
+    "campaigns-voucher-product-summary-modal-title-override": "Gavekort på ${$[voucherAmount]} kr",
+    "campaigns-voucher-product-summary-info": "Køb online nu og få rabat i form af et <strong>gavekort på ${$[voucherAmount]} kr.<\/strong>.<br\/>Gavekortet aktiveres 14 dage efter, din forsikring er startet.",
+    "campaigns-voucher-product-box-description": "<p>Rabat i form af <strong>gavekort på ${$[voucherAmount]} kr.<\/strong><\/p>",
+    "campaigns-voucher-terms-and-conditions-link": "https:\/\/tryg.mbxp.dk\/Landing\/TermsandConditions",
+    "campaigns-voucher-terms-and-conditions": "Vilkår og betingelser",
+    "campaigns-voucher-info-false": "",
+    "campaigns-voucher-info-true": "Vær opmærksom på, at rabatten i form af et gavekort kun tilbydes i en periode, og derfor måske ikke tilgængeligt, når du vender tilbage til din beregning.",
+    "12-paymentFrequency": "Månedlig",
+    "1-paymentFrequency": "Årlig",
+    "5-claimCount": "5+",
+    "4-claimCount": "4",
+    "3-claimCount": "3",
+    "2-claimCount": "2",
+    "1-claimCount": "1",
+    "0-claimCount": "Ingen",
+    "excess-amount-link-label": "Hvad er selvrisiko?",
+    "error_label": "Fejlkoden er:",
+    "required_data_msg": "Vi er igang med at hente dine data. Vent venligst til dette er færdigt.",
+    "overview_postprice": "kr.\/måned",
+    "overview_preprice": "Estimeret",
+    "overview_title": "Overblik over din <strong>Tryghedspakke<\/strong>",
+    "product-Din-Dit": "Din",
+    "product-din-dit": "din",
+    "step-cpr-after-button-text": "Når du køber en forsikring online, træffer vi afgørelser, der alene beror på automatisk behandling, herunder profilering. I den automatiske afgørelse om pris og vilkår indgår de oplysninger du indtaster, sammenholdt med vores vurdering af din risiko for skader. Pris og vilkår kan fx afhænge af, hvor mange skader du tidligere har haft, hvor du bor, størrelsen af dit hus, din bilmodel mv.<br\/><br\/>Afgørelsen kan resultere i, at du får en højere eller lavere pris afhængig af din risiko for skader eller, at vi kun kan beregne din pris i telefonen. Du kan altid ringe og tale med vores medarbejdere på ${company-contact-phone}, om de afgørelser vi træffer.<br\/><br\/>Vi behandler din personoplysninger for at kunne give dig et tilbud og gemmer dem til statistik og markedsføring. Under <a href=\"${company-person-info-url}\">Personoplysninger<\/a> kan du læse om, hvordan vi behandler dine personoplysninger, herunder hvilke oplysninger vi registrerer, og hvem vi deler dem med.",
+    "step-pricepage-options-title": "Tilpas din forsikring",
+    "questionmark-icon": " <svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9 18C13.9706 18 18 13.9706 18 9C18 4.02942 13.9706 0 9 0C4.02942 0 0 4.02942 0 9C0 13.9706 4.02942 18 9 18ZM8.22437 11.7029H9.67871C9.67114 11.233 9.70728 10.9068 9.78711 10.7245C9.83423 10.6217 9.92188 10.5003 10.0499 10.3602C10.149 10.2518 10.2725 10.1321 10.4202 10.0013C11.0741 9.422 11.5 8.96423 11.6978 8.62793C11.8993 8.29169 12 7.93518 12 7.55841C12 6.87781 11.7281 6.28223 11.1844 5.77179C10.6406 5.25726 9.90869 5 8.98865 5C8.11401 5 7.40686 5.25323 6.86694 5.75964C6.33081 6.26605 6.04187 6.88184 6 7.60699L7.47144 7.80151C7.5741 7.29504 7.76233 6.91827 8.03613 6.67114C8.30994 6.42401 8.65015 6.30048 9.05701 6.30048C9.47913 6.30048 9.81372 6.41998 10.0608 6.659C10.3118 6.89398 10.4373 7.17761 10.4373 7.50977C10.4373 7.74884 10.3669 7.96759 10.2262 8.16608C10.135 8.29169 9.85547 8.55707 9.38782 8.96216C8.92017 9.36731 8.6084 9.73193 8.45251 10.056C8.29663 10.3801 8.21863 10.7934 8.21863 11.2958C8.21863 11.3444 8.22058 11.4801 8.22437 11.7029ZM8.22437 12.2924V14H9.82703V12.2924H8.22437Z\" fill=\"#989898\"\/>\n\n<\/svg>",
+    "price-loader-text1": "Indsamler data",
+    "price-loader-text2": "Finder dækninger",
+    "price-loader-text3": "Samler tilbud",
+    "price-loader-text4": "Beregner pris",
+    "step-address-phone-number-placeholder": "fx 12345678",
+    "tryg-Logo": "<svg width=\"60\" height=\"26\" viewBox=\"0 0 60 26\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<g clip-path=\"url(#clip0)\">\n<mask id=\"mask0\" mask-type=\"alpha\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"60\" height=\"26\">\n<path d=\"M0.0253525 25.3246V0.252625H59.8868V25.3246H0.0253525Z\" fill=\"white\"\/>\n<\/mask>\n<g mask=\"url(#mask0)\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M59.8868 21.5238C59.8868 23.6283 58.1653 25.35 56.0611 25.35H3.82606C1.72225 25.35 0 23.6283 0 21.5238V4.07836C0 1.97431 1.72225 0.252625 3.82606 0.252625H56.0611C58.1653 0.252625 59.8868 1.97431 59.8868 4.07836V21.5238Z\" fill=\"#DC0000\"\/>\n<\/g>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M53.7397 16.6152C53.6662 16.7048 53.5563 16.8129 53.4976 16.878C53.0662 17.3482 52.5486 17.7437 51.9596 18.0373C51.8109 18.1121 51.6592 18.1797 51.5054 18.2401C52.1493 17.8797 52.7104 17.4112 53.1701 16.8586C52.9432 16.7956 52.6982 16.6418 52.4497 16.4411C52.0437 16.1133 51.758 15.7613 51.8092 15.4284C51.8768 15.3583 51.9414 15.286 52.0031 15.21C53.1824 13.7549 53.0256 11.6483 51.6938 10.3778C52.0238 10.423 52.3703 10.1378 52.6956 9.73563C53.0083 9.35031 53.2137 8.96752 53.1304 8.65994C55.3944 10.7124 55.6872 14.212 53.7397 16.6152ZM49.227 9.78506C49.9517 9.78506 50.6611 10.0369 51.2248 10.4932C52.5858 11.5951 52.7962 13.599 51.693 14.9586C51.087 15.7064 50.1866 16.1352 49.2237 16.1352C48.4982 16.1352 47.7887 15.8838 47.2251 15.4267C46.5655 14.8935 46.1535 14.1351 46.0652 13.291C45.9765 12.4477 46.2224 11.6204 46.7569 10.9617C47.3628 10.2139 48.2632 9.78506 49.227 9.78506ZM44.7097 9.30468C44.7887 9.20751 44.8703 9.11498 44.9539 9.02372C45.2535 8.97133 45.6182 9.16906 45.9837 9.4665C46.2735 9.69972 46.4996 9.94561 46.5887 10.1885C46.9403 9.91012 47.3438 9.69507 47.7887 9.56663C47.9501 9.51973 48.1145 9.48466 48.2797 9.46185C47.6218 9.67606 47.0434 10.0546 46.5862 10.5519C46.5448 10.5963 46.5038 10.6419 46.4641 10.6896C46.4493 10.7082 46.4349 10.7272 46.421 10.745C45.8375 11.481 45.5696 12.3974 45.6685 13.3332C45.7585 14.1985 46.1552 14.9822 46.7861 15.5699C46.4366 15.474 46.0639 15.7689 45.7162 16.1986C45.4242 16.5582 45.2278 16.9173 45.2717 17.2135C43.0517 15.1555 42.7766 11.6901 44.7097 9.30468ZM44.3721 9.0309C42.2041 11.7053 42.6173 15.6434 45.2928 17.81C46.402 18.7083 47.7968 19.2026 49.2211 19.2026C51.1162 19.2026 52.8862 18.3597 54.0769 16.8894C56.2449 14.215 55.8325 10.2764 53.157 8.10985C52.0479 7.21161 50.6531 6.71771 49.2279 6.71771C47.3337 6.71771 45.5637 7.56018 44.3721 9.0309Z\" fill=\"white\"\/>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M30.8945 13.5407H30.8442C29.853 13.5407 29.3911 13.0658 29.3911 12.0421C29.3911 11.034 29.8648 10.5435 30.8442 10.5435H30.9038C31.8625 10.5549 32.3307 11.0471 32.3307 12.0421C32.3307 13.054 31.8756 13.5284 30.8945 13.5407ZM30.9076 9.27682C28.8596 9.27682 27.0025 9.94691 27.0025 12.2495C27.0025 13.34 27.6309 14.0832 28.5063 14.4943C28.5063 14.4943 28.5287 14.5048 28.5609 14.5192L28.3263 14.6857C27.6917 15.1141 27.0093 15.7229 27.0093 16.5755C27.0093 17.224 27.4796 17.622 28.0094 17.8147C28.7142 18.0931 29.5973 18.0623 30.2311 18.0788C30.5569 18.0931 31.6623 17.9681 32.1761 18.1569C32.3489 18.2334 32.5014 18.4062 32.5014 18.6107C32.5014 19.0053 31.8849 20.0831 31.8849 20.0831H34.2139L34.3242 19.8402L34.6885 19.029C34.8072 18.74 34.8516 18.5414 34.8516 18.263V18.2414C34.7734 16.2388 32.4182 16.2536 31.9699 16.2236L30.4225 16.1813C30.4225 16.1813 29.5851 16.2236 29.5851 15.6832C29.5851 15.3308 29.9383 15.038 30.322 14.7964C30.322 14.7964 30.8548 14.842 31.2832 14.842C33.2425 14.842 34.7024 14.0109 34.7024 12.2495C34.7024 11.5558 34.3327 10.9161 34.1949 10.6719L35.2999 10.7277V9.39597H32.602C32.602 9.39597 31.8824 9.27682 30.9076 9.27682ZM22.2803 14.2243C22.2245 14.0507 20.79 9.80664 20.6523 9.39597H17.8694C18.1906 10.1015 21.0325 16.3355 21.0532 16.3875L19.4789 19.5824L22.0509 19.5837L26.7047 9.39597H23.9079L22.2803 14.2243ZM12.251 9.73735V16.2477H14.6899V11.2461C14.6899 11.2461 15.4293 11.0801 16.1594 11.0801C16.5756 11.0801 17.0176 11.1316 17.0176 11.1316V9.32203C17.0176 9.32203 16.421 9.29541 16.1835 9.29541C13.7911 9.29541 12.251 9.73735 12.251 9.73735ZM3.73015 8.85052H6.49142V16.2489H9.00466V8.85052H11.7913V7.13433H3.73015V8.85052ZM39.0325 20.7667H39.668V4.47089H39.0325V20.7667Z\" fill=\"white\"\/>\n<\/g>\n<defs>\n<clipPath id=\"clip0\">\n<rect width=\"60\" height=\"25.35\" fill=\"white\"\/>\n<\/clipPath>\n<\/defs>\n<\/svg>",
+    "step-login-title": "Vi sørger for <strong>din sikkerhed<\/strong>",
+    "step-login-details": "Vi skal bede dig logge ind, så vi ved hvem du er og kan give dig en sikker og tryg købsoplevelse.",
+    "step-login-mitid": "",
+    "step-login-nemid": "",
+    "section-login-name": "Din sikkerhed",
+    "step-login-more-details": "Læs mere og få hjælp til at logge på",
+    "nemId-login-url": "https:\/\/api.tryg.com\/tryg\/dk\/security\/common\/v1\/login?response_type=code&scope=openid+businessdata&client_id=fb26a876-0dae-419e-a3b6-8658f14ce59f&acr_values=urn:signicat:oidc:method:nemid-tryg&redirect_uri=https:\/\/minside.tryg.dk\/DigitalLogin\/services\/flow\/authorize&state=",
+    "mitId-login-url": "https:\/\/api.tryg.com\/tryg\/dk\/security\/common\/v1\/login?response_type=code&scope=openid+businessdata&client_id=fb26a876-0dae-419e-a3b6-8658f14ce59f&acr_values=urn:signicat:oidc:method:mitid-tryg&redirect_uri=https:\/\/minside.tryg.dk\/DigitalLogin\/services\/flow\/authorize&state=",
+    "login-more-details-url": " https:\/\/tryg.dk\/kundeservice\/hjaelp-til-min-side",
+    "coverage-link-text-compact": "Se forsikringsbetingelser og flere oplysninger",
+    "modal-coverage-additional-details-title": "Alle dækninger",
+    "modal-coverage-overview-title": "Flere detaljer om forsikringen.",
+    "modal-coverage-overview-subtitle": "Lidt flere detaljer om indboforsikringen.",
+    "modal-coverage-overview-documents-title": "Forsikringsdokumenter",
+    "age-range-invalid-error-message": "Alder skal være mellem 18 og 120 år",
+    "step-product-summary-section-contact-product-body-compact": "$[addressInput] <br\/> Antal voksen: $[totalInsured] <br\/> Antal børn: $[totalInsuredChildren]<br\/> Ejerforhold: $[ownerShip]",
+    "step-section-consent-body": "<strong>Har din pris ændret sig?<\/strong> <br \/>\nDet kan fx skyldes, at vi har registreret en fordelsaftale, der giver dig yderligere rabat, eller at den oprindeligt oplyste alder ikke stemmer overens med alderen ud fra dit CPR-nummer.",
+    "section-employment-name": "Din beskæftigelse",
+    "step-employment-title": "Din beskæftigelse",
+    "step-employment-label": "Beskæftigelse",
+    "step-employment-error-message": "Vælg din jobfunktion ud fra listen",
+    "step-employment-length-error-message": "Indtast for at søge efter din jobfunktion",
+    "step-employment-desc": "<p>Forsikringens pris påvirkes af din beskæftigelse. Skriv en del af din beskæftigelsestitel for at få forslag. Vælg det forslag som kommer tættest på. Arbejder du udelukkende på kontor, så vælg \"kontor\". Din beskæftigelse er ikke det samme som din jobtitel.</p>"
+  }
+}

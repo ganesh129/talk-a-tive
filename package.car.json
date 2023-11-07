@@ -1,0 +1,3465 @@
+{
+  "name": "SPPC",
+  "desc": "Overblik over din <strong>Bilforsikring<\/strong>.",
+  "initialValues": {
+    "produktnavn": "Bilforsikring",
+    "productGroupName": "Bilforsikring",
+    "recordedMileage-car": "20000",
+    "paymentFrequency-car": "12",
+    "equipmentValue-car": "30000",
+    "deductible-car": "3500",
+    "consentEnabled": true,
+    "emailReceipt": true,
+    "packageName": "car",
+    "firstName": "",
+    "lastName": "",
+    "consentTypes": "CPR_offer,Marketing,Claim_history,Terminate_insurance,Digital_customer,Payment_service",
+    "insertToUserData": [
+      "hasMembershipCheck",
+      "hasPartnerPermissionConsent",
+      "showExtraMembership",
+      "env",
+      "units",
+      "showChooseStartDate",
+      "mixedBreed",
+      "paymentFrequency-car",
+      "equipmentValue-car",
+      "excessAmount-car",
+      "deductible-car",
+      "addNextDayToStartDateList",
+      "maritalStatusMap",
+      "paymentTypeMap",
+      "activeOrPensioner",
+      "getFromQuote",
+      "recordedMileage-car",
+      "paymentFee",
+      "consumerId",
+      "produktnavn",
+      "leadSent",
+      "addressVariant",
+      "drivingExp",
+      "drivingExp18",
+      "drivingExp19",
+      "drivingExp20",
+      "drivingExp21",
+      "firstTimePaymentSum",
+      "firstPaymentSum",
+      "numberOfDamage",
+      "excessAmount",
+      "noegleDaekning",
+      "fejltankning",
+      "ferieLaanebil",
+      "age",
+      "loadPrice",
+      "indicativePrice",
+      "emailReceipt",
+      "firstName",
+      "lastName"
+    ],
+    "insertToState": [
+      "consumerId",
+      "coverageList",
+      "packages",
+      "priceInfo",
+      "paymentRate",
+      "units",
+      "annualDrivingReq",
+      "totalMileage",
+      "drivingExp",
+      "drivingExp18",
+      "drivingExp19",
+      "drivingExp20",
+      "drivingExp21",
+      "numberOfDamage",
+      "optionalEquipValue",
+      "tjmOrg",
+      "carLeased",
+      "drivePowerTypeName",
+      "firstTimePaymentSum",
+      "firstPaymentSum",
+      "excessAmount",
+      "noegleDaekning",
+      "fejltankning",
+      "ferieLaanebil",
+      "ageLimits",
+      "indicativePrice"
+    ],
+    "leasingCompany": {
+      "63470385750252407993": "Danske Leasing A\/S (tidl. Nordania Leasing)",
+      "79132144101252407994": "Jyske Finans A\/S",
+      "44738585510062607002": "Bmc Leasing A\/S",
+      "74081573950090402002": "Toyota Financial Services Danmark A\/S",
+      "79178470106142804002": "BMW Financial Services Denmark A\/S",
+      "70747824052130902002": "Ald Automotive A\/S",
+      "24817961951092019102": "Volkswagen Semler Finans Danmark A\/S",
+      "13095120343113010002": "Leaseplan Danmark A\/S",
+      "38364023559001217002": "Santander Consumer Bank, Filial af Santander Consumer Bank As, Norge",
+      "60538083053250307002": "Fleggaard Leasing A\/S",
+      "43696502434022905102": "Carta Flexleasing A\/S",
+      "75007142449042801002": "Mercedes-Benz Finans Danmark A\/S",
+      "05054002002152019991": "Opendo A\/S",
+      "76780171151120018991": "Al Finans A\/S",
+      "16901361447092301102": "Focus Flex Leasing A\/S",
+      "08892164742251104002": "Selected Car Leasing A\/S",
+      "46616663710082215002": "Krone Kapital III A\/S",
+      "93029572300051306102": "Solid Leasing A\/S",
+      "85127854621252407993": "Fca Capital Danmark A\/S",
+      "04951783052271213002": "Forza Leasing A\/S",
+      "00953753710082215002": "Krone Kapital II A\/S",
+      "16538875934002905002": "Global Car Leasing A\/S",
+      "52752294334151400102": "Fleasing A\/S",
+      "15245475621060215002": "Nf Fleet A\/S",
+      "28759054741121601002": "Nykredit Leasing A\/S",
+      "24884781644161301202": "A Lease & Mobility, Filial af Leasys S.P.A., Italien",
+      "57280883750051704102": "Easy Group A\/S",
+      "90793371201082018002": "Breinholt & Co. ApS",
+      "65279823020060901102": "Unico A\/S",
+      "02275870634192905002": "Agilease A\/S",
+      "09321743014170217002": "Leasing Partner A\/S",
+      "32007070840091010102": "Nellemann Leasing A\/S",
+      "15169740050030708102": "Repeatly Leasing A\/S",
+      "69087863354090110102": "Formula Leasing A\/S",
+      "73587340620002019002": "Flexleasing.Nu A\/S",
+      "97920671810061214102": "A-Leasing A\/S",
+      "79713001012050209102": "Core Leasing A\/S",
+      "46713154650252407994": "Csk Leasing A\/S",
+      "22407481030031105102": "Aros Leasing A\/S",
+      "31726770421042119002": "Leasing.DK A\/S",
+      "46248804902062209102": "Perb Finans ApS",
+      "40566541723282909002": "+ Leasing A\/S",
+      "91658601343232017102": "Hessel Finans A\/S",
+      "86090530303201604102": "Nord Leasing ApS",
+      "02003485252012509102": "Leasingklubben ApS",
+      "57164470501252407994": "Nordea Finans Danmark A\/S",
+      "93927100402261115102": "Kobe Leasing A\/S",
+      "89713040408110508102": "Berg Leasing A\/S",
+      "42804185828110302202": "Drivalia Lease Danmark A\/S",
+      "69904875317021402202": "Ondrive Leasing A\/S",
+      "09134160123272216102": "Smart-Drive A\/S",
+      "44966071110040101102": "Flexto A\/S",
+      "58868054510050907102": "Lokal Leasing Viborg A\/S",
+      "84668022600092601202": "Lx Flexleasing A\/S",
+      "09547590253240505102": "Winleasing ApS",
+      "80069033950022109102": "DK-Car-Leasing A\/S",
+      "05000644023280200102": "Allan Hansen Leasing A\/S",
+      "52500042912241104002": "Sand Jensen Leasing A\/S",
+      "03000970811031208102": "Dansk Motor Finans A\/S",
+      "18202891732280801102": "Raf Leasing ApS",
+      "54873702125082216002": "E.S. Rental A\/S",
+      "50531813311252407991": "L. T. Finans af 1992 A\/S",
+      "78699474159120306102": "Autoteknika Leasing A\/S",
+      "54589462852203604102": "DK Kapital A\/S",
+      "70515315323270600102": "Nordic Leasing Finans I ApS",
+      "12245862953272606102": "Bilplusleasing.DK A\/S",
+      "13576265310041705102": "Dinleasing ApS",
+      "50146510710012808102": "24leasing A\/S",
+      "98623191646131303102": "Rørbæk Leasing A\/S",
+      "50782892151271114102": "Autohauz Leasing ApS",
+      "60088854652201603102": "Carnomy ApS",
+      "28760154132250104002": "Bd Finans ApS",
+      "99765593443040200202": "Ctl Leasing ApS",
+      "06676611520041214002": "A Ét Auto Finans A\/S",
+      "10055635042213101102": "Flexcars A\/S",
+      "12795380031070709002": "Kildebiler ApS",
+      "60854522810032206102": "Fortius Leasing A\/S",
+      "96778315333201500102": "Lindholm Leasing A\/S",
+      "57650084356192508102": "Conzept Leasing A\/S",
+      "98719900830030403102": "Bilcom Leasing ApS",
+      "74276973720052101102": "Matchlease ApS",
+      "67459971843270215102": "Mla Leasing A\/S",
+      "01830310221252407993": "Skjern Bank A\/S",
+      "31668655038141016102": "Punkt Leasing A\/S",
+      "40935680110091602102": "Ctl Cars To Lease Ab",
+      "92982903724060010202": "Stevns Leasing A\/S",
+      "66728573636081609102": "Caradvisor ApS",
+      "54235383011050608102": "Asaleasing ApS",
+      "90084914912261104002": "Fredensborg Auto Handel ApS",
+      "95446881632060809102": "Dreamcars ApS",
+      "01731510310032206102": "Flexrater ApS",
+      "60228255737003905102": "Hjleasingbiler.DK ApS",
+      "50138883631081706002": "Dansk Erhvervsfinansiering A\/S",
+      "52276262750031606002": "Karlsholm Leasing ApS",
+      "72913510911252407992": "Leasing Fyn Bank A\/S",
+      "17560760620082503102": "Complet Leasing A\/S",
+      "17957121810032108102": "Bestlease ApS",
+      "88627634501252407992": "Danske Bank A\/S",
+      "42261853712070306002": "Gadeberg Auto ApS",
+      "22803162710042903102": "Kc Consult ApS",
+      "62602410611252407994": "Sparekassen Danmark af 1871",
+      "11237435740091010102": "Jdh Leasing ApS",
+      "05394600551042408102": "Djb Leasing ApS",
+      "77268180401091808002": "Dw Group ApS",
+      "80791912900030402102": "Twx Biler ApS",
+      "22350381052162102102": "Ikano Bank, Filial af Ikano Bank Ab (Publ), Sverige",
+      "11380652752222110102": "Mortensen Leasing ApS",
+      "00488692243061110102": "Mr Leasing ApS",
+      "23652710233290608002": "Business Leasing Danmark ApS",
+      "49841080543211100102": "Humlebæk Autohandel ApS",
+      "90752255511252407994": "Sydbank A\/S",
+      "26923891540041503102": "Danleasing ApS",
+      "42282193112052015002": "Agger Group ApS",
+      "57951641610002901102": "Automentor Danmark A\/S",
+      "41534904510050907102": "Ep Flexleasing ApS",
+      "78567742111050608102": "Imbiler ApS",
+      "08563474904001505002": "Nordea Finance Equipment, Filial af Nordea Finance Equipment As, Norge",
+      "83018092317131303102": "A Auto ApS",
+      "60659955631042219102": "Cars & Dreams A\/S",
+      "42604231920002607102": "Fionia Leasing ApS",
+      "32690971912240213002": "Herman ApS",
+      "40639082644180708002": "Yupex Trading A\/S",
+      "86553071802062106102": "Autoremarketing Nordics ApS",
+      "92361944343242805102": "Camp Leasing ApS",
+      "98197151530061012102": "Horsens-Autocenter.DK ApS",
+      "82566093450252407992": "Spar Nord Bank A\/S",
+      "22974204233280507102": "Staff Leasing ApS",
+      "04533874801252407992": "Vestjysk Bank A\/S",
+      "21725025300062602102": "Dn Leasing ApS",
+      "07684485532090018102": "Leasing Copenhagen ApS",
+      "92899841252220104002": "Leasing Fyn Faaborg A\/S",
+      "10612355501091509002": "Ponticulus G.M.B.H. ApS",
+      "95487050126030219102": "Shg Biler ApS",
+      "49945420638020200002": "A\/S Hydrema Finans",
+      "20209385300091701102": "Arval A\/S",
+      "41996343643241111102": "Carconcept ApS",
+      "25734151434022905102": "Carta Deleleasing A\/S",
+      "49023874638150706102": "Ecar Leasing ApS",
+      "24872193208030609002": "Forso Danmark, Filial af Forso Nordic Ab, Sverige",
+      "08538650420021010102": "Kolding Mc ApS",
+      "92998873700092601202": "Midtvejs Leasing A\/S",
+      "92132211810070607102": "Nf Leasing ApS",
+      "78664741653281504002": "Pacta Leasing A\/S",
+      "55426240913080019102": "Quick Leasing ApS",
+      "97071690722042300202": "Vv Autoleasing ApS",
+      "78730803723280214102": "Billeaser ApS",
+      "93859023953211208002": "Brian Jørgensen Invest ApS",
+      "56888240600091701102": "C.R.Leasing A\/S",
+      "90963592103171808991": "Cnh Industrial Financial Services A\/S",
+      "17961674813041013002": "Handelsbanken, Filial af Svenska Handelsbanken Ab (Publ),Sverige",
+      "44007570428060906102": "Hl Finans ApS",
+      "46506451252220104002": "Leasing Fyn Middelfart A\/S",
+      "37581185152220104002": "Leasing Fyn Svendborg A\/S",
+      "83427082950252407994": "Nordfyns Finans A\/S",
+      "91894053151112112002": "Sac Leasing A\/S",
+      "33983582750051704102": "Scanleasing Danmark A\/S Under Konkurs",
+      "47911880952282201102": "Scanleasing Gmbh",
+      "07258155723213707102": "Seg Leasing ApS",
+      "84359891831042219102": "Smk-Leasing ApS",
+      "12013675130081217002": "Brdr. Jensen, Last- og Varebiler A\/S",
+      "86889893240012900102": "Clauss Møller Leasing ApS",
+      "14999682023272216102": "Copenhagen Leasing Partner A\/S",
+      "85140894700091401102": "Dansk Leasing A\/S",
+      "54705970003101305002": "De Lage Landen Finans Danmark Filial af De Lage Landen Finans Ab, Sverige",
+      "61938074901252407992": "Ejner Hessel A\/S",
+      "87706285901110802002": "First Lease A\/S",
+      "72206933353222214102": "Interdan Leasing A\/S",
+      "84535773000060307002": "J.T. Leasing og Udlejning A\/S",
+      "52665692101082214002": "Jutlander Bank A\/S",
+      "84476114625151102002": "Kommunekredit",
+      "25551133310002901102": "Lease Danmark ApS",
+      "76725002640020507102": "N.E.K ApS",
+      "06599822124081113002": "Purefi A\/S",
+      "74901182752222110102": "S.A.C A\/S",
+      "75610822021042209002": "Semler Leasing A\/S"
+    },
+    "drivingExp": [
+      {
+        "key": "0",
+        "value": "0 år"
+      },
+      {
+        "key": "1",
+        "value": "1 år"
+      },
+      {
+        "key": "2",
+        "value": "2 år"
+      },
+      {
+        "key": "3",
+        "value": "3 år"
+      },
+      {
+        "key": "4",
+        "value": "4 år"
+      },
+      {
+        "key": "5",
+        "value": "5 år eller derover"
+      }
+    ],
+    "drivingExp18": [
+      {
+        "key": "0",
+        "value": "0 år"
+      },
+      {
+        "key": "1",
+        "value": "1 år"
+      }
+    ],
+    "drivingExp19": [
+      {
+        "key": "0",
+        "value": "0 år"
+      },
+      {
+        "key": "1",
+        "value": "1 år"
+      },
+      {
+        "key": "2",
+        "value": "2 år"
+      }
+    ],
+    "drivingExp20": [
+      {
+        "key": "0",
+        "value": "0 år"
+      },
+      {
+        "key": "1",
+        "value": "1 år"
+      },
+      {
+        "key": "2",
+        "value": "2 år"
+      },
+      {
+        "key": "3",
+        "value": "3 år"
+      }
+    ],
+    "drivingExp21": [
+      {
+        "key": "0",
+        "value": "0 år"
+      },
+      {
+        "key": "1",
+        "value": "1 år"
+      },
+      {
+        "key": "2",
+        "value": "2 år"
+      },
+      {
+        "key": "3",
+        "value": "3 år"
+      },
+      {
+        "key": "4",
+        "value": "4 år"
+      }
+    ],
+    "numberOfDamage": [
+      {
+        "key": "0",
+        "value": "Ingen"
+      },
+      {
+        "key": "1",
+        "value": "1"
+      },
+      {
+        "key": "2",
+        "value": "2"
+      },
+      {
+        "key": "3",
+        "value": "3"
+      },
+      {
+        "key": "Cannot proceed",
+        "value": "4+"
+      }
+    ],
+    "optionalEquipValue": [
+      {
+        "key": "30000",
+        "value": "Under 30.000 kr."
+      },
+      {
+        "key": "50000",
+        "value": "30-50.000 kr."
+      },
+      {
+        "key": "70000",
+        "value": "50-70.000 kr."
+      },
+      {
+        "key": "90000",
+        "value": "70-90.000 kr."
+      },
+      {
+        "key": "110000",
+        "value": "90-110.000 kr."
+      }
+    ],
+    "firstPaymentSum": [
+      {
+        "key": "0",
+        "value": "0 kr."
+      },
+      {
+        "key": "10000",
+        "value": "1-10.000 kr."
+      },
+      {
+        "key": "20000",
+        "value": "10.001-20.000 kr."
+      },
+      {
+        "key": "30000",
+        "value": "20.001-30.000 kr."
+      },
+      {
+        "key": "40000",
+        "value": "30.001-40.000 kr."
+      },
+      {
+        "key": "50000",
+        "value": "40.001-50.000 kr."
+      },
+      {
+        "key": "60000",
+        "value": "50.001-60.000 kr."
+      },
+      {
+        "key": "70000",
+        "value": "60.001-70.000 kr."
+      },
+      {
+        "key": "80000",
+        "value": "70.001-80.000 kr."
+      },
+      {
+        "key": "90000",
+        "value": "80.001-90.000 kr."
+      },
+      {
+        "key": "100000",
+        "value": "90.001-100.000 kr."
+      }
+    ],
+    "excessAmount": [
+      {
+        "key": "0",
+        "value": "0 kr."
+      },
+      {
+        "key": "1000",
+        "value": "1.000 kr."
+      },
+      {
+        "key": "2500",
+        "value": "2.500 kr."
+      },
+      {
+        "key": "3500",
+        "value": "3.500 kr."
+      },
+      {
+        "key": "5000",
+        "value": "5.000 kr."
+      },
+      {
+        "key": "7000",
+        "value": "7.000 kr."
+      },
+      {
+        "key": "11500",
+        "value": "11.500 kr."
+      },
+      {
+        "key": "14500",
+        "value": "14.500 kr."
+      },
+      {
+        "key": "20000",
+        "value": "20.000 kr."
+      },
+      {
+        "key": "30000",
+        "value": "30.000 kr."
+      }
+    ],
+    "totalMileage": [
+      {
+        "key": "20000",
+        "value": "Under 20.000 km"
+      },
+      {
+        "key": "40000",
+        "value": "20-40.000 km"
+      },
+      {
+        "key": "60000",
+        "value": "40-60.000 km"
+      },
+      {
+        "key": "80000",
+        "value": "60-80.000 km"
+      },
+      {
+        "key": "100000",
+        "value": "80-100.000 km"
+      },
+      {
+        "key": "120000",
+        "value": "100-120.000 km"
+      },
+      {
+        "key": "140000",
+        "value": "120-140.000 km"
+      },
+      {
+        "key": "160000",
+        "value": "140-160.000 km"
+      },
+      {
+        "key": "180000",
+        "value": "160-180.000 km"
+      },
+      {
+        "key": "200000",
+        "value": "180-200.000 km"
+      },
+      {
+        "key": "220000",
+        "value": "200-220.000 km"
+      },
+      {
+        "key": "240000",
+        "value": "220-240.000 km"
+      },
+      {
+        "key": "250000",
+        "value": "Over 240.000 km"
+      }
+    ],
+    "annualDrivingReq": [
+      {
+        "key": "5.000",
+        "value": "Under 5.000 km\/pr.år"
+      },
+      {
+        "key": "10.000",
+        "value": "5-10.000 km\/pr.år"
+      },
+      {
+        "key": "15.000",
+        "value": "10-15.000 km\/pr.år"
+      },
+      {
+        "key": "20.000",
+        "value": "15-20.000 km\/pr.år"
+      },
+      {
+        "key": "25.000",
+        "value": "20-25.000 km\/pr.år"
+      },
+      {
+        "key": "30.000",
+        "value": "25-30.000 km\/pr.år"
+      },
+      {
+        "key": "35.000",
+        "value": "30-35.000 km\/pr.år"
+      },
+      {
+        "key": "40.000",
+        "value": "35-40.000 km\/pr.år"
+      },
+      {
+        "key": "45.000",
+        "value": "40-45.000 km\/pr.år"
+      },
+      {
+        "key": ">45.000",
+        "value": "Over 45.000 km\/pr.år"
+      }
+    ],
+    "basketList": [
+      "car"
+    ],
+    "ageLimits": [
+      {
+        "min": 18,
+        "max": 24,
+        "value": "18-24"
+      },
+      {
+        "min": 25,
+        "max": 40,
+        "value": "25-40"
+      },
+      {
+        "min": 41,
+        "max": 120,
+        "value": "40+"
+      }
+    ],
+    "insertFromQueryParams": [
+      {
+        "key": "registrationNumber"
+      },
+      {
+        "key": "registrationNumberUnknown",
+        "type": "boolean"
+      },
+      {
+        "key": "flow"
+      }
+    ]
+  },
+  "trygTealium": {
+    "flowHashData": {
+      "page_product_name": "bilforsikring",
+      "stepAll": {
+        "flow_group": "beregn og køb widget",
+        "widget_type": "full width"
+      },
+      "step1.1.1": {
+        "custom_event": [
+          "checkout calc start"
+        ],
+        "flow_step_no": "step1",
+        "_append_title": "din bil"
+      },
+      "step1.2.1": {
+        "custom_event": [
+          "checkout step 1.2"
+        ],
+        "flow_step_no": "step1.2",
+        "_append_title": "leasing"
+      },
+      "step2.1.1": {
+        "custom_event": [
+          "checkout step 2"
+        ],
+        "flow_step_no": "step2",
+        "_append_title": "din alder"
+      },
+      "step2.2.1": {
+        "custom_event": [
+          "checkout step 2.2"
+        ],
+        "flow_step_no": "step2.2",
+        "_append_title": "din erfaring"
+      },
+      "step3.1.1": {
+        "custom_event": [
+          "checkout step 3"
+        ],
+        "flow_step_no": "step3",
+        "_append_title": "din adresse"
+      },
+      "step4.0.1": {
+        "custom_event": [
+          "checkout calc executed"
+        ],
+        "flow_step_no": "step4.0.1",
+        "_append_title": "beregning forsøgt",
+        "noTracking": false
+      },
+      "step4.1.1": {
+        "custom_event": [
+          "checkout calc complete"
+        ],
+        "flow_step_no": "step4",
+        "_append_title": "din pris"
+      },
+      "step4.1.2": {
+        "custom_event": [
+          "checkout calc no registration number"
+        ],
+        "flow_step_no": "step4.1.2",
+        "_append_title": "nummerplade mangler"
+      },
+      "step5.1.1": {
+        "custom_event": [
+          "order start"
+        ],
+        "flow_step_no": "step5",
+        "_append_title": "login",
+        "purchase_product_id": "#dynamicFields that will be replaced",
+        "additional_covers": "#dynamicFields that will be replaced"
+      },
+      "step6.1.1": {
+        "custom_event": [
+          "checkout step 6"
+        ],
+        "flow_step_no": "step6",
+        "_append_title": "personoplysninger",
+        "purchase_product_id": "#dynamicFields that will be replaced",
+        "additional_covers": "#dynamicFields that will be replaced"
+      },
+      "step7.1.1": {
+        "custom_event": [
+          "checkout step 7"
+        ],
+        "flow_step_no": "step7",
+        "_append_title": "nuværende forsikringer",
+        "purchase_product_id": "#dynamicFields that will be replaced",
+        "additional_covers": "#dynamicFields that will be replaced"
+      },
+      "step8.0.1": {
+        "custom_event": [
+          "checkout recalc before summary"
+        ],
+        "flow_step_no": "step8.0.1",
+        "_append_title": "genberegning før oversigt forsøgt"
+      },
+      "step8.1.1": {
+        "custom_event": [
+          "checkout step 8"
+        ],
+        "flow_step_no": "step8",
+        "_append_title": "produktoversigt",
+        "purchase_product_id": "#dynamicFields that will be replaced",
+        "additional_covers": "#dynamicFields that will be replaced"
+      },
+      "step9.1.1": {
+        "custom_event": [
+          "checkout step 9"
+        ],
+        "flow_step_no": "step9",
+        "_append_title": "betalingsoplysninger",
+        "purchase_product_id": "#dynamicFields that will be replaced",
+        "additional_covers": "#dynamicFields that will be replaced"
+      },
+      "step9.2.1": {
+        "custom_event": [
+          "order executed"
+        ],
+        "flow_step_no": "step9.2.1",
+        "_append_title": "køb forsøgt",
+        "purchase_product_id": "#dynamicFields that will be replaced",
+        "additional_covers": "#dynamicFields that will be replaced"
+      },
+      "step9.3.1": {
+        "custom_event": [
+          "order complete"
+        ],
+        "flow_step_no": "stepfinish",
+        "_append_title": "bekræftelse",
+        "purchase_product_id": "#dynamicFields that will be replaced",
+        "additional_covers": "#dynamicFields that will be replaced",
+        "purchase_revenue": [
+          "$[yearlyPrice]"
+        ],
+        "purchase_total_discount": "$[purchase_total_discount]",
+        "purchase_payment_frequency": "$[paymentFrequencyText]",
+        "purchase_payment_method": "bs",
+        "purchase_id": "$[transaction_id]",
+        "purchase_product_units": [
+          "1"
+        ],
+        "purchase_policy_number": "$(purchase_policy_number)"
+      }
+    }
+  },
+  "sections": [
+    {
+      "alias": "registrationNumberSection",
+      "sectionId": 1,
+      "sectionWeight": 1
+    },
+    {
+      "alias": "ageSection",
+      "sectionId": 2,
+      "sectionWeight": 2
+    },
+    {
+      "alias": "addressSection",
+      "sectionId": 3,
+      "sectionWeight": 3
+    },
+    {
+      "alias": "priceSection",
+      "sectionId": 4,
+      "sectionWeight": 4
+    },
+    {
+      "alias": "loginSection",
+      "sectionId": 5,
+      "sectionWeight": 5
+    },
+    {
+      "alias": "personalInformationSection",
+      "sectionId": 6,
+      "sectionWeight": 6
+    },
+    {
+      "alias": "startDateConsentSection",
+      "sectionId": 7,
+      "sectionWeight": 7
+    },
+    {
+      "alias": "productSummaryConsentSection",
+      "sectionId": 8,
+      "sectionWeight": 8
+    },
+    {
+      "alias": "paymentConsentSection",
+      "sectionId": 9,
+      "sectionWeight": 9
+    }
+  ],
+  "sectionComponents": {
+    "registrationNumberSection": {
+      "name": "${section-registration-number-name}",
+      "sectionGroup": "price",
+      "sectionWidth": "small",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "registrationNumberPage"
+        },
+        {
+          "alias": "leasingPage"
+        }
+      ]
+    },
+    "ageSection": {
+      "name": "${section-age-car-name}",
+      "sectionGroup": "price",
+      "sectionWidth": "small",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "agePage"
+        },
+        {
+          "alias": "experiencePage"
+        }
+      ]
+    },
+    "experienceSection": {
+      "name": "${section-experience-name}",
+      "sectionWidth": "small",
+      "sectionGroup": "price",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "experiencePage"
+        }
+      ]
+    },
+    "addressSection": {
+      "sectionWidth": "small",
+      "backButtonConfig": {
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "props": {
+              "fields": [
+                {
+                  "field": "quotes.car0.sessionKey",
+                  "value": ""
+                },
+                {
+                  "field": "quotes.car1.sessionKey",
+                  "value": ""
+                },
+                {
+                  "field": "quotes.car2.sessionKey",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "personalInformationSection": {
+      "name": "${section-personal-information-name}",
+      "sectionGroup": "purchase",
+      "sectionWidth": "small",
+      "hideCurrentProgress": true,
+      "pages": [
+        {
+          "alias": "cprConsentPage"
+        }
+      ]
+    },
+    "startDateConsentSection": {
+      "sectionWidth": "small"
+    },
+    "productSummaryConsentSection": {
+      "sectionWidth": "small"
+    },
+    "paymentSection": {
+      "sectionWidth": "small",
+      "pages": [
+        {
+          "alias": "paymentPage"
+        },
+        {
+          "alias": "purchaseLoaderPage"
+        },
+        {
+          "alias": "confirmationV2Page"
+        }
+      ]
+    },
+    "paymentConsentSection": {
+      "sectionWidth": "small",
+      "pages": [
+        {
+          "alias": "paymentConsentPage"
+        },
+        {
+          "alias": "purchaseLoaderConsentPage"
+        },
+        {
+          "alias": "confirmationPage"
+        }
+      ]
+    }
+  },
+  "pageComponents": {
+    "registrationNumberPage": {
+      "alias": "_basicPage",
+      "steps": [
+        {
+          "alias": "registrationNumberInput"
+        }
+      ]
+    },
+    "leasingPage": {
+      "alias": "_basicPage",
+      "pageId": 2,
+      "pageWeight": 2,
+      "steps": [
+        {
+          "alias": "leasingInput"
+        }
+      ]
+    },
+    "experiencePage": {
+      "alias": "_basicPage",
+      "pageId": 2,
+      "pageWeight": 2,
+      "steps": [
+        {
+          "alias": "experienceInput"
+        }
+      ]
+    },
+    "pricePage": {
+      "backButtonConfig": {
+        "actions": [
+          {
+            "props": {
+              "services": [
+                {
+                  "serviceName": "carCreateUpdate_V2"
+                }
+              ]
+            }
+          },
+          {},
+          {
+            "actionType": "callServices",
+            "props": {
+              "useSpinner": true,
+              "services": [
+                {
+                  "serviceName": "carCreateUpdate_V2"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "contactPage": {
+      "pageId": 2,
+      "pageWeight": 2
+    },
+    "priceDetailsPage": {
+      "backButtonConfig": {
+        "actions": [
+          {},
+          {
+            "props": {
+              "services": [
+                {
+                  "serviceName": "carCreateUpdate_V2"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "stepComponents": {
+    "registrationNumberInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-registration-number-title}",
+        "actionVariant": "clean",
+        "hideNext": true,
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "registrationNumber",
+                  "type": "userData",
+                  "minLength": 2
+                },
+                {
+                  "notField": "vehicleMakeId",
+                  "type": "userData"
+                }
+              ]
+            },
+            "props": {
+              "services": [
+                {
+                  "serviceName": "carVehicleModelsByRegistrationNumber_V2",
+                  "serviceParams": [
+                    {
+                      "field": "registrationNumber",
+                      "required": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "requiredData": {
+          "anyof": [
+            {
+              "field": "vehicleMakeId",
+              "type": "formValues",
+              "minLength": 10
+            },
+            {
+              "field": "registrationNumberValid",
+              "type": "userData",
+              "boolValue": true
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "registrationNumber",
+            "type": "text",
+            "label": "${step-registration-number-label}",
+            "placeholder": "${step-registration-number-placeholder}",
+            "autoComplete": "off",
+            "maxLength": 7,
+            "hidden": false,
+            "actionEnterEnabled": false,
+            "showHide": {
+              "formValues": {
+                "key": "registrationNumberUnknown",
+                "value": false,
+                "or": {
+                  "notKey": "registrationNumberUnknown"
+                }
+              }
+            },
+            "columns": "7",
+            "loadingOnField": "isUpdatingCar",
+            "validators": [
+              {
+                "name": "inputLength",
+                "errorMsg": "${step-registration-number-error-message}",
+                "values": [
+                  2
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "formValuesOverride": true,
+                  "fields": [
+                    {
+                      "field": "registrationNumberValid",
+                      "value": null
+                    },
+                    {
+                      "field": "make",
+                      "value": ""
+                    },
+                    {
+                      "field": "modelYear",
+                      "value": ""
+                    },
+                    {
+                      "field": "model",
+                      "value": ""
+                    },
+                    {
+                      "field": "vehicleMakeId",
+                      "value": ""
+                    },
+                    {
+                      "field": "chooseModelVariant",
+                      "value": false
+                    },
+                    {
+                      "field": "variantName",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "actionType": "callServices",
+                "triggerOnEnter": true,
+                "props": {
+                  "useSpinner": true,
+                  "services": [
+                    {
+                      "serviceName": "carVehicleModelsByRegistrationNumber_V2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "registrationNumberSubmit",
+            "type": "button",
+            "label": "${step-registration-number-submit-label}",
+            "className": "button--registration",
+            "hidden": false,
+            "showHide": {
+              "formValues": {
+                "key": "registrationNumberUnknown",
+                "value": false,
+                "or": {
+                  "notKey": "registrationNumberUnknown"
+                }
+              }
+            },
+            "columns": "5",
+            "requiredData": {
+              "allof": [
+                {
+                  "field": "registrationNumber",
+                  "type": "formValues",
+                  "minLength": 2
+                }
+              ],
+              "anyof": [
+                {
+                  "field": "registrationNumberValid",
+                  "type": "userData",
+                  "boolValue": false
+                },
+                {
+                  "field": "registrationNumberValid",
+                  "type": "userData",
+                  "nullValue": null
+                },
+                {
+                  "notField": "registrationNumberValid",
+                  "type": "userData"
+                }
+              ]
+            },
+            "actions": [
+              {
+                "actionType": "callServices",
+                "props": {
+                  "useSpinner": true,
+                  "services": [
+                    {
+                      "serviceName": "carVehicleModelsByRegistrationNumber_V2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "forgotRegistrationNumber",
+            "type": "toggleSwitch",
+            "columns": 12,
+            "options": [
+              {
+                "label": "${step-registration-number-forgot-label}",
+                "id": "registrationNumberUnknown",
+                "activeText": "",
+                "formColumns": "8",
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "registrationNumberValid",
+                          "value": null
+                        },
+                        {
+                          "field": "make",
+                          "value": ""
+                        },
+                        {
+                          "field": "modelYear",
+                          "value": ""
+                        },
+                        {
+                          "field": "model",
+                          "value": ""
+                        },
+                        {
+                          "field": "vehicleMakeId",
+                          "value": ""
+                        },
+                        {
+                          "field": "isAjax",
+                          "value": false
+                        },
+                        {
+                          "field": "registrationNumber",
+                          "value": null
+                        },
+                        {
+                          "field": "chooseModelVariant",
+                          "value": false
+                        },
+                        {
+                          "field": "variantName",
+                          "value": ""
+                        },
+                        {
+                          "field": "vehicleIdentificationNumber",
+                          "value": ""
+                        },
+                        {
+                          "field": "registrationNumberInput",
+                          "value": ""
+                        },
+                        {
+                          "field": "registrationNumberNoService",
+                          "value": false
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "registrationNumberAjaxNoDataError",
+            "type": "ajax",
+            "message": "${step-registration-number-ajax-no-data-error}",
+            "className": "text__ajax error",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "registrationNumberValid",
+                "value": false
+              }
+            }
+          },
+          {
+            "id": "registrationNumberAjaxNoServiceError",
+            "type": "ajax",
+            "message": "${step-registration-number-ajax-no-service-error}",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "registrationNumberNoService",
+                "value": true
+              }
+            }
+          },
+          {
+            "type": "space",
+            "rows": "2",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "registrationNumberValid",
+                "value": true
+              }
+            }
+          },
+          {
+            "id": "carInfo",
+            "type": "ajax",
+            "message": "${step-registration-number-car-info-message}",
+            "label": {
+              "id": "chooseModelVariant",
+              "type": "label",
+              "label": "${step-registration-number-choose-model-variant-label}",
+              "hidden": false,
+              "actions": [
+                {
+                  "actionType": "changeUserData",
+                  "props": {
+                    "fields": [
+                      {
+                        "field": "chooseModelVariant",
+                        "value": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "showHide": {
+                "userData": {
+                  "multipleAnd": [
+                    {
+                      "key": "registrationNumberValid",
+                      "value": true
+                    },
+                    {
+                      "key": "showModelVariant",
+                      "value": true
+                    },
+                    {
+                      "key": "chooseModelVariant",
+                      "value": false
+                    }
+                  ]
+                }
+              }
+            },
+            "icon": "checkmark",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "registrationNumberValid",
+                "value": true
+              }
+            }
+          },
+          {
+            "id": "drivePowerTypeName",
+            "type": "radioButtons",
+            "title": "Er bilen Elektrisk eller plugin-hybrid?",
+            "actions": [
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "fields": [
+                    {
+                      "field": "drivePowerTypeName",
+                      "value": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "optionsFrom": "initialValues",
+            "options": [
+              {
+                "id": "yes-electric-plugin-hybrid",
+                "label": "${yes}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "drivePowerTypeName",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "no-electric-plugin-hybrid",
+                "label": "${no}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "drivePowerTypeName",
+                          "value": "Benzin"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ],
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "registrationNumberValid_NOTWORK_blabla",
+                "value": true
+              }
+            }
+          },
+          {
+            "id": "gpsInfo",
+            "type": "label",
+            "label": "${step-registration-number-Gps-message}",
+            "showHide": {
+              "userData": {
+                "multipleAnd": [
+                  {
+                    "key": "registrationNumberValid",
+                    "value": true
+                  },
+                  {
+                    "key": "gpsRequired",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            "actions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "consentGPSTrygDrive"
+                }
+              }
+            ]
+          },
+          {
+            "id": "vehicleMakeId",
+            "type": "select",
+            "columns": "12",
+            "label": "${step-registration-number-model-variant-label}",
+            "loading": "${loading...}",
+            "placeholder": "${choose-a-variant}",
+            "optionsFrom": "userData",
+            "options": "modelVariant",
+            "textName": "variantName",
+            "hidden": true,
+            "required": true,
+            "showHide": {
+              "userData": {
+                "multipleAnd": [
+                  {
+                    "key": "registrationNumberValid",
+                    "value": true
+                  },
+                  {
+                    "key": "showModelVariant",
+                    "value": true
+                  },
+                  {
+                    "key": "chooseModelVariant",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            "actions": [
+              {
+                "actionType": "saveState"
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "1"
+          },
+          {
+            "id": "make",
+            "variant": "make",
+            "type": "autoSuggest",
+            "label": "${step-registration-number-make-label}",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "registrationNumberUnknown",
+                "value": true
+              }
+            },
+            "name": "bilmærke",
+            "columns": "8",
+            "placeholder": "${step-registration-number-make-placeholder}"
+          },
+          {
+            "id": "modelYear",
+            "variant": "modelYear",
+            "type": "autoSuggest",
+            "subType": "number",
+            "min": "1967",
+            "max": "$[CURRENT_YEAR]",
+            "label": "${step-registration-number-model-year-label}",
+            "name": "Årgang",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "registrationNumberUnknown",
+                "value": true
+              }
+            },
+            "columns": "8",
+            "placeholder": "${step-registration-number-model-year-placeholder}"
+          },
+          {
+            "id": "model",
+            "variant": "carModel_V2",
+            "type": "autoSuggest",
+            "columns": "8",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "registrationNumberUnknown",
+                "value": true
+              }
+            },
+            "label": "${step-registration-number-model-label}",
+            "name": "model",
+            "placeholder": "${step-registration-number-model-placeholder}"
+          }
+        ],
+        "actionProps": []
+      }
+    },
+    "leasingInput": {
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-car-lease-page-title}",
+        "hideNext": false,
+        "actionVariant": "clean",
+        "requiredData": {
+          "anyof": [
+            {
+              "field": "carLeased",
+              "type": "formValues",
+              "value": "false"
+            },
+            {
+              "field": "carLeased",
+              "type": "formValues",
+              "value": "true",
+              "allof": [
+                {
+                  "field": "leasingCompanyId",
+                  "type": "formValues"
+                }
+              ]
+            }
+          ]
+        },
+        "props": [
+          {
+            "id": "carLeased",
+            "type": "radioButtons",
+            "title": "${step-car-lease-label}",
+            "required": "true",
+            "actions": [
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "fields": [
+                    {
+                      "field": "carLeased",
+                      "value": ""
+                    },
+                    {
+                      "field": "leasingCompanyId",
+                      "value": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "optionsFrom": "initialValues",
+            "options": [
+              {
+                "id": "true",
+                "label": "${yes}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "carLeased",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "false",
+                "label": "${no}",
+                "required": true,
+                "actions": [
+                  {
+                    "actionType": "changeUserData",
+                    "first": true,
+                    "props": {
+                      "fields": [
+                        {
+                          "field": "carLeased",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "space",
+            "rows": "3"
+          },
+          {
+            "id": "leasingCompanyId",
+            "type": "autoSuggest",
+            "variant": "leasingCompanies",
+            "name": "leasingselskab",
+            "label": "${step-car-leasing-company-label}",
+            "placeholder": "${step-car-leasing-company-placeholder}",
+            "required": true,
+            "title": "${step-car-leasing-company-title}",
+            "columns": "12",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "carLeased",
+                "value": "true"
+              }
+            },
+            "formValues": [
+              "leasingCompany"
+            ]
+          },
+          {
+            "id": "firstTimePaymentSum",
+            "type": "select",
+            "columns": "12",
+            "label": "${first-payment-sum}",
+            "loading": "${loading...}",
+            "placeholder": "${choose}",
+            "optionsFrom": "initialValues",
+            "options": "firstPaymentSum",
+            "required": true,
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "carLeased",
+                "value": "true"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ageInput": {
+      "component": {
+        "props": [
+          {},
+          {},
+          {
+            "columns": 12
+          }
+        ]
+      }
+    },
+    "experienceInput": {
+      "stepId": 1,
+      "stepWeight": 1,
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-experience-title}",
+        "actionVariant": "clean",
+        "requiredData": {
+          "allof": [
+            {
+              "field": "driverExperience-car",
+              "type": "formValues",
+              "numbersOnly": true
+            },
+            {
+              "field": "claimCount-car",
+              "type": "formValues",
+              "numbersOnly": true
+            }
+          ]
+        },
+        "props": [
+          {
+            "desc": "${step-experience-desc}",
+            "type": "textBlock"
+          },
+          {
+            "id": "driverExperience-car",
+            "type": "select",
+            "columns": "12",
+            "label": "${driving-experience} ${questionmark-icon}",
+            "loading": "${loading...}",
+            "placeholder": "${choose}",
+            "optionsFrom": "initialValues",
+            "options": "drivingExp",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "multipleAnd": [
+                  {
+                    "key": "age",
+                    "notValue": "18"
+                  },
+                  {
+                    "key": "age",
+                    "notValue": "19"
+                  },
+                  {
+                    "key": "age",
+                    "notValue": "20"
+                  },
+                  {
+                    "key": "age",
+                    "notValue": "21"
+                  }
+                ]
+              }
+            },
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "drivingExperience"
+                }
+              }
+            ]
+          },
+          {
+            "id": "driverExperience-car",
+            "type": "select",
+            "columns": "12",
+            "label": "${driving-experience} ${questionmark-icon}",
+            "loading": "${loading...}",
+            "placeholder": "${choose}",
+            "optionsFrom": "initialValues",
+            "options": "drivingExp18",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "age",
+                "value": "18"
+              }
+            },
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "drivingExperience"
+                }
+              }
+            ]
+          },
+          {
+            "id": "driverExperience-car",
+            "type": "select",
+            "columns": "12",
+            "label": "${driving-experience} ${questionmark-icon}",
+            "loading": "${loading...}",
+            "placeholder": "${choose}",
+            "optionsFrom": "initialValues",
+            "options": "drivingExp19",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "age",
+                "value": "19"
+              }
+            },
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "drivingExperience"
+                }
+              }
+            ]
+          },
+          {
+            "id": "driverExperience-car",
+            "type": "select",
+            "columns": "12",
+            "label": "${driving-experience} ${questionmark-icon}",
+            "loading": "${loading...}",
+            "placeholder": "${choose}",
+            "optionsFrom": "initialValues",
+            "options": "drivingExp20",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "age",
+                "value": "20"
+              }
+            },
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "drivingExperience"
+                }
+              }
+            ]
+          },
+          {
+            "id": "driverExperience-car",
+            "type": "select",
+            "columns": "12",
+            "label": "${driving-experience} ${questionmark-icon}",
+            "loading": "${loading...}",
+            "placeholder": "${choose}",
+            "optionsFrom": "initialValues",
+            "options": "drivingExp21",
+            "hidden": true,
+            "showHide": {
+              "userData": {
+                "key": "age",
+                "value": "21"
+              }
+            },
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "drivingExperience"
+                }
+              }
+            ]
+          },
+          {
+            "id": "claimCount-car",
+            "type": "select",
+            "columns": "12",
+            "label": "${number-of-claims} ${questionmark-icon}",
+            "loading": "${loading...}",
+            "placeholder": "${choose}",
+            "optionsFrom": "initialValues",
+            "options": "numberOfDamage",
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "numberOfClaims"
+                }
+              }
+            ]
+          },
+          {
+            "desc": "${step-experience-claims-more-than-3}",
+            "type": "textBlock",
+            "hidden": true,
+            "showHide": {
+              "formValues": {
+                "key": "claimCount-car",
+                "value": "Cannot proceed"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "addressInput": {
+      "component": {
+        "props": [
+          {
+            "type": "address",
+            "label": "Din adresse",
+            "placeholder": "fx Klausdalsbrovej 601",
+            "multiline": false,
+            "hidden": false
+          },
+          {
+            "_delete": true
+          },
+          {
+            "columns": 12
+          }
+        ]
+      }
+    },
+    "priceLoader": {
+      "component": {
+        "onLoad": [
+          {
+            "props": {
+              "services": [
+                {
+                  "serviceName": "carCreateUpdate_V2"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "pricePackagesInput": {
+      "component": {
+        "props": [
+          {},
+          {
+            "actions": [
+              {
+                "actionType": "nextStep",
+                "requiredData": {
+                  "anyof": [
+                    {
+                      "field": "registrationNumberValid",
+                      "value": true,
+                      "type": "userData"
+                    }
+                  ]
+                }
+              },
+              {
+                "actionType": "modal",
+                "requiredData": {
+                  "anyof": [
+                    {
+                      "field": "registrationNumberValid",
+                      "type": "userData",
+                      "boolValue": false
+                    },
+                    {
+                      "field": "registrationNumberValid",
+                      "type": "userData",
+                      "nullValue": null
+                    },
+                    {
+                      "notField": "registrationNumberValid",
+                      "type": "userData"
+                    }
+                  ]
+                },
+                "hidden": true,
+                "props": {
+                  "name": "registrationNumber"
+                }
+              },
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "fields": [
+                    {
+                      "field": "indicativePrice",
+                      "value": [
+                        "$[quotes.$[chosenPackage].priceApiResponse.offeredPrice.priceWithFee]"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "priceTilpasInput": {
+      "stepId": 1,
+      "stepWeight": 3,
+      "component": {
+        "componentName": "Basic",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "props": [
+          {
+            "type": "componentGroup",
+            "className": "inner hero__inner inner--medium",
+            "components": [
+              {
+                "type": "columnLayout",
+                "title": "${step-pricepage-options-title}",
+                "submitButton": false,
+                "columnElements": [
+                  {
+                    "className": "leftAlign",
+                    "columns": "6",
+                    "mobileColumns": "12",
+                    "columnProps": [
+                      {
+                        "hidden": true,
+                        "id": "deductible-car",
+                        "type": "select",
+                        "columns": "11",
+                        "formColumns": "12",
+                        "labelColumns": "12",
+                        "className": "cursor__default addon-button",
+                        "label": "${excess-amount} ${questionmark-icon}",
+                        "loading": "${loading...}",
+                        "optionsFrom": "service",
+                        "options": "carExcessAmount",
+                        "actions": [
+                          {
+                            "actionType": "callServices",
+                            "props": {
+                              "useSpinner": true,
+                              "services": [
+                                {
+                                  "serviceName": "carCreateUpdate_V2"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "actionType": "scrollToTop",
+                            "props": {
+                              "scrollElement": "headline-wrapper-v3"
+                            }
+                          }
+                        ],
+                        "labelActions": [
+                          {
+                            "actionType": "modal",
+                            "props": {
+                              "name": "excessAmount"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "id": "deductible-car",
+                        "type": "select",
+                        "columns": "11",
+                        "formColumns": "12",
+                        "labelColumns": "12",
+                        "className": "cursor__default",
+                        "label": "${excess-amount} ${questionmark-icon}",
+                        "loading": "${loading...}",
+                        "optionsFrom": "initialValues",
+                        "options": "excessAmount",
+                        "actions": [
+                          {
+                            "actionType": "callServices",
+                            "props": {
+                              "useSpinner": true,
+                              "services": [
+                                {
+                                  "serviceName": "carCreateUpdate_V2"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "actionType": "scrollToTop",
+                            "props": {
+                              "scrollElement": "headline-wrapper-v3"
+                            }
+                          }
+                        ],
+                        "labelActions": [
+                          {
+                            "actionType": "modal",
+                            "props": {
+                              "name": "excessAmount"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "className": "rightAlign",
+                    "columns": "6",
+                    "mobileColumns": "12",
+                    "columnProps": [
+                      {
+                        "id": "mileage-car",
+                        "type": "select",
+                        "label": "${annual-mileage} ${questionmark-icon}",
+                        "columns": "12",
+                        "formColumns": "12",
+                        "labelColumns": "12",
+                        "className": "cursor__default addon-button",
+                        "loading": "${loading...}",
+                        "optionsFrom": "initialValues",
+                        "options": "annualDrivingReq",
+                        "actions": [
+                          {
+                            "actionType": "callServices",
+                            "props": {
+                              "useSpinner": true,
+                              "services": [
+                                {
+                                  "serviceName": "carCreateUpdate_V2"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "actionType": "scrollToTop",
+                            "props": {
+                              "scrollElement": "headline-wrapper-v3"
+                            }
+                          }
+                        ],
+                        "labelActions": [
+                          {
+                            "actionType": "modal",
+                            "props": {
+                              "name": "annualMileage"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "accordionAdvanced",
+                "className": "accordion__heading accordion__heading-v2",
+                "variant": "advanced",
+                "title": "${step-price-additional-services}",
+                "addOnClass": "addon-section",
+                "contentInfo": [
+                  {
+                    "listProps": [
+                      {
+                        "type": "columnLayout",
+                        "submitButton": false,
+                        "columnElements": [
+                          {
+                            "className": "leftAlign",
+                            "columns": "10",
+                            "mobileColumns": "12",
+                            "columnProps": [
+                              {
+                                "title": "${addon-car-key-coverage-title}",
+                                "type": "textBlock"
+                              },
+                              {
+                                "type": "label",
+                                "label": "${addon-car-key-coverage-text}",
+                                "className": "addon--label",
+                                "actions": [
+                                  {
+                                    "actionType": "modal",
+                                    "props": {
+                                      "name": "addOnCarKeyCoverageInfo"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "className": "rightAlign",
+                            "columns": "1",
+                            "mobileColumns": "12",
+                            "columnProps": [
+                              {
+                                "type": "space",
+                                "rows": "1"
+                              },
+                              {
+                                "id": "carKeyCoverage",
+                                "type": "toggleSwitch",
+                                "className": "addon-toggle",
+                                "actions": [
+                                  {
+                                    "actionType": "changeUserData",
+                                    "props": {
+                                      "fields": [
+                                        {
+                                          "field": "addonCoverageCodes",
+                                          "value": []
+                                        },
+                                        {
+                                          "field": "noegleDaekning",
+                                          "value": []
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "options": [
+                                  {
+                                    "id": "noegleDaekningSwitch",
+                                    "activeText": "",
+                                    "formColumns": "6",
+                                    "label": " ",
+                                    "actions": [
+                                      {
+                                        "actionType": "changeUserData",
+                                        "first": true,
+                                        "props": {
+                                          "fields": [
+                                            {
+                                              "field": "addonCoverageCodes",
+                                              "value": [
+                                                "NOGL"
+                                              ]
+                                            },
+                                            {
+                                              "field": "noegleDaekning",
+                                              "value": [
+                                                "yes"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "actionType": "callServices",
+                                        "props": {
+                                          "useSpinner": true,
+                                          "services": [
+                                            {
+                                              "serviceName": "carCreateUpdate_V2",
+                                              "serviceParams": [
+                                                {
+                                                  "field": "coverageCodes",
+                                                  "value": [
+                                                    "NOGL"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "actionType": "scrollToTop",
+                                        "props": {
+                                          "scrollElement": "product-button-wrapper"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "columnLayout",
+                        "submitButton": false,
+                        "columnElements": [
+                          {
+                            "className": "leftAlign",
+                            "columns": "10",
+                            "mobileColumns": "12",
+                            "columnProps": [
+                              {
+                                "title": "${addon-vacation-courtesy-car-coverage-title}",
+                                "type": "textBlock"
+                              },
+                              {
+                                "type": "label",
+                                "label": "${addon-vacation-courtesy-car-coverage-text}",
+                                "className": "addon--label",
+                                "actions": [
+                                  {
+                                    "actionType": "modal",
+                                    "props": {
+                                      "name": "addOnVacationCourtesyCarCoverageInfo"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "className": "rightAlign",
+                            "columns": "1",
+                            "mobileColumns": "12",
+                            "columnProps": [
+                              {
+                                "type": "space",
+                                "rows": "1"
+                              },
+                              {
+                                "id": "vacationCourtesyCar",
+                                "type": "toggleSwitch",
+                                "className": "addon-toggle",
+                                "actions": [
+                                  {
+                                    "actionType": "changeUserData",
+                                    "props": {
+                                      "fields": [
+                                        {
+                                          "field": "addonCoverageCodes",
+                                          "value": []
+                                        },
+                                        {
+                                          "field": "ferieLaanebil",
+                                          "value": []
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "options": [
+                                  {
+                                    "id": "ferieLaanebilSwitch",
+                                    "activeText": "",
+                                    "formColumns": "6",
+                                    "label": " ",
+                                    "actions": [
+                                      {
+                                        "actionType": "changeUserData",
+                                        "first": true,
+                                        "props": {
+                                          "fields": [
+                                            {
+                                              "field": "addonCoverageCodes",
+                                              "value": [
+                                                "FEBI"
+                                              ]
+                                            },
+                                            {
+                                              "field": "ferieLaanebil",
+                                              "value": [
+                                                "yes"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "actionType": "callServices",
+                                        "props": {
+                                          "useSpinner": true,
+                                          "services": [
+                                            {
+                                              "serviceName": "carCreateUpdate_V2",
+                                              "serviceParams": [
+                                                {
+                                                  "field": "coverageCodes",
+                                                  "value": [
+                                                    "FEBI"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "actionType": "scrollToTop",
+                                        "props": {
+                                          "scrollElement": "product-selector--footer-outer-v3"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "columnLayout",
+                        "submitButton": false,
+                        "columnElements": [
+                          {
+                            "className": "leftAlign",
+                            "columns": "10",
+                            "mobileColumns": "12",
+                            "columnProps": [
+                              {
+                                "title": "${addon-wrong-fuel-coverage-title}",
+                                "type": "textBlock"
+                              },
+                              {
+                                "type": "label",
+                                "label": "${addon-wrong-fuel-coverage-text}",
+                                "className": "addon--label",
+                                "actions": [
+                                  {
+                                    "actionType": "modal",
+                                    "props": {
+                                      "name": "addOnWrongFuelCoverageInfo"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "className": "rightAlign",
+                            "columns": "1",
+                            "mobileColumns": "12",
+                            "columnProps": [
+                              {
+                                "type": "space",
+                                "rows": "1"
+                              },
+                              {
+                                "id": "wrongFuelCoverage",
+                                "type": "toggleSwitch",
+                                "className": "addon-toggle",
+                                "actions": [
+                                  {
+                                    "actionType": "changeUserData",
+                                    "props": {
+                                      "fields": [
+                                        {
+                                          "field": "addonCoverageCodes",
+                                          "value": []
+                                        },
+                                        {
+                                          "field": "fejltankning",
+                                          "value": []
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "options": [
+                                  {
+                                    "id": "fejltankningSwitch",
+                                    "activeText": "",
+                                    "formColumns": "6",
+                                    "label": " ",
+                                    "actions": [
+                                      {
+                                        "actionType": "changeUserData",
+                                        "first": true,
+                                        "props": {
+                                          "fields": [
+                                            {
+                                              "field": "addonCoverageCodes",
+                                              "value": [
+                                                "FTNK"
+                                              ]
+                                            },
+                                            {
+                                              "field": "fejltankning",
+                                              "value": [
+                                                "yes"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "actionType": "callServices",
+                                        "props": {
+                                          "useSpinner": true,
+                                          "services": [
+                                            {
+                                              "serviceName": "carCreateUpdate_V2",
+                                              "serviceParams": [
+                                                {
+                                                  "field": "coverageCodes",
+                                                  "value": [
+                                                    "FTNK"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "actionType": "scrollToTop",
+                                        "props": {
+                                          "scrollElement": "product-selector--footer-outer-v3"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cprInput": {
+      "component": {
+        "props": [
+          {},
+          {
+            "columns": 12
+          }
+        ]
+      }
+    },
+    "contactInput": {
+      "component": {
+        "props": [
+          {},
+          {},
+          {},
+          {
+            "columns": 12
+          }
+        ]
+      }
+    },
+    "startDateConsentInput": {
+      "component": {
+        "props": [
+          {},
+          {},
+          {},
+          {},
+          {
+            "columns": 12
+          },
+          {},
+          {
+            "columns": 12
+          },
+          {},
+          {},
+          {
+            "columns": 12
+          }
+        ]
+      }
+    },
+    "priceSaveDetailsInput": {
+      "component": {
+        "props": [
+          {},
+          {},
+          {
+            "actions": [
+              {
+                "props": {
+                  "fields": [
+                    {},
+                    {
+                      "field": "quotes.defaults.default.deductible",
+                      "value": "$[deductible-car]"
+                    },
+                    {
+                      "field": "quotes.defaults.default.equipmentValue",
+                      "value": "$[equipmentValue-car]"
+                    },
+                    {
+                      "field": "quotes.defaults.default.mileage",
+                      "value": "$[mileage-car]"
+                    },
+                    {
+                      "field": "quotes.defaults.default.claimCount",
+                      "value": "$[claimCount-car]"
+                    },
+                    {
+                      "field": "quotes.defaults.default.driverExperience",
+                      "value": "$[driverExperience-car]"
+                    },
+                    {
+                      "field": "quotes.defaults.default.paymentFrequency",
+                      "value": "$[paymentFrequency-car]"
+                    },
+                    {
+                      "field": "quotes.defaults.default.recordedMileage",
+                      "value": "$[recordedMileage-car]"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "actions": [
+              {
+                "props": {
+                  "fields": [
+                    {},
+                    {
+                      "field": "deductible-car",
+                      "value": "$[quotes.defaults.default.deductible]"
+                    },
+                    {
+                      "field": "equipmentValue-car",
+                      "value": "$[quotes.defaults.default.equipmentValue]"
+                    },
+                    {
+                      "field": "mileage-car",
+                      "value": "$[quotes.defaults.default.mileage]"
+                    },
+                    {
+                      "field": "claimCount-car",
+                      "value": "$[quotes.defaults.default.claimCount]"
+                    },
+                    {
+                      "field": "driverExperience-car",
+                      "value": "$[quotes.defaults.default.driverExperience]"
+                    },
+                    {
+                      "field": "paymentFrequency-car",
+                      "value": "$[quotes.defaults.default.paymentFrequency]"
+                    },
+                    {
+                      "field": "recordedMileage-car",
+                      "value": "$[quotes.defaults.default.recordedMileage]"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "productSummaryLoader": {
+      "component": {
+        "onLoad": [
+          {
+            "props": {
+              "services": [
+                {
+                  "serviceName": "carCreateUpdate_V2"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "pricePrerequisiteInfo": {
+      "stepId": 1,
+      "stepWeight": 3,
+      "component": {
+        "componentName": "Basic",
+        "actionVariant": "clean",
+        "title": "${step-price-details-coverage-title}",
+        "submitText": "${step-price-prerequisite-info-submit}",
+        "actions": [
+          {
+            "actionType": "changeUserData",
+            "first": true,
+            "props": {
+              "fields": [
+                {
+                  "field": "showPriceEdit",
+                  "value": null
+                }
+              ]
+            }
+          }
+        ],
+        "showHide": {
+          "userData": {
+            "key": "showPriceEdit",
+            "value": null,
+            "or": {
+              "notField": "showPriceEdit"
+            }
+          }
+        },
+        "props": [
+          {
+            "type": "textBlock",
+            "desc": "${step-price-details-coverage-desc}"
+          },
+          {
+            "hidden": false,
+            "type": "space",
+            "rows": "4"
+          },
+          {
+            "type": "productSelector",
+            "variant": "basic",
+            "heading": "${step-price-prerequisite-info-heading}",
+            "headingLink": {
+              "variant": "editLink",
+              "type": "label",
+              "label": "${edit}",
+              "actions": [
+                {
+                  "actionType": "nextStep",
+                  "props": {
+                    "changeUserData": true,
+                    "fields": [
+                      {
+                        "field": "showPriceEdit",
+                        "value": "prerequisite"
+                      },
+                      {
+                        "field": "quotes.defaults.default.recordedMileage",
+                        "value": "$[recordedMileage-car]"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "bodyProps": [
+              {
+                "title": "${recorded-mileage}",
+                "body": "${$[recordedMileage-car]}"
+              },
+              {
+                "title": "${equipment-value}",
+                "body": "${$[equipmentValue-car]-equipmentValue}"
+              },
+              {
+                "title": "${driving-experience}",
+                "body": "${$[driverExperience-car]-driverExperience}"
+              },
+              {
+                "title": "${number-of-claims}",
+                "body": "${$[claimCount-car]-claimCount}"
+              },
+              {
+                "title": "${payment-rate}",
+                "body": "${$[paymentFrequency-car]-paymentFrequency}"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pricePrerequisiteInput": {
+      "stepId": 2,
+      "stepWeight": 3,
+      "showIf": {
+        "anyof": [
+          {
+            "field": "showPriceEdit",
+            "stringValue": "prerequisite"
+          }
+        ]
+      },
+      "component": {
+        "componentName": "Basic",
+        "title": "${step-price-prerequisite-title}",
+        "actionVariant": "clean",
+        "submitButton": false,
+        "showHide": {
+          "userData": {
+            "key": "showPriceEdit",
+            "value": "prerequisite"
+          }
+        },
+        "props": [
+          {
+            "id": "recordedMileage-car",
+            "type": "select",
+            "label": "${recorded-mileage} ${questionmark-icon}",
+            "columns": "6",
+            "formColumns": "12",
+            "labelColumns": "12",
+            "className": "cursor__default",
+            "loading": "${loading...}",
+            "optionsFrom": "initialValues",
+            "options": "totalMileage",
+            "actions": [
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "fields": [
+                    {
+                      "field": "recordedMileage-car",
+                      "formValuesOverride": true,
+                      "value": "$[recordedMileage-car]"
+                    }
+                  ]
+                }
+              }
+            ],
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "recordedMileage"
+                }
+              }
+            ]
+          },
+          {
+            "id": "driverExperience-car",
+            "type": "select",
+            "label": "${driving-experience} ${questionmark-icon}",
+            "columns": "6",
+            "formColumns": "12",
+            "labelColumns": "12",
+            "className": "cursor__default",
+            "loading": "${loading...}",
+            "optionsFrom": "initialValues",
+            "options": "drivingExp",
+            "actions": [
+              {
+                "actionType": "callServices",
+                "props": {
+                  "useSpinner": true,
+                  "services": [
+                    {
+                      "serviceName": "carCreateUpdate_V2"
+                    }
+                  ]
+                }
+              }
+            ],
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "drivingExperience"
+                }
+              }
+            ]
+          },
+          {
+            "id": "claimCount-car",
+            "type": "select",
+            "label": "${number-of-claims} ${questionmark-icon}",
+            "columns": "6",
+            "formColumns": "12",
+            "labelColumns": "12",
+            "className": "cursor__default",
+            "loading": "${loading...}",
+            "optionsFrom": "initialValues",
+            "options": "numberOfDamage",
+            "actions": [
+              {
+                "actionType": "callServices",
+                "props": {
+                  "useSpinner": true,
+                  "services": [
+                    {
+                      "serviceName": "carCreateUpdate_V2"
+                    }
+                  ]
+                }
+              }
+            ],
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "numberOfClaims"
+                }
+              }
+            ]
+          },
+          {
+            "id": "equipmentValue-car",
+            "type": "select",
+            "label": "${equipment-value} ${questionmark-icon}",
+            "columns": "6",
+            "formColumns": "12",
+            "labelColumns": "12",
+            "className": "cursor__default",
+            "loading": "${loading...}",
+            "optionsFrom": "initialValues",
+            "options": "optionalEquipValue",
+            "actions": [
+              {
+                "actionType": "callServices",
+                "props": {
+                  "useSpinner": true,
+                  "services": [
+                    {
+                      "serviceName": "carCreateUpdate_V2"
+                    }
+                  ]
+                }
+              }
+            ],
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "equipmentValue"
+                }
+              }
+            ]
+          },
+          {
+            "id": "paymentFrequency-car",
+            "type": "select",
+            "label": "${payment-rate} ${questionmark-icon}",
+            "columns": "6",
+            "formColumns": "12",
+            "labelColumns": "12",
+            "className": "cursor__default",
+            "optionsFrom": "initialValues",
+            "options": "paymentRate",
+            "actions": [
+              {
+                "actionType": "callServices",
+                "props": {
+                  "useSpinner": true,
+                  "services": [
+                    {
+                      "serviceName": "carCreateUpdate_V2"
+                    }
+                  ]
+                }
+              }
+            ],
+            "labelActions": [
+              {
+                "actionType": "modal",
+                "props": {
+                  "name": "paymentRate"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "purchaseLoader": {
+      "component": {
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "updateLoader": true,
+              "services": [
+                {
+                  "serviceName": "createCustomerV2"
+                }
+              ],
+              "lastService": {
+                "serviceName": "purchase_V2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "purchaseConsentLoader": {
+      "component": {
+        "onLoad": [
+          {
+            "actionType": "callServices",
+            "props": {
+              "updateLoader": true,
+              "services": [
+                {
+                  "serviceName": "createCustomerV2"
+                }
+              ],
+              "lastService": {
+                "serviceName": "purchase_V2"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "modals": {
+    "consentPermissionTrygDrive": {
+      "modalType": "info",
+      "title": "${modal-consent-permission-tryg-drive-title}",
+      "props": [
+        {
+          "type": "textBlock",
+          "title": "${modal-consent-permission-tryg-drive-title}",
+          "body": "${modal-consent-permission-tryg-drive-body}"
+        }
+      ]
+    },
+    "registrationNumber": {
+      "modalType": "info",
+      "className": "registrationModal",
+      "title": "${modal-registration-number-title}",
+      "trackingStepNo": "step4.1.2",
+      "text": "${modal-registration-number-text}",
+      "props": [
+        {
+          "id": "registrationNumber",
+          "type": "text",
+          "label": "${modal-registration-number-label}",
+          "placeholder": "${modal-registration-number-placeholder}",
+          "hidden": false,
+          "autoComplete": "off",
+          "maxLength": 7,
+          "columns": "6",
+          "loadingOnField": "isUpdatingCar",
+          "actionEnterEnabled": false,
+          "validators": [
+            {
+              "name": "inputLength",
+              "errorMsg": "modal-registration-number-length-error-message",
+              "values": [
+                2
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "actionType": "callServices",
+              "triggerOnEnter": true,
+              "props": {
+                "services": [
+                  {
+                    "serviceName": "carVehicleModelsByRegistrationNumber_V2"
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "changeUserData",
+              "props": {
+                "fields": [
+                  {
+                    "field": "registrationNumberValid",
+                    "value": null
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "registrationNumberSubmit",
+          "type": "button",
+          "label": "${modal-registration-number-button-label}",
+          "className": "button--registration",
+          "hidden": false,
+          "columns": "4",
+          "requiredData": {
+            "allOf": [
+              {
+                "field": "registrationNumber",
+                "type": "formValues",
+                "minLength": 2
+              }
+            ],
+            "anyof": [
+              {
+                "field": "registrationNumberValid",
+                "type": "userData",
+                "boolValue": false
+              },
+              {
+                "field": "registrationNumberValid",
+                "type": "userData",
+                "nullValue": null
+              },
+              {
+                "notField": "registrationNumberValid",
+                "type": "userData"
+              }
+            ]
+          },
+          "actions": [
+            {
+              "actionType": "callServices",
+              "props": {
+                "services": [
+                  {
+                    "serviceName": "carVehicleModelsByRegistrationNumber_V2",
+                    "serviceParams": [
+                      {
+                        "field": "registrationNumber",
+                        "required": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "changeUserData",
+              "props": {
+                "fields": [
+                  {
+                    "field": "chooseModelVariant",
+                    "value": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "carInfo",
+          "type": "ajax",
+          "message": "${modal-registration-number-car-info}",
+          "icon": "checkmark",
+          "columns": "10",
+          "hidden": true,
+          "label": {
+            "id": "chooseModelVariant",
+            "type": "label",
+            "variant": "link",
+            "label": "${modal-registration-number-choose-model-variant-label}",
+            "hidden": false,
+            "actions": [
+              {
+                "actionType": "changeUserData",
+                "props": {
+                  "fields": [
+                    {
+                      "field": "chooseModelVariant",
+                      "value": true
+                    }
+                  ]
+                }
+              }
+            ],
+            "showHide": {
+              "userData": {
+                "multipleAnd": [
+                  {
+                    "key": "registrationNumberValid",
+                    "value": true
+                  },
+                  {
+                    "key": "showModelVariant",
+                    "value": true
+                  },
+                  {
+                    "key": "chooseModelVariant",
+                    "value": false
+                  }
+                ]
+              }
+            }
+          },
+          "showHide": {
+            "userData": {
+              "key": "registrationNumberValid",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "textBlock",
+          "desc": " ",
+          "descClass": "modal__gps-text",
+          "hidden": true,
+          "descMore": {
+            "id": "gpsInfo",
+            "type": "link",
+            "label": "${step-registration-number-Gps-message}",
+            "className": "modal__gps-text--link",
+            "link": "${step-registration-number-Gps-link}"
+          },
+          "showHide": {
+            "userData": {
+              "multipleAnd": [
+                {
+                  "key": "registrationNumberValid",
+                  "value": true
+                },
+                {
+                  "key": "gpsRequired",
+                  "value": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "registrationNumberAjaxNoDataError",
+          "type": "ajax",
+          "message": "${modal-registration-number-ajax-no-data-error}",
+          "className": "text__ajax error",
+          "hidden": true,
+          "showHide": {
+            "userData": {
+              "key": "registrationNumberValid",
+              "value": false
+            }
+          }
+        },
+        {
+          "id": "vehicleMakeId",
+          "type": "select",
+          "columns": "10",
+          "label": "${modal-registration-number-model-variant-label}",
+          "loading": "${loading...}",
+          "placeholder": "${choose-a-variant}",
+          "optionsFrom": "userData",
+          "options": "modelVariant",
+          "textName": "variantName",
+          "hidden": true,
+          "required": true,
+          "showHide": {
+            "userData": {
+              "multipleAnd": [
+                {
+                  "key": "registrationNumberValid",
+                  "value": true
+                },
+                {
+                  "key": "showModelVariant",
+                  "value": true
+                },
+                {
+                  "key": "chooseModelVariant",
+                  "value": true
+                }
+              ]
+            }
+          },
+          "actions": [
+            {
+              "actionType": "saveState"
+            }
+          ]
+        },
+        {
+          "type": "space",
+          "rows": "2",
+          "requiredData": {
+            "allof": [
+              {
+                "field": "registrationNumberValid",
+                "type": "userData",
+                "value": true
+              },
+              {
+                "field": "showModelVariant",
+                "type": "userData",
+                "value": true
+              },
+              {
+                "field": "chooseModelVariant",
+                "type": "userData",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "registrationNumberAjaxNoServiceError",
+          "type": "ajax",
+          "message": "${modal-registration-number-ajax-no-service-error}",
+          "hidden": true,
+          "showHide": {
+            "userData": {
+              "key": "registrationNumberNoService",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "continue",
+          "type": "button",
+          "variant": "button",
+          "className": "primary",
+          "label": "${proceed}",
+          "columns": "4",
+          "requiredData": {
+            "anyof": [
+              {
+                "field": "registrationNumberValid",
+                "value": true
+              }
+            ]
+          },
+          "actions": [
+            {
+              "actionType": "changeUserData",
+              "props": {
+                "fields": [
+                  {
+                    "field": "registrationNumberUnknown",
+                    "value": false
+                  },
+                  {
+                    "field": "recordedMileage-car",
+                    "value": 20000
+                  },
+                  {
+                    "field": "recordedMileageDate",
+                    "value": null
+                  },
+                  {
+                    "field": "registrationNumber",
+                    "value": "$[registrationNumberInput]"
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "callServices",
+              "props": {
+                "useSpinner": true,
+                "services": [
+                  {
+                    "serviceName": "carCreateUpdate_V2"
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "closeModal"
+            }
+          ]
+        },
+        {
+          "hidden": true,
+          "id": "close",
+          "type": "button",
+          "variant": "button",
+          "label": "${close}",
+          "columns": "4",
+          "actions": [
+            {
+              "actionType": "changeUserData",
+              "props": {
+                "fields": [
+                  {
+                    "field": "make",
+                    "value": "$[makeModal]"
+                  },
+                  {
+                    "field": "model",
+                    "value": "$[modelModal]"
+                  },
+                  {
+                    "field": "registrationNumberValid",
+                    "value": null
+                  },
+                  {
+                    "field": "vehicleIdentificationNumber",
+                    "value": ""
+                  },
+                  {
+                    "field": "registrationNumberInput",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            {
+              "actionType": "closeModal"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "actionType": "changeUserData",
+          "props": {
+            "fields": [
+              {
+                "field": "makeModal",
+                "value": "$[make]"
+              },
+              {
+                "field": "modelModal",
+                "value": "$[model]"
+              },
+              {
+                "field": "registrationNumber",
+                "value": "$[registrationNumberInput]"
+              }
+            ]
+          }
+        }
+      ],
+      "closeActions": [
+        {
+          "actionType": "changeUserData",
+          "props": {
+            "fields": [
+              {
+                "field": "make",
+                "value": "$[makeModal]"
+              },
+              {
+                "field": "model",
+                "value": "$[modelModal]"
+              },
+              {
+                "field": "registrationNumberValid",
+                "value": null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "firstPaymentSum": {
+      "modalType": "info",
+      "title": "${first-payment-sum-title}",
+      "body": "${first-payment-sum-body}"
+    },
+    "annualMileage": {
+      "modalType": "info",
+      "title": "${annual-mileage}",
+      "body": "${modal-annual-mileage-body}"
+    },
+    "recordedMileage": {
+      "modalType": "info",
+      "title": "${recorded-mileage}",
+      "body": "${modal-recorded-mileage-body}"
+    },
+    "drivingExperience": {
+      "modalType": "info",
+      "title": "${driving-experience}",
+      "body": "${modal-driving-experience-body}"
+    },
+    "numberOfClaims": {
+      "modalType": "info",
+      "title": "${number-of-claims}",
+      "body": "${modal-number-of-claims-body}"
+    },
+    "equipmentValue": {
+      "modalType": "info",
+      "title": "${equipment-value}",
+      "body": "${modal-equipment-value-body}"
+    },
+    "advantage": {
+      "modalType": "info",
+      "title": "${modal-advantage-tryghedspakken-$[marketSegmentCode-$[basketList]]-modal-title}",
+      "props": [
+        {
+          "type": "textBlock",
+          "desc": "${modal-advantage-tryghedspakken-$[marketSegmentCode-$[basketList]]-modal-description}"
+        }
+      ]
+    },
+    "numberOfLiabilityClaims": {
+      "modalType": "info",
+      "title": "${modal-number-of-liability-claims-title}",
+      "body": "${modal-number-of-liability-claims-body}"
+    },
+    "consentGPSTrygDrive": {
+      "modalType": "info",
+      "props": [
+        {
+          "type": "textHeader",
+          "title": "${modal-consent-gps-tryg-drive-title}",
+          "desc": "${modal-consent-gps-tryg-drive-body}"
+        },
+        {
+          "type": "textBlock",
+          "title": "${modal-consent-gps-tryg-drive-sub-title-1}",
+          "list": [
+            "${modal-consent-gps-tryg-drive-sub-body-list-1}",
+            "${modal-consent-gps-tryg-drive-sub-body-list-2}",
+            "${modal-consent-gps-tryg-drive-sub-body-list-3}",
+            "${modal-consent-gps-tryg-drive-sub-body-list-4}",
+            "${modal-consent-gps-tryg-drive-sub-body-list-5}"
+          ]
+        },
+        {
+          "type": "textBlock",
+          "title": "${modal-consent-gps-tryg-drive-sub-title-2}",
+          "body": "${modal-consent-gps-tryg-drive-sub-body-1}"
+        }
+      ]
+    }
+  }
+}
